@@ -34,10 +34,13 @@ bugs with certain themes eg. dark text on dark background.) */
   :root[privatebrowsingmode="temporary"]:where([style*="--lwt-accent-color: rgb(28, 27, 34)"]:not([style*="--newtab-background-color-secondary: rgb(66, 65, 77)"])) {
     --lwt-accent-color: light-dark(#f3f3f3, #202020) !important;
     --lwt-accent-color-inactive: unset !important;
-    --toolbar-bgcolor: light-dark(#fff, #3F3F3F) !important;
+    --toolbar-bgcolor: light-dark(#fff, #3f3f3f) !important;
     --lwt-tab-text: light-dark(#262626, #fff) !important;
     --chrome-content-separator-color: light-dark(#bfbfbf, #535353) !important;
-    --lwt-tab-line-color: light-dark(transparent, rgb(255 255 255 / 0.06)) !important;
+    --lwt-tab-line-color: light-dark(
+      transparent,
+      rgb(255 255 255 / 0.06)
+    ) !important;
   }
 
   /* Uses :root body to avoid affecting other variables by changing
@@ -48,8 +51,14 @@ bugs with certain themes eg. dark text on dark background.) */
     --toolbarbutton-icon-fill: var(--lwt-text-color) !important;
 
     &:-moz-window-inactive {
-      --toolbar-color: var(--lwt-text-color-inactive, var(--lwt-text-color)) !important;
-      --toolbarbutton-icon-fill:  var(--lwt-text-color-inactive, var(--lwt-text-color)) !important;
+      --toolbar-color: var(
+        --lwt-text-color-inactive,
+        var(--lwt-text-color)
+      ) !important;
+      --toolbarbutton-icon-fill: var(
+        --lwt-text-color-inactive,
+        var(--lwt-text-color)
+      ) !important;
     }
   }
 
@@ -71,14 +80,14 @@ bugs with certain themes eg. dark text on dark background.) */
   :root,
   :root .tabbrowser-tab {
     --uc-titlebar-shadow: none;
-    --uc-tab-shadow-outline: rgb(0 0 0 / .11);
-    --uc-tab-shadow: 0 2.5px 3px 1px rgb(0 0 0 / .08);
+    --uc-tab-shadow-outline: rgb(0 0 0 / 0.11);
+    --uc-tab-shadow: 0 2.5px 3px 1px rgb(0 0 0 / 0.08);
 
     & [brighttext],
     & [brighttext] .tabbrowser-tab {
       --uc-titlebar-shadow: none;
       --uc-tab-shadow-outline: transparent;
-      --uc-tab-shadow: 0 2px 3px rgb(0 0 0 / .12);
+      --uc-tab-shadow: 0 2px 3px rgb(0 0 0 / 0.12);
     }
 
     & #TabsToolbar {
@@ -103,7 +112,8 @@ bugs with certain themes eg. dark text on dark background.) */
   }
 
   .tab-background[selected] {
-    border: 1px solid var(--lwt-tab-line-color, var(--lwt-tabs-border-color, transparent)) !important;
+    border: 1px solid
+      var(--lwt-tab-line-color, var(--lwt-tabs-border-color, transparent)) !important;
     outline: 1px solid var(--uc-tab-shadow-outline) !important;
 
     /* Fractional scaling adjustments (150%, 175%, etc.) */
@@ -191,7 +201,8 @@ bugs with certain themes eg. dark text on dark background.) */
 }
 
 @media (-moz-bool-pref: "uc.tweak.context-menu.hide-access-key") {
-  :where(menuitem, menu) > :is(.menu-text, .menu-iconic-text)[value]:not([value=""]) {
+  :where(menuitem, menu)
+    > :is(.menu-text, .menu-iconic-text)[value]:not([value=""]) {
     &::before {
       /* The default value is -moz-label-content, which takes the data from the
        * value attribute and highlights the character found in the accesskey
@@ -202,7 +213,9 @@ bugs with certain themes eg. dark text on dark background.) */
 }
 
 @media (-moz-bool-pref: "uc.tweak.show-tab-close-button-on-hover") {
-  #tabbrowser-tabs[closebuttons="activetab"] .tabbrowser-tab:not([pinned], [selected]):hover .tab-close-button {
+  #tabbrowser-tabs[closebuttons="activetab"]
+    .tabbrowser-tab:not([pinned], [selected]):hover
+    .tab-close-button {
     display: flex !important;
   }
 }

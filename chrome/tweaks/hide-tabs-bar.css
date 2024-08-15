@@ -39,7 +39,10 @@
 
   /* Make sure window controls are removed in full screen mode. */
   &[inDOMFullscreen] #TabsToolbar .titlebar-buttonbox,
-  &[inFullscreen] #navigator-toolbox[style*="margin-top"] #TabsToolbar .titlebar-buttonbox {
+  &[inFullscreen]
+    #navigator-toolbox[style*="margin-top"]
+    #TabsToolbar
+    .titlebar-buttonbox {
     visibility: collapse !important;
   }
 
@@ -50,7 +53,9 @@
       padding-left: calc(70px + var(--uc-titlebar-drag-space)) !important;
 
       /* Remove the padding from the side of the navbar */
-      & #nav-bar-customization-target > :is(toolbarbutton, toolbaritem):first-child {
+      &
+        #nav-bar-customization-target
+        > :is(toolbarbutton, toolbaritem):first-child {
         padding-inline-start: 0 !important;
       }
     }
@@ -65,7 +70,9 @@
       left: 0;
 
       & .titlebar-buttonbox {
-        margin-inline: calc((var(--uc-navbar-height) + var(--uc-tab-top-margin, 0px) - 14px) / 2) !important;
+        margin-inline: calc(
+          (var(--uc-navbar-height) + var(--uc-tab-top-margin, 0px) - 14px) / 2
+        ) !important;
       }
     }
   }
@@ -74,7 +81,9 @@
   @media (-moz-platform: windows) {
     /* Offset navbar contents to make space for the window controls */
     &:where([inFullscreen], [tabsintitlebar]) #nav-bar {
-      padding-inline-end: calc(140px + var(--uc-titlebar-drag-space)) !important;
+      padding-inline-end: calc(
+        140px + var(--uc-titlebar-drag-space)
+      ) !important;
 
       /* Remove the padding from the side of the navbar */
       & #PanelUI-menu-button {
@@ -88,18 +97,19 @@
       position: fixed !important;
       top: 0;
       inset-inline-end: 0;
-      height: calc(var(--uc-navbar-height) + var(--uc-tab-top-margin, 0)) !important;
+      height: calc(
+        var(--uc-navbar-height) + var(--uc-tab-top-margin, 0)
+      ) !important;
       z-index: 100 !important;
       color: var(--toolbar-color) !important;
     }
-
   }
 
   /* Linux/GTK specific positioning, only needed if there is at least one window
    * control button. */
   @media (-moz-gtk-csd-minimize-button),
-  (-moz-gtk-csd-maximize-button),
-  (-moz-gtk-csd-close-button) {
+    (-moz-gtk-csd-maximize-button),
+    (-moz-gtk-csd-close-button) {
     /* Width of single window control button. */
     --uc-window-control-btn: 34px;
 
@@ -108,8 +118,8 @@
 
     /* Navbar space reserved for two buttons. */
     @media (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-maximize-button),
-    (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-close-button),
-    (-moz-gtk-csd-maximize-button) and (-moz-gtk-csd-close-button) {
+      (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-close-button),
+      (-moz-gtk-csd-maximize-button) and (-moz-gtk-csd-close-button) {
       --uc-window-controls-width: calc(var(--uc-window-control-btn) * 2);
     }
 
@@ -122,7 +132,9 @@
     &:where([inFullscreen], [tabsintitlebar]) #nav-bar {
       /* Window controls on the right. */
       @media not (-moz-gtk-csd-reversed-placement) {
-        padding-inline-end: calc(var(--uc-window-controls-width, 0px) + var(--uc-titlebar-drag-space)) !important;
+        padding-inline-end: calc(
+          var(--uc-window-controls-width, 0px) + var(--uc-titlebar-drag-space)
+        ) !important;
 
         /* Remove the padding from the side of the navbar */
         & #PanelUI-menu-button {
@@ -132,10 +144,14 @@
 
       /* Window controls on the left. */
       @media (-moz-gtk-csd-reversed-placement) {
-        padding-inline-start: calc(var(--uc-window-controls-width, 0px) + var(--uc-titlebar-drag-space)) !important;
+        padding-inline-start: calc(
+          var(--uc-window-controls-width, 0px) + var(--uc-titlebar-drag-space)
+        ) !important;
 
         /* Remove the padding from the side of the navbar */
-        & #nav-bar-customization-target > :is(toolbarbutton, toolbaritem):first-child {
+        &
+          #nav-bar-customization-target
+          > :is(toolbarbutton, toolbaritem):first-child {
           padding-inline-start: 0 !important;
         }
       }
@@ -146,7 +162,9 @@
       visibility: visible !important;
       position: fixed !important;
       top: 0;
-      height: calc(var(--uc-navbar-height) + var(--uc-tab-top-margin, 0)) !important;
+      height: calc(
+        var(--uc-navbar-height) + var(--uc-tab-top-margin, 0)
+      ) !important;
       z-index: 100 !important;
       inset-inline: auto 0;
 

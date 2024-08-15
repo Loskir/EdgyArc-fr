@@ -10,22 +10,21 @@
 /* Since the UUIDs are randomly generated, only a generic path can be specified,
  * this can cause conflicts with other extensions that use the same file
  * structure, but is unlikely to cause any major issues. */
-@-moz-document regexp("^moz-extension://.*?/sidebar/sidebar.html") {
+@-moz-document regexp("^moz-extension://.*?/sidebar/sidebar.html")
+{
+  /* Fix issues with rounded corners rendering. */
+  :root {
+    color-scheme: light dark !important;
+    background: light-dark(#aaa, #222) !important;
+  }
 
-
-    /* Fix issues with rounded corners rendering. */
-    :root {
-        color-scheme: light dark !important;
-        background: light-dark(#aaa, #222) !important;
-    }
-
-    /* On macOS, ensure that text is rendered correctly. */
-    body * {
-        -moz-osx-font-smoothing: auto !important;
-    }
-    /* ::::: Default theme colours ::::: */
-    /* macOS light mode. */
-    body[style*="--s-frame-fg: rgba(0, 0, 0, 0.847)"],
+  /* On macOS, ensure that text is rendered correctly. */
+  body * {
+    -moz-osx-font-smoothing: auto !important;
+  }
+  /* ::::: Default theme colours ::::: */
+  /* macOS light mode. */
+  body[style*="--s-frame-fg: rgba(0, 0, 0, 0.847)"],
     /* macOS dark mode. */
     body[style*="--s-frame-bg: rgb(30, 30, 30)"],
     /* Windows light mode. */
@@ -34,713 +33,770 @@
     body[style*="--s-frame-bg: rgb(35, 34, 43)"],
     /* No theme enabled. */
     body:not([style*="--s-frame-bg"]) {
-        --s-frame-bg: light-dark(#ececec, #1C1C1C) !important;
-        --s-frame-fg: light-dark(#000, #FFF) !important;
-        --s-toolbar-bg: light-dark(#ececec, #1C1C1C) !important;
-        --s-toolbar-fg: light-dark(#252525, #fff) !important;
-        --s-act-el-bg: light-dark(#fff, #4D4D4D) !important;
-        --s-act-el-fg: light-dark(#000, #fff) !important;
-        --s-act-el-border: transparent !important;
-        --s-popup-bg: light-dark(#fff, #4A4A4A) !important;
-        --s-popup-fg: light-dark(#1c1c1c, #fff) !important;
-        --s-popup-border: light-dark(#dadada, #636363) !important;
-        --s-accent: light-dark(#0078D4, #63ADE5) !important;
-        
+    --s-frame-bg: light-dark(#ececec, #1c1c1c) !important;
+    --s-frame-fg: light-dark(#000, #fff) !important;
+    --s-toolbar-bg: light-dark(#ececec, #1c1c1c) !important;
+    --s-toolbar-fg: light-dark(#252525, #fff) !important;
+    --s-act-el-bg: light-dark(#fff, #4d4d4d) !important;
+    --s-act-el-fg: light-dark(#000, #fff) !important;
+    --s-act-el-border: transparent !important;
+    --s-popup-bg: light-dark(#fff, #4a4a4a) !important;
+    --s-popup-fg: light-dark(#1c1c1c, #fff) !important;
+    --s-popup-border: light-dark(#dadada, #636363) !important;
+    --s-accent: light-dark(#0078d4, #63ade5) !important;
+  }
+
+  /* ::::: Variables ::::: */
+  #root.root {
+    --frame-bg: var(--s-frame-bg) !important;
+    --frame-fg: var(--s-toolbar-fg) !important;
+    --general-margin: 6px !important;
+    --tabs-font: 0.9rem system-ui !important;
+    --tabs-close-btn-margin: 8px !important;
+    --ntb-btn-height: 32px !important;
+    --tabs-border-radius: 4px !important;
+    --general-border-radius: 4px !important;
+    --frame-el-overlay-hover-bg: light-dark(
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.11)
+    ) !important;
+    /**/
+    --tabs-activated-shadow: inset 0 0 0 1px
+        light-dark(rgba(0, 0, 0, 0.1689), rgba(255, 255, 255, 0.14)),
+      0 0 1px 0px light-dark(rgba(0, 0, 0, 0.07), rgba(0, 0, 0, 0.6)) !important;
+
+    @media (min-width: 100px) {
+      .PinnedTabsBar .Tab[data-pin="true"] {
+        --tabs-activated-shadow: inset 0 0 0 1px
+          light-dark(rgba(0, 0, 0, 0.4), rgba(255, 255, 255, 0.6)) !important;
+        &[data-colorized="false"][data-active="true"] .body {
+          background-color: light-dark(
+            white,
+            rgba(100, 100, 100, 0.5)
+          ) !important;
+        }
+        &[data-colorized="true"] {
+          --tabs-activated-shadow: inset 0 0 0 1px
+            light-dark(rgba(0, 0, 0, 1), rgba(255, 255, 255, 0.6)) !important;
+        }
+      }
+    }
+    /**/
+    --tabs-activated-bg: light-dark(
+      rgba(255, 255, 255, 0.9),
+      rgba(100, 100, 100, 0.5)
+    ) !important;
+    --separator-color: color-mix(
+      in srgb,
+      var(--frame-fg) 20%,
+      transparent
+    ) !important;
+    --nav-btn-active-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.086),
+      inset 0 1px 3px 0 rgb(0 0 0 / 0.086) !important;
+    /**/
+    /*edgyarc variables*/
+    --af-hidden-popup-bg: color-mix(
+      in srgb,
+      var(--frame-bg) 50%,
+      light-dark(rgb(255, 255, 255), rgb(20, 20, 20))
+    );
+    --af-fade-tab-text: linear-gradient(
+      90deg,
+      black 93%,
+      #f1f1f100 99%
+    ) !important;
+    --af-total-pinned-width: calc(100vw - 6px);
+    --af-searchbar-bg-color: light-dark(
+      rgba(200, 200, 200, 0.3),
+      rgba(80, 80, 80, 0.4)
+    );
+    /*tabs*/
+    --tabs-indent: 14px !important;
+    --tabs-inner-gap: 6px !important;
+    --tabs-pinned-height: 38px !important;
+    --tabs-pinned-width: 42px !important;
+    --tabs-color-layer-opacity: 0.4 !important;
+    --tabs-activated-color-layer-opacity: 0.6 !important;
+    @media (-moz-bool-pref: "af.edgyarc.macos-translucent") {
+      --tabs-color-layer-opacity: 0.5 !important;
+      --tabs-activated-color-layer-opacity: 0.6 !important;
+    }
+    --tabs-discarded-favicon-opacity: 0.6 !important;
+    --tabs-discarded-title-opacity: 0.7 !important;
+    --tabs-lvl-opacity: 0.3 !important;
+    --tabs-audio-btn-width: 30px !important;
+    --tabs-normal-fg: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));
+    /**/
+    --tabs-close-btn-margin: 4px !important;
+    /*search*/
+    --search-border-radius: 4px !important;
+    --search-font-size: 0.9rem !important;
+    --search-icon-width: 40px !important;
+    /*history*/
+    --history-item-padding-left: 6px !important;
+    --history-item-margin: 5px !important;
+    --history-item-border-radius: 4px !important;
+    /*popups*/
+    --notification-bg: color-mix(
+      in srgb,
+      var(--frame-bg) 50%,
+      light-dark(rgb(250, 250, 250), rgb(0, 0, 0))
+    ) !important;
+    --ctx-menu-shadow: 0 0 0 1px
+        light-dark(rgba(0, 0, 0, 0.4), rgba(255, 255, 255, 0.6)),
+      0 0 5px 5px light-dark(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)) !important;
+    --ctx-menu-bg: color-mix(
+      in srgb,
+      var(--frame-bg) 50%,
+      light-dark(rgb(255, 255, 255), rgb(20, 20, 20))
+    ) !important;
+    --ctx-menu-min-width: 160px !important;
+    --popup-shadow: 0 0 5px 5px
+      light-dark(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)) !important;
+    --ctx-menu-fg: light-dark(black, white) !important;
+    --ctx-menu-icon-opt-height: 30px !important;
+    --ctx-menu-text-opt-inner-gap: 6px !important;
+    --ctx-menu-padding: 4px !important;
+    /*misc*/
+    --nav-btn-width: 30px !important;
+    --nav-btn-height: 30px !important;
+    --nav-btn-len-margin: -1px !important;
+    --ntb-padding: 6px 0px !important;
+
+    /* Light mode adjustments. */
+    &[data-frame-color-scheme="light"] {
+      color-scheme: light !important;
+      --tabs-normal-fg: color-mix(
+        in srgb,
+        var(--frame-fg) 82%,
+        transparent
+      ) !important;
+    }
+    /* Dark mode adjustments. */
+    &[data-frame-color-scheme="dark"] {
+      color-scheme: dark !important;
+      --nav-btn-active-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.071),
+        0 1px 3px 0 rgb(0 0 0 / 0.212) !important;
     }
 
-    /* ::::: Variables ::::: */
-    #root.root {
-        --frame-bg: var(--s-frame-bg) !important;
-        --frame-fg: var(--s-toolbar-fg) !important;
-        --general-margin: 6px !important;
-        --tabs-font: 0.900rem system-ui !important;
-        --tabs-close-btn-margin: 8px !important;
-        --ntb-btn-height: 32px !important;
-        --tabs-border-radius: 4px !important;
-        --general-border-radius: 4px !important;
-        --frame-el-overlay-hover-bg:light-dark(rgba(255,255,255,0.8), rgba(255,255,255,0.11)) !important;
-        /**/
-        --tabs-activated-shadow: inset 0 0 0 1px light-dark(rgba(0, 0, 0, 0.1689), rgba(255, 255, 255, 0.14)), 0 0 1px 0px light-dark(rgba(0,0,0,0.07), rgba(0,0,0,0.6)) !important;
-        
-        @media(min-width:100px) {
-            .PinnedTabsBar .Tab[data-pin="true"] {
-                --tabs-activated-shadow: inset 0 0 0 1px light-dark(rgba(0, 0, 0, 0.4), rgba(255, 255, 255, 0.6)) !important;
-                &[data-colorized="false"][data-active="true"] .body {
-                    background-color:light-dark(white,rgba(100,100,100,0.5)) !important;
-                }
-                &[data-colorized="true"] {
-                --tabs-activated-shadow: inset 0 0 0 1px light-dark(rgba(0, 0, 0, 1), rgba(255, 255, 255, 0.6)) !important;
-                }
-            }
-        }
-        /**/
-        --tabs-activated-bg: light-dark(rgba(255, 255, 255, 0.9), rgba(100, 100, 100, 0.5)) !important;
-        --separator-color: color-mix(in srgb, var(--frame-fg) 20%, transparent) !important;
-        --nav-btn-active-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.086), inset 0 1px 3px 0 rgb(0 0 0 / 0.086) !important;
-        /**/
-       /*edgyarc variables*/
-       --af-hidden-popup-bg: color-mix(in srgb, var(--frame-bg) 50%, light-dark(rgb(255, 255, 255), rgb(20, 20, 20)));
-       --af-fade-tab-text: linear-gradient(90deg, black 93%, #f1f1f100 99%) !important;
-       --af-total-pinned-width: calc(100vw - 6px);
-       --af-searchbar-bg-color: light-dark(rgba(200, 200, 200, 0.3), rgba(80, 80, 80, 0.4));
-       /*tabs*/
-       --tabs-indent: 14px !important;
-       --tabs-inner-gap: 6px !important;
-       --tabs-pinned-height: 38px !important;
-       --tabs-pinned-width: 42px !important;
-       --tabs-color-layer-opacity: 0.4 !important;
-       --tabs-activated-color-layer-opacity: 0.6 !important;
-        @media (-moz-bool-pref:"af.edgyarc.macos-translucent") {
-                   --tabs-color-layer-opacity: 0.5 !important;
-       --tabs-activated-color-layer-opacity: 0.6 !important;
-        }
-       --tabs-discarded-favicon-opacity: 0.6 !important;
-       --tabs-discarded-title-opacity: 0.7 !important;
-       --tabs-lvl-opacity: 0.3 !important;
-       --tabs-audio-btn-width: 30px !important;
-       --tabs-normal-fg: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));
-       /**/
-       --tabs-close-btn-margin: 4px !important;
-       /*search*/
-       --search-border-radius: 4px !important;
-       --search-font-size: 0.9rem !important;
-       --search-icon-width: 40px !important;
-       /*history*/
-       --history-item-padding-left: 6px !important;
-       --history-item-margin: 5px !important;
-       --history-item-border-radius: 4px !important;
-       /*popups*/
-       --notification-bg: color-mix(in srgb, var(--frame-bg) 50%, light-dark(rgb(250, 250, 250), rgb(0, 0, 0))) !important;
-       --ctx-menu-shadow: 0 0 0 1px light-dark(rgba(0, 0, 0, 0.4), rgba(255, 255, 255, 0.6)),
-       0 0 5px 5px light-dark(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)) !important;
-       --ctx-menu-bg: color-mix(in srgb, var(--frame-bg) 50%, light-dark(rgb(255, 255, 255), rgb(20, 20, 20))) !important;
-       --ctx-menu-min-width: 160px !important;
-       --popup-shadow: 0 0 5px 5px light-dark(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)) !important;
-       --ctx-menu-fg: light-dark(black, white) !important;
-       --ctx-menu-icon-opt-height: 30px !important;
-       --ctx-menu-text-opt-inner-gap: 6px !important;
-       --ctx-menu-padding: 4px !important;
-       /*misc*/
-        --nav-btn-width:30px !important;
-        --nav-btn-height:30px !important;
-        --nav-btn-len-margin: -1px !important;
-        --ntb-padding: 6px 0px !important;
-      
-        /* Light mode adjustments. */
-        &[data-frame-color-scheme="light"] {
-            color-scheme: light !important;
-            --tabs-normal-fg: color-mix(in srgb, var(--frame-fg) 82%, transparent) !important;
-        }
-        /* Dark mode adjustments. */
-        &[data-frame-color-scheme="dark"] {
-            color-scheme: dark !important;
-            --nav-btn-active-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.071), 0 1px 3px 0 rgb(0 0 0 / 0.212) !important;
-        }
-
-        /*==== css properties ====*/
-        /* Padding adjustments */
-        & { 
-            padding: 6px 0 0 0 !important;
-        }
-        /* ==== Hidden panels ==== */
-        .NavigationBar {
-            .hidden-panels-popup-layer {
-                position: fixed !important;
-                top: 0 !important;
-                left: 0 !important;
-                margin-top: -40px !important;
-                width: 100vw !important;
-                height: 100vh !important;
-                z-index: 999 !important;
-                transform: scaleY(-1);
-                --toolbar-bg: var(--af-hidden-popup-bg) !important;
-            }
-
-            #hidden_panels_btn.nav-item .icon {
-                transform: scaleY(-1);
-            }
-
-            .hidden-panels-popup-content {
-                transform: scaleY(-1);
-                padding: 4px 4px 4px 4px !important;
-            }
-
-            .hidden-panels-popup {
-                border: 1px solid light-dark(rgba(0, 0, 0, 0.4), rgba(255, 255, 255, 0.6)) !important;
-                .nav-item {
-                    margin: 3px !important;
-                    .len {
-                        background-color: transparent !important;
-                    }
-                }
-            }
-
-            /*make hidden panel text not mirror the panel colour*/
-            &:has(.hidden-panels-popup) * {
-                border-radius: var(--general-border-radius) !important;
-                color: light-dark(black, white) !important;
-            }
-
-            .popup-container,
-            .hidden-panels-popup-layer:before {
-                background-color: transparent !important;
-            }
-
-        }
-
-        /* ==== Pinned Tabs ==== */
-        .PinnedTabsBar {
-            & .Tab {
-                /*pinned tabs have larger favicons*/
-                .fav,
-                .fav-icon {
-                    width: 22px !important;
-                    height: 22px !important;
-                }
-
-                /*add a slight bg colour*/
-                .body {
-                    background-color: light-dark(rgba(200, 200, 200, 0.3), rgba(200, 200, 200, 0.1)) !important;
-                }
-                &[data-active='true'] {
-                    .body {
-                            background-color: light-dark(rgba(250, 250, 250, 0.3), rgba(200, 200, 200, 0.3)) !important;
-                    }
-                }
-            }
-        }
-
-        /* ==== Tabs ==== */
-        /*tab scrollbox shadows*/
-        &[data-frame-color-scheme="light"] {
-                .top-shadow[data-show="true"], .bottom-shadow[data-show="true"] {
-            opacity:0.57 !important;
-        }
-            
-        }
-    
-        /*tab container indicator*/
-        .Tab[data-audible="true"] {
-            .body {
-                box-shadow: inset 0 0 0.5px 1px rgba(255,80,80,0.4) !important;
-                background: rgba(255,80,80,0.1) !important;  
-                
-            }
-            &[data-active="true"] .body {
-                box-shadow: inset 0 0 0.5px 1px rgba(255,80,80,0.8) !important;
-                background: light-dark(rgba(255,80,80,0.5),rgba(255,100,100,0.3)) !important;   
-            }
-            
-        }
-        .Tab[data-pin="false"] {
-            
-            &[data-active="true"] .ctx {
-                width: 4px !important;
-                height: 100% !important;
-                top: auto !important;
-                opacity: 0.8;
-                border-radius: 0 4px 4px 0 !important;
-            }
-
-            &[data-active="false"] .ctx,
-            &:hover .ctx {
-                height: 70%;
-                width: 4px;
-                top: auto;
-                border-radius: 20px !important;
-            }
-
-            .title { 
-               background: linear-gradient(90deg, light-dark(black, white) 92%, #f1f1f100 99%) !important;
-	           background-clip: text !important;
-	           color: transparent !important;  
-            }
-            .close {
-                --active-el-overlay-hover-bg:rgba(180,180,180,0.5) !important;
-            }
-
-            .ctx {
-                transition: height 200ms ease, width 200ms ease, top 200ms ease !important;
-            }
-        }
-
-        /* Tab colors */
-        .scrollable .Tab {
-            .audio {
-                margin-left:5px !important;
-            }
-            /*make colour layer span the width of the favicon, instead of the whole tab*/
-
-            &,
-            &[data-discarded] {
-                .color-layer {
-                    width: 32px !important;
-                }
-
-                &[data-active="true"] {
-                    --tabs-activated-shadow: inherit !important;
-
-                    .color-layer {
-                        @media not (max-width: 160px) {
-                            border-radius: 4px 0 0 4px !important;
-                        }
-                    }
-                }
-
-                &:hover {
-                    .Tab {
-                        --tabs-discarded-title-opacity: 1 !important;
-                    }
-                }
-            }
-
-            /*adjust padding to accomodate coloured tabs*/
-            .t-box {
-                padding: 0 6px !important;
-            }
-        }
-
-        /* Grouped tabs */
-        .Tab {
-
-            .exp,
-            .exp-icon,
-            .exp:hover {
-                opacity: 1 !important;
-            }
-
-            .child-count {
-                opacity: 1 !important;
-                text-shadow: 0 2px 5px light-dark(white, rgba(0, 0, 0, 0.6)), 2px 0px 5px light-dark(white, rgba(0, 0, 0, 0.6)), 0 0px 4px light-dark(white, rgba(0, 0, 0, 0.6)) !important;
-                
-            }
-
-            &[data-folded="true"] .fav {
-                opacity: 1 !important;
-            }
-        }
-
-        /* Search Bar */
-        #search_bar {
-            order: 2;
-            padding-right: 12px;
-            --toolbar-bg: var(--af-searchbar-bg-color) !important;
-
-            .clear-btn {
-                margin-right: 7px !important;
-            }
-        }
-
-  /* New tab button styling. */
-  .TabsPanel .new-tab-btns {
-    /* Add space for the separator. */
-    padding-top: calc(var(--tabs-margin) + 1px) !important;
-      @media (-moz-bool-pref:"af.sidebery.nav-on-top") {
-          margin-bottom:10px !important;
+    /*==== css properties ====*/
+    /* Padding adjustments */
+    & {
+      padding: 6px 0 0 0 !important;
+    }
+    /* ==== Hidden panels ==== */
+    .NavigationBar {
+      .hidden-panels-popup-layer {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        margin-top: -40px !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        z-index: 999 !important;
+        transform: scaleY(-1);
+        --toolbar-bg: var(--af-hidden-popup-bg) !important;
       }
-      @media (-moz-bool-pref:"af.sidebery.top-new-tab-btn") {
-          margin-bottom:0px !important;
-            
-          .new-tab-btn {
-              margin-bottom:5px !important;
+
+      #hidden_panels_btn.nav-item .icon {
+        transform: scaleY(-1);
+      }
+
+      .hidden-panels-popup-content {
+        transform: scaleY(-1);
+        padding: 4px 4px 4px 4px !important;
+      }
+
+      .hidden-panels-popup {
+        border: 1px solid
+          light-dark(rgba(0, 0, 0, 0.4), rgba(255, 255, 255, 0.6)) !important;
+        .nav-item {
+          margin: 3px !important;
+          .len {
+            background-color: transparent !important;
           }
+        }
       }
-    /* Add separator before new tab button. */
-  
-       &::before {
-      width: calc(100% - var(--tabs-margin)*2) !important;
-      inset-inline: auto !important;
-      top: 0 !important;
-      @media not (-moz-bool-pref:"af.sidebery.top-new-tab-btn") { 
-          border-top: 1px solid var(--separator-color) !important; }
-           
-      box-shadow: none !important;
+
+      /*make hidden panel text not mirror the panel colour*/
+      &:has(.hidden-panels-popup) * {
+        border-radius: var(--general-border-radius) !important;
+        color: light-dark(black, white) !important;
+      }
+
+      .popup-container,
+      .hidden-panels-popup-layer:before {
+        background-color: transparent !important;
+      }
     }
-      
 
+    /* ==== Pinned Tabs ==== */
+    .PinnedTabsBar {
+      & .Tab {
+        /*pinned tabs have larger favicons*/
+        .fav,
+        .fav-icon {
+          width: 22px !important;
+          height: 22px !important;
+        }
 
-    /* Make sure the separator is hidden when there are only pinned tabs. */
-    &[data-new-tab-bar-position="after_tabs"]:first-child {
-      padding-top: 0 !important;
+        /*add a slight bg colour*/
+        .body {
+          background-color: light-dark(
+            rgba(200, 200, 200, 0.3),
+            rgba(200, 200, 200, 0.1)
+          ) !important;
+        }
+        &[data-active="true"] {
+          .body {
+            background-color: light-dark(
+              rgba(250, 250, 250, 0.3),
+              rgba(200, 200, 200, 0.3)
+            ) !important;
+          }
+        }
+      }
+    }
+
+    /* ==== Tabs ==== */
+    /*tab scrollbox shadows*/
+    &[data-frame-color-scheme="light"] {
+      .top-shadow[data-show="true"],
+      .bottom-shadow[data-show="true"] {
+        opacity: 0.57 !important;
+      }
+    }
+
+    /*tab container indicator*/
+    .Tab[data-audible="true"] {
+      .body {
+        box-shadow: inset 0 0 0.5px 1px rgba(255, 80, 80, 0.4) !important;
+        background: rgba(255, 80, 80, 0.1) !important;
+      }
+      &[data-active="true"] .body {
+        box-shadow: inset 0 0 0.5px 1px rgba(255, 80, 80, 0.8) !important;
+        background: light-dark(
+          rgba(255, 80, 80, 0.5),
+          rgba(255, 100, 100, 0.3)
+        ) !important;
+      }
+    }
+    .Tab[data-pin="false"] {
+      &[data-active="true"] .ctx {
+        width: 4px !important;
+        height: 100% !important;
+        top: auto !important;
+        opacity: 0.8;
+        border-radius: 0 4px 4px 0 !important;
+      }
+
+      &[data-active="false"] .ctx,
+      &:hover .ctx {
+        height: 70%;
+        width: 4px;
+        top: auto;
+        border-radius: 20px !important;
+      }
+
+      .title {
+        background: linear-gradient(
+          90deg,
+          light-dark(black, white) 92%,
+          #f1f1f100 99%
+        ) !important;
+        background-clip: text !important;
+        color: transparent !important;
+      }
+      .close {
+        --active-el-overlay-hover-bg: rgba(180, 180, 180, 0.5) !important;
+      }
+
+      .ctx {
+        transition:
+          height 200ms ease,
+          width 200ms ease,
+          top 200ms ease !important;
+      }
+    }
+
+    /* Tab colors */
+    .scrollable .Tab {
+      .audio {
+        margin-left: 5px !important;
+      }
+      /*make colour layer span the width of the favicon, instead of the whole tab*/
+
+      &,
+      &[data-discarded] {
+        .color-layer {
+          width: 32px !important;
+        }
+
+        &[data-active="true"] {
+          --tabs-activated-shadow: inherit !important;
+
+          .color-layer {
+            @media not (max-width: 160px) {
+              border-radius: 4px 0 0 4px !important;
+            }
+          }
+        }
+
+        &:hover {
+          .Tab {
+            --tabs-discarded-title-opacity: 1 !important;
+          }
+        }
+      }
+
+      /*adjust padding to accomodate coloured tabs*/
+      .t-box {
+        padding: 0 6px !important;
+      }
+    }
+
+    /* Grouped tabs */
+    .Tab {
+      .exp,
+      .exp-icon,
+      .exp:hover {
+        opacity: 1 !important;
+      }
+
+      .child-count {
+        opacity: 1 !important;
+        text-shadow:
+          0 2px 5px light-dark(white, rgba(0, 0, 0, 0.6)),
+          2px 0px 5px light-dark(white, rgba(0, 0, 0, 0.6)),
+          0 0px 4px light-dark(white, rgba(0, 0, 0, 0.6)) !important;
+      }
+
+      &[data-folded="true"] .fav {
+        opacity: 1 !important;
+      }
+    }
+
+    /* Search Bar */
+    #search_bar {
+      order: 2;
+      padding-right: 12px;
+      --toolbar-bg: var(--af-searchbar-bg-color) !important;
+
+      .clear-btn {
+        margin-right: 7px !important;
+      }
+    }
+
+    /* New tab button styling. */
+    .TabsPanel .new-tab-btns {
+      /* Add space for the separator. */
+      padding-top: calc(var(--tabs-margin) + 1px) !important;
+      @media (-moz-bool-pref: "af.sidebery.nav-on-top") {
+        margin-bottom: 10px !important;
+      }
+      @media (-moz-bool-pref: "af.sidebery.top-new-tab-btn") {
+        margin-bottom: 0px !important;
+
+        .new-tab-btn {
+          margin-bottom: 5px !important;
+        }
+      }
+      /* Add separator before new tab button. */
 
       &::before {
-        display: none !important;
-      }
-    }
+        width: calc(100% - var(--tabs-margin) * 2) !important;
+        inset-inline: auto !important;
+        top: 0 !important;
+        @media not (-moz-bool-pref: "af.sidebery.top-new-tab-btn") {
+          border-top: 1px solid var(--separator-color) !important;
+        }
 
-    /* Hide unnecessary pseudo element. */
-    &::after {
-      content: initial !important;
-    }
-
-    /* New tab button. */
-    & .new-tab-btn {
-      justify-content: start !important;
-      white-space: nowrap !important;
-      overflow: hidden !important;
-      border-radius: var(--tabs-border-radius) !important;
-
-      /* Make sure images do not shrink when collapsed. */
-      & > svg,
-      & > img {
-        position: static !important;
-        margin: 0 calc(var(--tabs-inner-gap) + 2px) 0 var(--tabs-inner-gap) !important;
-        flex-shrink: 0 !important;
+        box-shadow: none !important;
       }
 
-      /* Add new tab label. */
+      /* Make sure the separator is hidden when there are only pinned tabs. */
+      &[data-new-tab-bar-position="after_tabs"]:first-child {
+        padding-top: 0 !important;
+
+        &::before {
+          display: none !important;
+        }
+      }
+
+      /* Hide unnecessary pseudo element. */
       &::after {
-        content: "New Tab" !important;
-        font: var(--tabs-font) !important;
-        color: var(--frame-fg) !important;
+        content: initial !important;
+      }
+
+      /* New tab button. */
+      & .new-tab-btn {
+        justify-content: start !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        border-radius: var(--tabs-border-radius) !important;
+
+        /* Make sure images do not shrink when collapsed. */
+        & > svg,
+        & > img {
+          position: static !important;
+          margin: 0 calc(var(--tabs-inner-gap) + 2px) 0 var(--tabs-inner-gap) !important;
+          flex-shrink: 0 !important;
+        }
+
+        /* Add new tab label. */
+        &::after {
+          content: "New Tab" !important;
+          font: var(--tabs-font) !important;
+          color: var(--frame-fg) !important;
+        }
+      }
+      @media (-moz-bool-pref: "af.sidebery.top-new-tab-btn") {
+        order: -5 !important;
       }
     }
-            @media (-moz-bool-pref:"af.sidebery.top-new-tab-btn") {
-          order:  -5 !important;
+
+    /* Navigation box */
+    .top-horizontal-box {
+      display: flex;
+      @media not (-moz-bool-pref: "af.sidebery.nav-on-top") {
+        order: 3 !important;
       }
-  }
 
-        
-        /* Navigation box */
-        .top-horizontal-box {
-            display: flex;
-            @media not (-moz-bool-pref:"af.sidebery.nav-on-top") {
-                order: 3 !important; }
+      & #nav_bar[data-layout="wrap"] .main-items {
+        justify-content: center !important;
+        align-items: center !important;
+        overflow: hidden !important;
+      }
+      & #nav_bar .main-items {
+        padding: 0px !important;
+        margin: 0px !important;
+        transition:
+          height 100ms ease-in-out 0ms,
+          width 100ms ease-in-out 0ms;
 
-            & #nav_bar[data-layout="wrap"] .main-items {
-                justify-content: center !important;
-                align-items: center !important;
-                overflow: hidden !important;
-            }
-            & #nav_bar .main-items 
-            {
-                padding:0px !important;
-                margin:0px !important;
-                transition: height 100ms ease-in-out 0ms, width 100ms ease-in-out 0ms;
-                
-                @media not (-moz-bool-pref:"af.sidebery.always-panel-show-tab-count")
-                {.nav-item:not(:hover):not([data-active="true"]) .len {
-                    opacity:0 !important;
-                    transition:opacity 200ms linear !important;
-                }}
-            }
+        @media not (-moz-bool-pref: "af.sidebery.always-panel-show-tab-count") {
+          .nav-item:not(:hover):not([data-active="true"]) .len {
+            opacity: 0 !important;
+            transition: opacity 200ms linear !important;
+          }
+        }
+      }
 
-            #nav_bar {
-                background-color: transparent !important;
-                
-            }
-            
-            #nav_bar[data-layout="inline"] {
-        --nav-btn-width:26px !important;
-        --nav-btn-height:26px !important;
-        --nav-btn-len-margin: 0px  !important;
-                .len {
-                   
-                }   
-        
+      #nav_bar {
+        background-color: transparent !important;
+      }
+
+      #nav_bar[data-layout="inline"] {
+        --nav-btn-width: 26px !important;
+        --nav-btn-height: 26px !important;
+        --nav-btn-len-margin: 0px !important;
+        .len {
+        }
+      }
     }
+    .left-vertical-box #nav_bar {
+      background-color: transparent !important;
+      padding: 0 6px !important;
+    }
+
+    /*=== resize pinned tab widths ===*/
+    .PinnedTabsBar {
+      margin: 0 0 0 0 !important;
+      --general-padding: 0 0 0 0 !important;
+      --general-margin: 0 0 0 0 !important;
+
+      .tab-wrapper {
+        --calc-pinned-tab-width: calc(
+          (
+              var(--af-total-pinned-width) -
+                (var(--tabs-margin) * var(--pinned-tabs-col))
+            ) / var(--pinned-tabs-col)
+        );
+        --tabs-pinned-width: var(--calc-pinned-tab-width);
+      }
+    }
+
+    /*--------on collapsed sidebar*/
+    @media (min-width: 40px) and (max-width: 149px) {
+      .PinnedTabsBar .tab-wrapper {
+        --pinned-tabs-col: 2;
+        --tabs-pinned-width: 11px !important;
+      }
+    }
+
+    /*------------on narrow sidebar*/
+    @media (min-width: 150px) and (max-width: 239px) {
+      --pinned-tabs-col: 3;
+      @media not (-moz-bool-pref: "af.sidebery.static-pinned-tab-width") {
+        .PinnedTabsBar .tab-wrapper {
+          /* when one tab in bottom row */
+          &:nth-child(3n + 1):last-child {
+            --pinned-tabs-col: 1 !important;
+          }
+
+          /* when two tab in bottom row */
+          &:nth-child(3n + 2):nth-last-child(1),
+          &:nth-child(3n + 1):nth-last-child(2) {
+            --pinned-tabs-col: 2 !important;
+          }
         }
-        .left-vertical-box #nav_bar {
-            background-color: transparent !important;
-            padding: 0 6px !important;
+      }
+    }
+
+    /*--------------on regular sidebar*/
+    @media (min-width: 240px) and (max-width: 280px) {
+      --pinned-tabs-col: 4;
+      @media not (-moz-bool-pref: "af.sidebery.static-pinned-tab-width") {
+        .PinnedTabsBar .tab-wrapper {
+          /* when one tab in bottom row */
+          &:nth-child(4n-3):last-child {
+            --pinned-tabs-col: 1 !important;
+          }
+
+          /* when two tab in bottom row */
+          &:nth-child(4n-2):last-child,
+          &:nth-child(4n-3):nth-last-child(2) {
+            --pinned-tabs-col: 2 !important;
+          }
+
+          /*when 3 tab in bottom row*/
+          &:nth-child(3):last-child,
+          &:nth-child(2):nth-last-child(2),
+          &:nth-child(1):nth-last-child(3),
+          &:nth-child(7n):last-child,
+          &:nth-child(6n):nth-last-child(2),
+          &:nth-child(5n):nth-last-child(3) {
+            --pinned-tabs-col: 3 !important;
+          }
         }
+      }
+    }
 
-        /*=== resize pinned tab widths ===*/
-        .PinnedTabsBar {
-            margin: 0 0 0 0 !important;
-            --general-padding: 0 0 0 0 !important;
-            --general-margin: 0 0 0 0 !important;
+    @media (min-width: 280px) {
+      --pinned-tabs-col: 5;
+    }
 
-            .tab-wrapper {
-                --calc-pinned-tab-width: calc((var(--af-total-pinned-width) - (var(--tabs-margin) * var(--pinned-tabs-col))) / var(--pinned-tabs-col));
-                --tabs-pinned-width: var(--calc-pinned-tab-width);
-            }
-        }
+    /*tabs transitions*/
+    .PinnedTabsBar,
+    .Tab,
+    .top-horizontal-box .main-items {
+      transition:
+        height 0ms linear 0ms,
+        width 0ms linear 0ms !important;
+    }
 
-        /*--------on collapsed sidebar*/
-        @media (min-width: 40px) and (max-width:149px) {
-            .PinnedTabsBar .tab-wrapper {
-                --pinned-tabs-col: 2;
-                --tabs-pinned-width: 11px !important;
-            }
-        }
+    /*----------- Collapsed sidebar stuff from here ----------------------------*/
 
-        /*------------on narrow sidebar*/
-        @media (min-width: 150px) and (max-width: 239px) {
-            --pinned-tabs-col: 3;
-            @media not (-moz-bool-pref:"af.sidebery.static-pinned-tab-width") {
-            .PinnedTabsBar .tab-wrapper {
-
-                /* when one tab in bottom row */
-                &:nth-child(3n+1):last-child {
-                    --pinned-tabs-col: 1 !important;
-                }
-
-                /* when two tab in bottom row */
-                &:nth-child(3n+2):nth-last-child(1),
-                &:nth-child(3n+1):nth-last-child(2) {
-                    --pinned-tabs-col: 2 !important;
-
-                }
-            }
-            }
-        }
-
-        /*--------------on regular sidebar*/
-        @media (min-width: 240px) and (max-width: 280px) {
-            --pinned-tabs-col: 4;
- @media not (-moz-bool-pref:"af.sidebery.static-pinned-tab-width") {
-            .PinnedTabsBar .tab-wrapper {
-
-                /* when one tab in bottom row */
-                &:nth-child(4n-3):last-child {
-                    --pinned-tabs-col: 1 !important;
-                }
-
-                /* when two tab in bottom row */
-                &:nth-child(4n-2):last-child,
-                &:nth-child(4n-3):nth-last-child(2) {
-                    --pinned-tabs-col: 2 !important;
-                
-
-                }
-
-                /*when 3 tab in bottom row*/
-                &:nth-child(3):last-child,
-                &:nth-child(2):nth-last-child(2),
-                &:nth-child(1):nth-last-child(3),
-                &:nth-child(7n):last-child,
-                &:nth-child(6n):nth-last-child(2),
-                &:nth-child(5n):nth-last-child(3) {
-                    --pinned-tabs-col: 3 !important;
-                }
-            }
-        }
-        }
-
-        @media (min-width: 280px) {
-            --pinned-tabs-col: 5;
-        }
-
-        /*tabs transitions*/
+    @media (max-width: 150px) {
+      @media (-moz-bool-pref: "af.sidebery.minimal-collapsed") {
         .PinnedTabsBar,
-        .Tab,
-        .top-horizontal-box .main-items {
-            transition: height 0ms linear 0ms, width 0ms linear 0ms !important;
+        .top-horizontal-box {
+          visibility: collapse !important;
         }
+      }
+      --tabs-pinned-height: 12px;
+      --tabs-pinned-width: 12px;
+      --tabs-indent: 0;
+      --tabs-lvl-opacity: 0;
 
-
-        /*----------- Collapsed sidebar stuff from here ----------------------------*/
-
-        @media (max-width:150px) {
-            @media (-moz-bool-pref:"af.sidebery.minimal-collapsed") {
-                .PinnedTabsBar, .top-horizontal-box {
-                    visibility:collapse !important;
-                }
-            } 
-            --tabs-pinned-height: 12px;
-            --tabs-pinned-width: 12px;
-            --tabs-indent: 0;
-            --tabs-lvl-opacity: 0;
-         
-            width: 100vw;
-            max-width: 280px;
-            overflow: hidden;
-            white-space: nowrap;
-            padding: 3px 0 0 0 !important;    
-            .Tab .audio {
-               /* display:none !important;
+      width: 100vw;
+      max-width: 280px;
+      overflow: hidden;
+      white-space: nowrap;
+      padding: 3px 0 0 0 !important;
+      .Tab .audio {
+        /* display:none !important;
                 opacity:0 !important;
                 visibility:collapse !important; */
-                top:-8px !important;
-                left:12px !important;
-                width:12px !important;
-                
-                
-            }
-            
-            /*Hide items */
-            .scrollable .left-vertical-box,
-            #search_bar,
-            .new-tab-btns,
-            .Tab .t-box,
-            .PinnedTabsBar .color-layer,
-            .top-horizontal-box .nav-item:not([data-class="panel"]),
-            .nav-item[data-active="false"],
-            .top-horizontal-box:has(#nav_bar[data-layout="inline"]),
-            .close {
-                display: none !important;
-            }
+        top: -8px !important;
+        left: 12px !important;
+        width: 12px !important;
+      }
 
-            .PinnedTabsBar .Tab {
-                margin-right: 3px !important;
-            }
+      /*Hide items */
+      .scrollable .left-vertical-box,
+      #search_bar,
+      .new-tab-btns,
+      .Tab .t-box,
+      .PinnedTabsBar .color-layer,
+      .top-horizontal-box .nav-item:not([data-class="panel"]),
+      .nav-item[data-active="false"],
+      .top-horizontal-box:has(#nav_bar[data-layout="inline"]),
+      .close {
+        display: none !important;
+      }
 
-            /*center tabs*/
-            .scrollable,
-            .PinnedTabsBar {
-                margin-left: 1px !important;
-            }
+      .PinnedTabsBar .Tab {
+        margin-right: 3px !important;
+      }
 
-            .scrollable .Tab {
-                width: 32px !important;
+      /*center tabs*/
+      .scrollable,
+      .PinnedTabsBar {
+        margin-left: 1px !important;
+      }
 
-                .body::after {
-                    top: calc(-20% - var(--tabs-margin)) !important;
-                    height: calc(var(--tabs-height) + var(--tabs-margin)) !important;
-                }
-            }
+      .scrollable .Tab {
+        width: 32px !important;
 
+        .body::after {
+          top: calc(-20% - var(--tabs-margin)) !important;
+          height: calc(var(--tabs-height) + var(--tabs-margin)) !important;
+        }
+      }
 
+      .PinnedTabsBar {
+        width: 48px !important;
+        padding-left: 6px !important;
+        max-height: 500px;
 
-            .PinnedTabsBar {
-                width: 48px !important;
-                padding-left: 6px !important;
-                max-height: 500px;
+        &,
+        .Tab {
+          background-color: transparent !important;
+          margin-top: 3px !important;
+          margin-bottom: 3px !important;
 
-                &,
-                .Tab {
-                    background-color: transparent !important;
-                    margin-top: 3px !important;
-                    margin-bottom: 3px !important;
+          & [data-active="true"] {
+            opacity: 1 !important;
+          }
 
-                    & [data-active="true"] {
-                        opacity: 1 !important;
-                    }
-
-                    .fav,
-                    .fav-icon {
-                        width: 16px !important;
-                        height: 16px !important;
-                    }
-                }
-
-                .tab-wrapper {
-                    flex-basis: 40%;
-                }
-            }
-
-            .nav-item [data-active="true"] {
-                width: 32px !important;
-                height: 32px !important;
-                margin-bottom: 3px !important;
-                margin-left: 2px !important;
-                border: 1px solid light-dark(rgba(0, 0, 0, 0.4), rgba(255, 255, 255, 0.2)) !important;
-                opacity: 1 !important;
-                filter: contrast(140%) !important;
-            }
-
-            /**/
+          .fav,
+          .fav-icon {
+            width: 16px !important;
+            height: 16px !important;
+          }
         }
 
-        /*----------- Collapsed sidebar stuff from here ----------------------------*/
-
-        @media (max-width: 160px) {
-            
-            @media (-moz-bool-pref:"af.sidebery.minimal-collapsed") {
-                .PinnedTabsBar, .PinnedTabsBar .Tab, .top-horizontal-box * {
-                    display:none !important;
-                    
-                }   
-            }
-            --tabs-pinned-height: 12px !important;
-            --tabs-pinned-width: 12px !important;
-            --tabs-indent: 0 !important;
-            --tabs-lvl-opacity: 0 !important;
-            width: 100vw !important;
-            max-width: 280px !important;
-            overflow: hidden !important;
-            white-space: nowrap !important;
-            padding: 3px 0 0 0 !important;
-                          --nav-btn-width:32px !important;
-        --nav-btn-height:32px !important;
-
-            /*Hide items */
-            .scrollable .left-vertical-box,
-            #search_bar,
-            .new-tab-btns,
-            .Tab .t-box,
-            .PinnedTabsBar .color-layer,
-            .top-horizontal-box .nav-item:not([data-class="panel"]),
-            .nav-item[data-active="false"],
-            .close {
-                display: none !important;
-            }
-
-            .PinnedTabsBar .Tab {
-                margin-right: 3px !important;
-            }
-
-            /*center tabs*/
-            .scrollable,
-            .PinnedTabsBar {
-                margin-left: 1px !important;
-            }
-
-            .scrollable .Tab {
-                width: 32px !important;
-            }
-
-            .PinnedTabsBar {
-                width: 48px !important;
-                padding-left: 6px !important;
-                max-height: 500px !important;
-
-                &,
-                .Tab {
-                    background-color: transparent !important;
-                    margin-top: 3px !important;
-                    margin-bottom: 3px !important;
-
-                    & [data-active="true"] {
-                        opacity: 1 !important;
-                    }
-
-                    .fav,
-                    .fav-icon {
-                        width: 16px !important;
-                        height: 16px !important;
-                    }
-                }
-
-                .tab-wrapper {
-                    flex-basis: 40% !important;
-                }
-            }
-
-            .nav-item [data-active="true"] {
-                width: 32px !important;
-                height: 32px !important;
-                margin-bottom: 3px !important;
-                margin-left: 2px !important;
-                border: 1px solid light-dark(rgba(0, 0, 0, 0.4), rgba(255, 255, 255, 0.2)) !important;
-                opacity: 1 !important;
-                filter: contrast(140%) !important;
-            }
-
-            /**/
-
+        .tab-wrapper {
+          flex-basis: 40%;
         }
+      }
 
+      .nav-item [data-active="true"] {
+        width: 32px !important;
+        height: 32px !important;
+        margin-bottom: 3px !important;
+        margin-left: 2px !important;
+        border: 1px solid
+          light-dark(rgba(0, 0, 0, 0.4), rgba(255, 255, 255, 0.2)) !important;
+        opacity: 1 !important;
+        filter: contrast(140%) !important;
+      }
+
+      /**/
+    }
+
+    /*----------- Collapsed sidebar stuff from here ----------------------------*/
+
+    @media (max-width: 160px) {
+      @media (-moz-bool-pref: "af.sidebery.minimal-collapsed") {
         .PinnedTabsBar,
         .PinnedTabsBar .Tab,
-        .top-horizontal-box .main-items {
-            transition: height 0ms linear 0ms, width 0ms linear 0ms !important;
+        .top-horizontal-box * {
+          display: none !important;
+        }
+      }
+      --tabs-pinned-height: 12px !important;
+      --tabs-pinned-width: 12px !important;
+      --tabs-indent: 0 !important;
+      --tabs-lvl-opacity: 0 !important;
+      width: 100vw !important;
+      max-width: 280px !important;
+      overflow: hidden !important;
+      white-space: nowrap !important;
+      padding: 3px 0 0 0 !important;
+      --nav-btn-width: 32px !important;
+      --nav-btn-height: 32px !important;
+
+      /*Hide items */
+      .scrollable .left-vertical-box,
+      #search_bar,
+      .new-tab-btns,
+      .Tab .t-box,
+      .PinnedTabsBar .color-layer,
+      .top-horizontal-box .nav-item:not([data-class="panel"]),
+      .nav-item[data-active="false"],
+      .close {
+        display: none !important;
+      }
+
+      .PinnedTabsBar .Tab {
+        margin-right: 3px !important;
+      }
+
+      /*center tabs*/
+      .scrollable,
+      .PinnedTabsBar {
+        margin-left: 1px !important;
+      }
+
+      .scrollable .Tab {
+        width: 32px !important;
+      }
+
+      .PinnedTabsBar {
+        width: 48px !important;
+        padding-left: 6px !important;
+        max-height: 500px !important;
+
+        &,
+        .Tab {
+          background-color: transparent !important;
+          margin-top: 3px !important;
+          margin-bottom: 3px !important;
+
+          & [data-active="true"] {
+            opacity: 1 !important;
+          }
+
+          .fav,
+          .fav-icon {
+            width: 16px !important;
+            height: 16px !important;
+          }
         }
 
-          /* ::::: Icons ::::: */
+        .tab-wrapper {
+          flex-basis: 40% !important;
+        }
+      }
 
-  /* New tab page icon. */
-  #icon_ff path {
-    d: path("M3 1h10a2 2 0 01 2 2v10a2 2 0 01-2 2H3a2 2 0 01-2-2V3a2 2 0 01 2-2zm3 1H3a1 1 0 00-1 1v10a1 1 0 00 1 1h10a1 1 0 00 1-1V5H7.5A1.5 1.5 0 01 6 3.5zm1 0v1.5a.5.5 0 00 .5.5H14V3a1 1 0 00-1-1zM5 8a1 1 0 01 0 2 1 1 0 01 0-2zm3 0a1 1 0 01 0 2 1 1 0 01 0-2zm3 0a1 1 0 01 0 2 1 1 0 01 0-2z") !important;
-  }
+      .nav-item [data-active="true"] {
+        width: 32px !important;
+        height: 32px !important;
+        margin-bottom: 3px !important;
+        margin-left: 2px !important;
+        border: 1px solid
+          light-dark(rgba(0, 0, 0, 0.4), rgba(255, 255, 255, 0.2)) !important;
+        opacity: 1 !important;
+        filter: contrast(140%) !important;
+      }
 
-  /* Plus icon. */
-  #icon_plus path {
-    d: path("M7 1a.5.5 0 01 1 0v6h6a.5.5 0 01 0 1H8v6a.5.5 0 01-1 0V8H1a.5.5 0 01 0-1h6z") !important;
-  }
-        
-    }/*end of root*/
+      /**/
+    }
 
+    .PinnedTabsBar,
+    .PinnedTabsBar .Tab,
+    .top-horizontal-box .main-items {
+      transition:
+        height 0ms linear 0ms,
+        width 0ms linear 0ms !important;
+    }
 
+    /* ::::: Icons ::::: */
+
+    /* New tab page icon. */
+    #icon_ff path {
+      d: path(
+        "M3 1h10a2 2 0 01 2 2v10a2 2 0 01-2 2H3a2 2 0 01-2-2V3a2 2 0 01 2-2zm3 1H3a1 1 0 00-1 1v10a1 1 0 00 1 1h10a1 1 0 00 1-1V5H7.5A1.5 1.5 0 01 6 3.5zm1 0v1.5a.5.5 0 00 .5.5H14V3a1 1 0 00-1-1zM5 8a1 1 0 01 0 2 1 1 0 01 0-2zm3 0a1 1 0 01 0 2 1 1 0 01 0-2zm3 0a1 1 0 01 0 2 1 1 0 01 0-2z"
+      ) !important;
+    }
+
+    /* Plus icon. */
+    #icon_plus path {
+      d: path(
+        "M7 1a.5.5 0 01 1 0v6h6a.5.5 0 01 0 1H8v6a.5.5 0 01-1 0V8H1a.5.5 0 01 0-1h6z"
+      ) !important;
+    }
+  } /*end of root*/
 }

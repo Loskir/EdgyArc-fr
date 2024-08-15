@@ -1,0 +1,15 @@
+{
+  "name": "edgyarc-fr",
+  "version": "1.0.0",
+  "description": "Because Arc and Edge look pretty af but FOSS FTW",
+  "main": "user.js",
+  "scripts": {
+    "format": "prettier --write ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MPL-2.0",
+  "devDependencies": {
+    "prettier": "^3.3.3"
+  }
+}

@@ -4,7 +4,8 @@
   --panel-subview-body-padding: 2px 0 !important;
   --arrowpanel-border-radius: 8px !important;
   --arrowpanel-menuitem-border-radius: 4px !important;
-  --arrowpanel-menuitem-margin: var(--uc-arrowpanel-menuitem-margin-block) var(--uc-arrowpanel-menuitem-margin-inline) !important;
+  --arrowpanel-menuitem-margin: var(--uc-arrowpanel-menuitem-margin-block)
+    var(--uc-arrowpanel-menuitem-margin-inline) !important;
   --arrowpanel-menuitem-padding-block: 6px !important;
   --arrowpanel-menuitem-padding-inline: 10px !important;
   --uc-arrowpanel-menuicon-margin-inline: 14px;
@@ -15,7 +16,10 @@
 
   --uc-panel-zoom-button-padding: 8px;
   --uc-panel-zoom-button-inline-padding: 9px;
-  --uc-panel-zoom-padding-block: calc(var(--panel-separator-margin-vertical) + var(--uc-arrowpanel-menuitem-margin-block));
+  --uc-panel-zoom-padding-block: calc(
+    var(--panel-separator-margin-vertical) +
+      var(--uc-arrowpanel-menuitem-margin-block)
+  );
 
   --uc-autocomplete-panel-menuitem-margin: 4px;
   --uc-autocomplete-panel-menuicon-padding-inline: 14px;
@@ -26,16 +30,26 @@
   --uc-permission-item-padding-inline: 16px;
 
   --uc-contextmenu-border-radius: 8px;
-  --uc-contextmenu-padding: calc(4px - var(--uc-contextmenu-menuitem-border-width)) 0;
-  --uc-contextmenu-menuitem-border-radius: calc(4px + var(--uc-contextmenu-menuitem-border-width));
+  --uc-contextmenu-padding: calc(
+      4px - var(--uc-contextmenu-menuitem-border-width)
+    )
+    0;
+  --uc-contextmenu-menuitem-border-radius: calc(
+    4px + var(--uc-contextmenu-menuitem-border-width)
+  );
   --uc-contextmenu-menuitem-padding-block: 6px;
   --uc-contextmenu-menuitem-padding-inline: 10px;
   --uc-contextmenu-menuitem-border-width: 2px;
   --uc-contextmenu-menuicon-margin-inline: 12px;
-  --uc-contextmenu-menuitem-margin-inline: calc(4px - var(--uc-contextmenu-menuitem-border-width));
+  --uc-contextmenu-menuitem-margin-inline: calc(
+    4px - var(--uc-contextmenu-menuitem-border-width)
+  );
   --uc-contextmenu-menuitem-margin-block: 0px;
-  --uc-contextmenu-menuitem-margin: var(--uc-contextmenu-menuitem-margin-block) var(--uc-contextmenu-menuitem-margin-inline);
-  --uc-contextmenu-separator-vertical: calc(4px - var(--uc-contextmenu-menuitem-border-width));
+  --uc-contextmenu-menuitem-margin: var(--uc-contextmenu-menuitem-margin-block)
+    var(--uc-contextmenu-menuitem-margin-inline);
+  --uc-contextmenu-separator-vertical: calc(
+    4px - var(--uc-contextmenu-menuitem-border-width)
+  );
   --uc-contextmenu-separator-horizontal: 0;
 }
 
@@ -53,8 +67,12 @@
   margin-block: 0 !important;
 }
 
-.widget-overflow-list .toolbarbutton-1:not(.toolbarbutton-combined) > .toolbarbutton-text,
-.subviewbutton:not(#appMenu-zoom-controls > .subviewbutton) > .toolbarbutton-icon + .toolbarbutton-text,
+.widget-overflow-list
+  .toolbarbutton-1:not(.toolbarbutton-combined)
+  > .toolbarbutton-text,
+.subviewbutton:not(#appMenu-zoom-controls > .subviewbutton)
+  > .toolbarbutton-icon
+  + .toolbarbutton-text,
 #appMenu-fxa-label2 > vbox {
   padding-inline-start: var(--uc-arrowpanel-menuicon-margin-inline) !important;
 }
@@ -63,7 +81,9 @@
 #appMenu-zoom-controls > .toolbarbutton-text,
 #fxa-manage-account-button > vbox,
 #PanelUI-fxa-menu-syncnow-button > hbox {
-  padding-inline-start: calc(16px + var(--uc-arrowpanel-menuicon-margin-inline)) !important;
+  padding-inline-start: calc(
+    16px + var(--uc-arrowpanel-menuicon-margin-inline)
+  ) !important;
 }
 
 .subviewbutton > .toolbarbutton-icon {
@@ -91,29 +111,43 @@
 }
 
 #appMenu-fxa-status2:not([fxastatus]) > #appMenu-fxa-label2 {
-  margin-inline-end: calc(var(--arrowpanel-menuitem-padding-inline) * -1) !important;
+  margin-inline-end: calc(
+    var(--arrowpanel-menuitem-padding-inline) * -1
+  ) !important;
 }
 
 /* zoom controls */
 #appMenu-zoom-controls {
   border-top: 1px solid var(--panel-separator-color) !important;
-  padding-inline: calc(var(--arrowpanel-menuitem-padding-inline) + var(--uc-arrowpanel-menuitem-margin-inline)) var(--uc-arrowpanel-menuitem-margin-inline) !important;
+  padding-inline: calc(
+      var(--arrowpanel-menuitem-padding-inline) +
+        var(--uc-arrowpanel-menuitem-margin-inline)
+    )
+    var(--uc-arrowpanel-menuitem-margin-inline) !important;
   padding-block: var(--uc-panel-zoom-padding-block) !important;
-  margin: var(--panel-separator-margin-vertical) 0 calc(var(--panel-separator-margin-vertical) * -1) !important;
+  margin: var(--panel-separator-margin-vertical) 0
+    calc(var(--panel-separator-margin-vertical) * -1) !important;
 }
 
 #appMenu-zoom-controls > .subviewbutton {
-  padding: var(--uc-panel-zoom-button-padding) var(--uc-panel-zoom-button-inline-padding) !important;
+  padding: var(--uc-panel-zoom-button-padding)
+    var(--uc-panel-zoom-button-inline-padding) !important;
   margin: 0 !important;
 }
 
 #appMenu-zoom-controls > #appMenu-zoomReset-button2 {
-  padding: var(--uc-panel-zoom-button-padding) calc(var(--uc-panel-zoom-button-padding) / 2) !important;
+  padding: var(--uc-panel-zoom-button-padding)
+    calc(var(--uc-panel-zoom-button-padding) / 2) !important;
 }
 
 /* #appMenu-zoomReduce-button2, */
 #appMenu-zoom-controls > #appMenu-fullscreen-button2 {
-  margin-left: calc((var(--panel-separator-margin-vertical) + var(--uc-arrowpanel-menuitem-margin-block)) * 2 + 1px) !important;
+  margin-left: calc(
+    (
+        var(--panel-separator-margin-vertical) +
+          var(--uc-arrowpanel-menuitem-margin-block)
+      ) * 2 + 1px
+  ) !important;
 }
 
 #appMenu-zoom-controls > #appMenu-fullscreen-button2::before {
@@ -123,7 +157,15 @@
   position: relative;
   height: 32px;
   margin-block: calc(var(--uc-panel-zoom-button-padding) * -1);
-  transform: translateX(calc(var(--uc-panel-zoom-button-inline-padding) * -1 - (var(--panel-separator-margin-vertical) + var(--uc-arrowpanel-menuitem-margin-block)) - 1px));
+  transform: translateX(
+    calc(
+      var(--uc-panel-zoom-button-inline-padding) * -1 -
+        (
+          var(--panel-separator-margin-vertical) +
+            var(--uc-arrowpanel-menuitem-margin-block)
+        ) - 1px
+    )
+  );
 }
 
 #appMenu-zoomReset-button2 {
@@ -181,7 +223,9 @@
 #identity-popup-mainView-panel-header,
 #protections-popup-mainView-panel-header,
 .panel-header {
-  min-height: calc((var(--arrowpanel-menuitem-padding-block) + 4px) * 2 + 16px) !important;
+  min-height: calc(
+    (var(--arrowpanel-menuitem-padding-block) + 4px) * 2 + 16px
+  ) !important;
 }
 
 /* URL bar popup */
@@ -194,7 +238,9 @@
 }
 
 .identity-popup-security-connection.identity-button {
-  margin-inline-end: calc(-1 * (var(--arrowpanel-menuitem-padding-inline) - 10px)) !important;
+  margin-inline-end: calc(
+    -1 * (var(--arrowpanel-menuitem-padding-inline) - 10px)
+  ) !important;
 }
 
 #identity-popup-mainView-panel-header-span,
@@ -252,7 +298,9 @@
 
 .webextension-popup-browser,
 .webextension-popup-stack {
-  margin-block-start: calc(var(--panel-separator-margin-vertical) * -.5) !important;
+  margin-block-start: calc(
+    var(--panel-separator-margin-vertical) * -0.5
+  ) !important;
 }
 
 /* downloads popup */
@@ -262,7 +310,9 @@
 }
 
 .downloadButton {
-  min-width: calc(16px + var(--uc-toolbarbutton-inner-inline-padding) * 2) !important;
+  min-width: calc(
+    16px + var(--uc-toolbarbutton-inner-inline-padding) * 2
+  ) !important;
   height: calc(16px + var(--toolbarbutton-inner-padding) * 2) !important;
   border-radius: var(--toolbarbutton-border-radius) !important;
 }
@@ -313,7 +363,11 @@
 /* ::::: Extensions Pop-up ::::: */
 /* #region */
 
-.toolbaritem-combined-buttons:is(:not([cui-areatype="toolbar"]), [overflowedItem="true"]) > toolbarbutton:not(.toolbarbutton-1)[disabled] {
+.toolbaritem-combined-buttons:is(
+    :not([cui-areatype="toolbar"]),
+    [overflowedItem="true"]
+  )
+  > toolbarbutton:not(.toolbarbutton-1)[disabled] {
   opacity: 1 !important;
   color: var(--panel-disabled-color) !important;
 }
@@ -338,8 +392,12 @@
   }
 
   /* Use smaller toolbar extension icon if available. */
-  toolbaritem:is([overflowedItem="true"], [cui-areatype="panel"]) > .webextension-browser-action {
-    list-style-image: var(--webextension-toolbar-image, var(--webextension-menupanel-image, inherit)) !important;
+  toolbaritem:is([overflowedItem="true"], [cui-areatype="panel"])
+    > .webextension-browser-action {
+    list-style-image: var(
+      --webextension-toolbar-image,
+      var(--webextension-menupanel-image, inherit)
+    ) !important;
   }
 }
 
@@ -377,7 +435,11 @@
 }
 
 /* Add grayscale filter to extensions with no access to current site. */
-.unified-extensions-list .unified-extensions-item-action-button:has(.unified-extensions-item-message[data-l10n-id="origin-controls-state-no-access"]) .unified-extensions-item-icon {
+.unified-extensions-list
+  .unified-extensions-item-action-button:has(
+    .unified-extensions-item-message[data-l10n-id="origin-controls-state-no-access"]
+  )
+  .unified-extensions-item-icon {
   filter: grayscale(1) !important;
 }
 
@@ -388,7 +450,9 @@
 }
 
 .unified-extensions-item-icon,
-.unified-extensions-item .webextension-browser-action > .toolbarbutton-badge-stack {
+.unified-extensions-item
+  .webextension-browser-action
+  > .toolbarbutton-badge-stack {
   margin-inline-end: 0 !important;
 }
 /* #endregion */
@@ -417,10 +481,14 @@
     background-color: transparent !important;
     height: 28px !important;
     min-height: 28px !important;
-    padding-inline-start: var(--uc-contextmenu-menuitem-padding-inline) !important;
+    padding-inline-start: var(
+      --uc-contextmenu-menuitem-padding-inline
+    ) !important;
     position: relative !important;
     overflow: visible !important;
-    margin-top: calc(var(--uc-contextmenu-separator-vertical) * 2 + 1px) !important;
+    margin-top: calc(
+      var(--uc-contextmenu-separator-vertical) * 2 + 1px
+    ) !important;
   }
 
   /* Separator */
@@ -429,7 +497,12 @@
     width: calc(100% + var(--uc-contextmenu-menuitem-margin-inline) * 2);
     border-top: 1px solid var(--panel-separator-color);
     position: absolute;
-    top: calc((var(--uc-contextmenu-separator-vertical) + var(--uc-contextmenu-menuitem-border-width)) * -1 - 1px);
+    top: calc(
+      (
+          var(--uc-contextmenu-separator-vertical) +
+            var(--uc-contextmenu-menuitem-border-width)
+        ) * -1 - 1px
+    );
     left: calc(var(--uc-contextmenu-menuitem-margin-inline) * -1);
   }
 
@@ -449,7 +522,9 @@
   }
 
   & .ac-title {
-    margin-inline: calc(16px + var(--uc-autocomplete-panel-menuicon-padding-inline)) !important;
+    margin-inline: calc(
+      16px + var(--uc-autocomplete-panel-menuicon-padding-inline)
+    ) !important;
   }
 
   & .two-line-wrapper {
@@ -463,7 +538,9 @@
 panelview .toolbarbutton-1,
 .subviewbutton,
 .widget-overflow-list .toolbarbutton-1 {
-  min-height: calc(16px + var(--uc-contextmenu-menuitem-padding-block) * 2) !important;
+  min-height: calc(
+    16px + var(--uc-contextmenu-menuitem-padding-block) * 2
+  ) !important;
 }
 
 /* Search bar suggestions */
@@ -497,7 +574,6 @@ panelview .toolbarbutton-1,
       margin-inline: 1px 7px !important;
     }
   }
-
 }
 
 /* disable context menu when this tweak is applied */
@@ -542,19 +618,13 @@ panelview .toolbarbutton-1,
   menupopup {
     --uc-margin: 0 !important;
     --uc-outline-color: #0001;
-    --uc-box-shadow:
-      0 8px 12px #0003,
-      0 4px 5px #0002,
-      0 2px 4px #0002;
+    --uc-box-shadow: 0 8px 12px #0003, 0 4px 5px #0002, 0 2px 4px #0002;
   }
 
-  @media (prefers-color-scheme:dark) {
+  @media (prefers-color-scheme: dark) {
     menupopup {
       --uc-outline-color: #0002;
-      --uc-box-shadow:
-        0 8px 12px #0003,
-        0 4px 5px #0003,
-        0 2px 4px #0002;
+      --uc-box-shadow: 0 8px 12px #0003, 0 4px 5px #0003, 0 2px 4px #0002;
     }
   }
 
@@ -567,7 +637,7 @@ panelview .toolbarbutton-1,
 
   .menupopup-arrowscrollbox {
     box-shadow: var(--uc-box-shadow) !important;
-    outline: .5px solid var(--uc-outline-color) !important;
+    outline: 0.5px solid var(--uc-outline-color) !important;
   }
 
   .popup-internal-box {
@@ -587,16 +657,16 @@ panelview .toolbarbutton-1,
     background: none !important;
   }
 
-  menupopup menu:hover:not([disabled=true]),
-  menupopup menuitem:hover:not([disabled=true]),
-  menupopup menu[_moz-menuactive]:not([disabled=true]),
-  menupopup menuitem[_moz-menuactive]:not([disabled=true]) {
+  menupopup menu:hover:not([disabled="true"]),
+  menupopup menuitem:hover:not([disabled="true"]),
+  menupopup menu[_moz-menuactive]:not([disabled="true"]),
+  menupopup menuitem[_moz-menuactive]:not([disabled="true"]) {
     background-color: var(--panel-item-hover-bgcolor) !important;
     color: inherit !important;
   }
 
-  menupopup menuitem:hover:active:not([disabled=true]),
-  menupopup menu:hover:active:not([disabled=true]) {
+  menupopup menuitem:hover:active:not([disabled="true"]),
+  menupopup menu:hover:active:not([disabled="true"]) {
     background-color: var(--panel-item-active-bgcolor) !important;
     color: inherit !important;
   }
@@ -623,18 +693,46 @@ panelview .toolbarbutton-1,
   menupopup menucaption,
   #PopupAutoComplete > richlistbox > richlistitem,
   #PopupSearchAutoComplete .autocomplete-richlistitem {
-    padding: var(--uc-contextmenu-menuitem-padding-block) var(--uc-contextmenu-menuitem-padding-inline) !important;
+    padding: var(--uc-contextmenu-menuitem-padding-block)
+      var(--uc-contextmenu-menuitem-padding-inline) !important;
     margin: var(--uc-contextmenu-menuitem-margin) !important;
     border-radius: var(--uc-contextmenu-menuitem-border-radius) !important;
     border: var(--uc-contextmenu-menuitem-border-width) solid transparent !important;
     background-clip: padding-box !important;
-    min-height: calc(16px + (var(--uc-contextmenu-menuitem-padding-block) + var(--uc-contextmenu-menuitem-border-width)) * 2) !important;
+    min-height: calc(
+      16px +
+        (
+          var(--uc-contextmenu-menuitem-padding-block) +
+            var(--uc-contextmenu-menuitem-border-width)
+        ) * 2
+    ) !important;
   }
 
-  :not(:not(menubar)>menu, #ContentSelectDropdown) > menupopup > menuitem:not(.menuitem-iconic, [type="checkbox"], [type="radio"], .in-menulist, .in-menulist menuitem, .unified-nav-current),
-  :not(:not(menubar)>menu, #ContentSelectDropdown) > menupopup > menu:not(.menu-iconic, [type="checkbox"], [type="radio"], .in-menulist, .in-menulist menu, .unified-nav-current),
-  :not(:not(menubar)>menu, #ContentSelectDropdown) > menupopup > menucaption {
-    padding-inline-start: calc(var(--uc-contextmenu-menuitem-padding-inline) + 16px + var(--uc-contextmenu-menuicon-margin-inline)) !important;
+  :not(:not(menubar) > menu, #ContentSelectDropdown)
+    > menupopup
+    > menuitem:not(
+      .menuitem-iconic,
+      [type="checkbox"],
+      [type="radio"],
+      .in-menulist,
+      .in-menulist menuitem,
+      .unified-nav-current
+    ),
+  :not(:not(menubar) > menu, #ContentSelectDropdown)
+    > menupopup
+    > menu:not(
+      .menu-iconic,
+      [type="checkbox"],
+      [type="radio"],
+      .in-menulist,
+      .in-menulist menu,
+      .unified-nav-current
+    ),
+  :not(:not(menubar) > menu, #ContentSelectDropdown) > menupopup > menucaption {
+    padding-inline-start: calc(
+      var(--uc-contextmenu-menuitem-padding-inline) + 16px +
+        var(--uc-contextmenu-menuicon-margin-inline)
+    ) !important;
   }
 
   .menu-iconic-icon {
@@ -647,7 +745,9 @@ panelview .toolbarbutton-1,
   menuitem > .menu-iconic-text,
   /* Used for vertical context navigation tweak. */
   #context-navigation > .menuitem-iconic::after {
-    padding-inline-start: var(--uc-contextmenu-menuicon-margin-inline) !important;
+    padding-inline-start: var(
+      --uc-contextmenu-menuicon-margin-inline
+    ) !important;
   }
 
   .menu-text,
@@ -669,7 +769,14 @@ panelview .toolbarbutton-1,
     padding-block: 0 !important;
   }
 
-  menuitem:is(.menuitem-iconic:not([data-usercontextid]), [type="checkbox"], [type="radio"], [checked], [selected]) .menu-iconic-icon {
+  menuitem:is(
+      .menuitem-iconic:not([data-usercontextid]),
+      [type="checkbox"],
+      [type="radio"],
+      [checked],
+      [selected]
+    )
+    .menu-iconic-icon {
     -moz-context-properties: fill !important;
     fill: currentColor !important;
   }
@@ -689,14 +796,18 @@ panelview .toolbarbutton-1,
     width: 16px !important;
   }
 
-  menulist > menupopup > menuitem:is([checked="true"], [selected="true"])::before,
+  menulist
+    > menupopup
+    > menuitem:is([checked="true"], [selected="true"])::before,
   menupopup > menuitem::before,
   menupopup > menu::before,
   menupopup > menuitem::after {
     display: none !important;
   }
 
-  menuitem:is([type="checkbox"], [checked="true"], [type="radio"]) > .menu-iconic-left > .menu-iconic-icon {
+  menuitem:is([type="checkbox"], [checked="true"], [type="radio"])
+    > .menu-iconic-left
+    > .menu-iconic-icon {
     display: flex !important;
   }
 
@@ -704,16 +815,21 @@ panelview .toolbarbutton-1,
   menu > .menu-iconic-left,
   menuitem > .menu-iconic-left {
     margin: 0 !important;
-    padding: 0 !important
+    padding: 0 !important;
   }
 
   #context-navigation:not([hidden]) {
     padding: 0 !important;
-    --menuitem-min-width: calc(16px + var(--uc-contextmenu-menuitem-padding-inline) * 2) !important;
+    --menuitem-min-width: calc(
+      16px + var(--uc-contextmenu-menuitem-padding-inline) * 2
+    ) !important;
     min-width: calc(4 * var(--menuitem-min-width));
   }
 
-  #context-navigation > .menuitem-iconic > .menu-iconic-left > .menu-iconic-icon {
+  #context-navigation
+    > .menuitem-iconic
+    > .menu-iconic-left
+    > .menu-iconic-icon {
     width: 16px !important;
     height: 16px !important;
     padding: 0 !important;
@@ -736,12 +852,18 @@ panelview .toolbarbutton-1,
     width: unset !important;
   }
 
-  #context-navigation > .menuitem-iconic[_moz-menuactive="true"] > .menu-iconic-left > .menu-iconic-icon {
+  #context-navigation
+    > .menuitem-iconic[_moz-menuactive="true"]
+    > .menu-iconic-left
+    > .menu-iconic-icon {
     background-color: transparent !important;
   }
 
   #context-bookmarkpage[starred] .menu-iconic-icon {
-    fill: var(--lwt-toolbarbutton-icon-fill-attention, var(--toolbarbutton-icon-fill-attention, currentColor)) !important;
+    fill: var(
+      --lwt-toolbarbutton-icon-fill-attention,
+      var(--toolbarbutton-icon-fill-attention, currentColor)
+    ) !important;
   }
 
   @media (not (-moz-bool-pref: "uc.tweak.smaller-context-menu-text")) and (-moz-platform: windows) {
@@ -797,13 +919,21 @@ dialog {
     /* Adjust vertical alignment of title text. */
     @media (-moz-platform: macOS) {
       &:not([noicon]) > #titleCropper {
-        translate: 0 calc(-1px - max(.55 * var(--icon-size) - .6em, 0px)) !important;
+        translate: 0 calc(-1px - max(0.55 * var(--icon-size) - 0.6em, 0px)) !important;
       }
     }
   }
 
   /* Input focus style. */
-  & input:where([type="email"], [type="tel"], [type="text"], [type="password"], [type="url"], [type="number"]):focus {
+  &
+    input:where(
+      [type="email"],
+      [type="tel"],
+      [type="text"],
+      [type="password"],
+      [type="url"],
+      [type="number"]
+    ):focus {
     outline: 2px solid var(--in-content-box-border-color) !important;
     outline-offset: -2px !important;
   }

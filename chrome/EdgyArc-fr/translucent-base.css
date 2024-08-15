@@ -1,39 +1,64 @@
-@media (-moz-bool-pref: "af.edgyarc.macos-translucent")
-{
+@media (-moz-bool-pref: "af.edgyarc.macos-translucent") {
   :root {
-  /*translucent stuff*/
-  #navigator-toolbox, #browser {
-  background-color:transparent !important;
-}
+    /*translucent stuff*/
+    #navigator-toolbox,
+    #browser {
+      background-color: transparent !important;
+    }
 
-   &, #navigator-toolbox  {
-  background-color:transparent !important;
-     appearance: -moz-window-titlebar !important;} 
+    &,
+    #navigator-toolbox {
+      background-color: transparent !important;
+      appearance: -moz-window-titlebar !important;
+    }
 
+    &[windowtype="navigator:browser"] {
+      background-color: transparent !important;
+    }
+  }
 
-  &[windowtype="navigator:browser"] {
-    background-color:transparent !important;
+  /*add translucency to library window WIP*/
+  #placesList,
+  #placeContent {
+    background-color: transparent !important;
+    appearance: -moz-window-titlebar !important;
   }
-}
-  
-/*add translucency to library window WIP*/
-  #placesList, #placeContent {
-background-color: transparent !important;
-appearance: -moz-window-titlebar !important;
-}
-  
-  #placesContentTitle, #placesContentTags, #placesContentUrl,  #placesContentDate,  #placesContentVisitCount,  #placesContentDateAdded,  #placesContentLastModified, #downloadsListBox{
-    background-color:transparent !important;
-    
+
+  #placesContentTitle,
+  #placesContentTags,
+  #placesContentUrl,
+  #placesContentDate,
+  #placesContentVisitCount,
+  #placesContentDateAdded,
+  #placesContentLastModified,
+  #downloadsListBox {
+    background-color: transparent !important;
   }
-  
-    :root:not([customizing]):not(:has(#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]:not([hidden]))),
-:root:not([customizing]):not(:has(#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]:not([hidden]))),
-:root:not([customizing]):not(:has(#sidebar-box[sidebarcommand="tabcenter-reborn_ariasuni-sidebar-action"]:not([hidden]))) { 
-  #sidebar {
-   background-color:var(--lwt-accent-color) !important;
+
+  :root:not([customizing]):not(
+      :has(
+          #sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]:not(
+              [hidden]
+            )
+        )
+    ),
+  :root:not([customizing]):not(
+      :has(
+          #sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]:not(
+              [hidden]
+            )
+        )
+    ),
+  :root:not([customizing]):not(
+      :has(
+          #sidebar-box[sidebarcommand="tabcenter-reborn_ariasuni-sidebar-action"]:not(
+              [hidden]
+            )
+        )
+    ) {
+    #sidebar {
+      background-color: var(--lwt-accent-color) !important;
+    }
   }
-  }
-  
 }
 /*end translucent stuff*/

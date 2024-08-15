@@ -52,14 +52,16 @@
 .tabbrowser-tab:not([pinned]) {
   transition-property: min-width, max-width !important;
   transition-duration: 150ms !important;
-  transition-timing-function: cubic-bezier(0, .75, .25, 1) !important;
+  transition-timing-function: cubic-bezier(0, 0.75, 0.25, 1) !important;
 }
 
 /* Tab moving transition. */
-#tabbrowser-tabs[movingtab] > #tabbrowser-arrowscrollbox > .tabbrowser-tab[fadein]:not([selected]):not([multiselected]),
+#tabbrowser-tabs[movingtab]
+  > #tabbrowser-arrowscrollbox
+  > .tabbrowser-tab[fadein]:not([selected]):not([multiselected]),
 .tabbrowser-tab[tab-grouping],
 .tabbrowser-tab[tabdrop-samewindow] {
-  transition: transform 200ms cubic-bezier(0, .75, .25, 1) !important;
+  transition: transform 200ms cubic-bezier(0, 0.75, 0.25, 1) !important;
 }
 
 /* Remove tab toolbar background transition on inactive windows. */
@@ -83,20 +85,26 @@
   & .toolbarbutton-1 > .toolbarbutton-icon,
   & .toolbarbutton-1 > .toolbarbutton-badge-stack {
     border-radius: var(--toolbarbutton-border-radius) !important;
-    padding: var(--toolbarbutton-inner-padding) var(--uc-toolbarbutton-inner-inline-padding) !important;
+    padding: var(--toolbarbutton-inner-padding)
+      var(--uc-toolbarbutton-inner-inline-padding) !important;
     /* Add margin-block to buttons so they are positioned correctly. */
     margin: var(--uc-toolbarbutton-block-margin) 0 !important;
   }
 
   & .toolbarbutton-1 > .toolbarbutton-icon {
-    width: calc(2 * var(--uc-toolbarbutton-inner-inline-padding) + 16px) !important;
+    width: calc(
+      2 * var(--uc-toolbarbutton-inner-inline-padding) + 16px
+    ) !important;
     height: calc(2 * var(--toolbarbutton-inner-padding) + 16px) !important;
   }
 
   /* Keep certain buttons (such as new tab) square shaped. */
   & #tabs-newtab-button > .toolbarbutton-icon,
   & #alltabs-button > .toolbarbutton-badge-stack,
-  & #tabbrowser-tabs[hasadjacentnewtabbutton][overflow] ~ #new-tab-button > .toolbarbutton-icon {
+  &
+    #tabbrowser-tabs[hasadjacentnewtabbutton][overflow]
+    ~ #new-tab-button
+    > .toolbarbutton-icon {
     padding: var(--toolbarbutton-inner-padding) !important;
     width: calc(2 * var(--toolbarbutton-inner-padding) + 16px) !important;
   }
@@ -112,13 +120,25 @@
     align-items: end !important;
 
     /* Reduce space between start of the window and first toolbar button. */
-    & > .toolbarbutton-1:nth-child(1 of .toolbarbutton-1:not(#tabbrowser-tabs ~ *)) {
+    &
+      > .toolbarbutton-1:nth-child(
+        1 of .toolbarbutton-1:not(#tabbrowser-tabs ~ *)
+      ) {
       margin-inline-start: -2px !important;
     }
 
     /* Add space after the last toolbar button before the tabs. */
-    & > .toolbarbutton-1:nth-last-child(1 of .toolbarbutton-1:not(#tabbrowser-tabs ~ *)),
-    :root[privatebrowsingmode] & > .toolbarbutton-1:nth-last-child(1 of .toolbarbutton-1:not(#tabbrowser-tabs ~ *):not(#firefox-view-button)) {
+    &
+      > .toolbarbutton-1:nth-last-child(
+        1 of .toolbarbutton-1:not(#tabbrowser-tabs ~ *)
+      ),
+    :root[privatebrowsingmode]
+      &
+      > .toolbarbutton-1:nth-last-child(
+        1
+          of
+          .toolbarbutton-1:not(#tabbrowser-tabs ~ *):not(#firefox-view-button)
+      ) {
       margin-inline-end: calc(var(--uc-toolbarbutton-tab-gap) + 2px) !important;
 
       /* Reduces space between this button and the tab scroll button when
@@ -144,7 +164,8 @@
   }
 
   /* Remove gap between pinned and unpinned tabs. */
-  &[haspinnedtabs]:not([positionpinnedtabs]) .tabbrowser-tab:nth-child(1 of :not([pinned], [hidden])) {
+  &[haspinnedtabs]:not([positionpinnedtabs])
+    .tabbrowser-tab:nth-child(1 of :not([pinned], [hidden])) {
     margin-inline-start: 0 !important;
   }
 }
@@ -192,7 +213,9 @@
 
     /* Make sure that titlebar buttons have equal spacing on all sides. */
     & .titlebar-buttonbox {
-      margin-inline: calc((var(--tab-min-height) + var(--uc-tab-top-margin) - 14px) / 2) !important;
+      margin-inline: calc(
+        (var(--tab-min-height) + var(--uc-tab-top-margin) - 14px) / 2
+      ) !important;
     }
   }
 }
@@ -210,7 +233,6 @@
   }
 }
 /* #endregion */
-
 
 /* ::::: Tab appearance ::::: */
 /* #region */
@@ -231,7 +253,10 @@
     color: var(--tab-selected-textcolor) !important;
 
     &:-moz-window-inactive {
-      color: var(--tab-selected-textcolor-inactive, var(--tab-selected-textcolor)) !important;
+      color: var(
+        --tab-selected-textcolor-inactive,
+        var(--tab-selected-textcolor)
+      ) !important;
     }
   }
 }
@@ -288,7 +313,9 @@
 }
 
 /* Change width of the gradient mask located on the right of the tab labels. */
-#tabbrowser-tabs[closebuttons="activetab"] .tabbrowser-tab .tab-label-container {
+#tabbrowser-tabs[closebuttons="activetab"]
+  .tabbrowser-tab
+  .tab-label-container {
   --tab-label-mask-size: 1em !important;
 }
 
@@ -308,7 +335,8 @@
 /* ::::: Tab audio indicator ::::: */
 
 /* Move the audio indicator to the right of the tab's icon. */
-#tabbrowser-tabs:not([closebuttons="activetab"]) .tab-icon-overlay:not([pinned]) {
+#tabbrowser-tabs:not([closebuttons="activetab"])
+  .tab-icon-overlay:not([pinned]) {
   margin-inline: 22px 6px !important;
 }
 
@@ -326,29 +354,37 @@
 
 /* Set colour for the overlay tab audio indicator. */
 #tabbrowser-tabs[closebuttons="activetab"] {
-  & .tab-icon-overlay:is([soundplaying], [muted], [activemedia-blocked]):not([crashed]) {
+  &
+    .tab-icon-overlay:is([soundplaying], [muted], [activemedia-blocked]):not(
+      [crashed]
+    ) {
     stroke: var(--tab-icon-overlay-stroke, light-dark(white, black)) !important;
     color: var(--tab-icon-overlay-fill, light-dark(black, white)) !important;
     fill-opacity: 1 !important;
 
     &:hover {
-      background-color: var(--tab-icon-overlay-stroke, light-dark(white, black)) !important;
+      background-color: var(
+        --tab-icon-overlay-stroke,
+        light-dark(white, black)
+      ) !important;
     }
   }
 }
 
 /* Add border radius to the tab audio indicator. */
-.tab-icon-overlay:is([soundplaying], [muted], [activemedia-blocked]):not([crashed]) {
+.tab-icon-overlay:is([soundplaying], [muted], [activemedia-blocked]):not(
+    [crashed]
+  ) {
   border-radius: var(--toolbarbutton-border-radius) !important;
   padding: 0 !important;
 }
 
 /* Ensure the audio indicator is visible when needed. */
-.tab-icon-stack:is([soundplaying], [muted], [activemedia-blocked]) > .tab-icon-overlay {
+.tab-icon-stack:is([soundplaying], [muted], [activemedia-blocked])
+  > .tab-icon-overlay {
   opacity: 1 !important;
 }
 /* #endregion */
-
 
 /* ::::: Tab background and bottom rounded corners ::::: */
 /* #region */
@@ -383,8 +419,8 @@
     box-shadow:
       /* First shadow is a 1px outline for better theming support. */
       -1px -1px var(--uc-tab-corner-outline) inset,
-      /* Second shadow is to add the background colour to the corner. */
-      0 0 0 var(--tab-border-radius) var(--uc-tab-corner-bg) !important;
+      /* Second shadow is to add the background colour to the corner. */ 0 0 0
+        var(--tab-border-radius) var(--uc-tab-corner-bg) !important;
   }
 
   /* Bottom right corner. */
@@ -395,13 +431,16 @@
     box-shadow:
       /* First shadow is a 1px outline for better theming support. */
       1px -1px var(--uc-tab-corner-outline) inset,
-      /* Second shadow is to add the background colour to the corner. */
-      0 0 0 var(--tab-border-radius) var(--uc-tab-corner-bg) !important;
+      /* Second shadow is to add the background colour to the corner. */ 0 0 0
+        var(--tab-border-radius) var(--uc-tab-corner-bg) !important;
   }
 
   /* Make sure that the bottom corners have the same background colour. */
   &:is([selected], [multiselected]) {
-    --uc-tab-corner-bg: var(--tab-selected-bgcolor, var(--lwt-selected-tab-background-color, var(--toolbar-bgcolor)));
+    --uc-tab-corner-bg: var(
+      --tab-selected-bgcolor,
+      var(--lwt-selected-tab-background-color, var(--toolbar-bgcolor))
+    );
     --uc-tab-corner-outline: var(--lwt-tab-line-color, transparent);
     /* Disable tab outlines when selected. */
     outline: none !important;
@@ -409,13 +448,21 @@
 
   /* Tab hover background colour. */
   .tabbrowser-tab:hover &:not([selected], [multiselected]) {
-    background-color: color-mix(in srgb, currentColor 8%, transparent) !important;
-    --uc-tab-corner-bg: color-mix(in srgb, currentColor 8%, transparent) !important;
+    background-color: color-mix(
+      in srgb,
+      currentColor 8%,
+      transparent
+    ) !important;
+    --uc-tab-corner-bg: color-mix(
+      in srgb,
+      currentColor 8%,
+      transparent
+    ) !important;
 
     /* When in light mode, the hover colour should be white. */
     #TabsToolbar:not([brighttext]) & {
-      background-color: rgb(255 255 255 / .3) !important;
-      --uc-tab-corner-bg: rgb(255 255 255 / .3) !important;
+      background-color: rgb(255 255 255 / 0.3) !important;
+      --uc-tab-corner-bg: rgb(255 255 255 / 0.3) !important;
 
       @media (-moz-bool-pref: "uc.tweak.floating-tabs") {
         background-color: var(--toolbar-bgcolor) !important;
@@ -442,7 +489,10 @@
  */
 .tabbrowser-tab:is([selected], [multiselected]):not([hidden]) {
   & + .tabbrowser-tab .tab-background:not([selected]),
-  & + .tabbrowser-tab[hidden] ~ .tabbrowser-tab:not([hidden]):is([hidden] + *) .tab-background:not([selected]) {
+  &
+    + .tabbrowser-tab[hidden]
+    ~ .tabbrowser-tab:not([hidden]):is([hidden] + *)
+    .tab-background:not([selected]) {
     border-bottom-left-radius: var(--tab-border-radius) !important;
 
     &::before {
@@ -451,7 +501,6 @@
   }
 }
 /* #endregion */
-
 
 /* ::::: Tab separators ::::: */
 /* #region */
@@ -466,7 +515,6 @@
     inset-block: 0;
     margin-block: auto;
     border-left: 1px solid transparent;
-
   }
 
   /* Fractional scaling adjustments (150%, 175%, etc.) */
@@ -508,7 +556,10 @@
  */
 .tabbrowser-tab:is([selected], [multiselected], :hover):not([hidden]) {
   & + .tabbrowser-tab .tab-stack::before,
-  & + .tabbrowser-tab[hidden] ~ .tabbrowser-tab:not([hidden]):is([hidden] + *) .tab-stack::before {
+  &
+    + .tabbrowser-tab[hidden]
+    ~ .tabbrowser-tab:not([hidden]):is([hidden] + *)
+    .tab-stack::before {
     border-color: transparent !important;
   }
 }
@@ -525,15 +576,22 @@
  *
  * If there are no buttons before the tabs, hide the separator.
  */
-:root[privatebrowsingmode] #firefox-view-button + #tabbrowser-tabs:not(.toolbarbutton-1:not(#fxa-toolbar-menu-button) + #firefox-view-button + #tabbrowser-tabs),
+:root[privatebrowsingmode]
+  #firefox-view-button
+  + #tabbrowser-tabs:not(
+    .toolbarbutton-1:not(#fxa-toolbar-menu-button)
+      + #firefox-view-button
+      + #tabbrowser-tabs
+  ),
 #fxa-toolbar-menu-button + #tabbrowser-tabs,
 #tabbrowser-tabs:first-child {
-  & .tabbrowser-tab:nth-child(1 of .tabbrowser-tab:not([hidden])) .tab-stack::before {
+  &
+    .tabbrowser-tab:nth-child(1 of .tabbrowser-tab:not([hidden]))
+    .tab-stack::before {
     border-color: transparent !important;
   }
 }
 /* #endregion */
-
 
 /* ::::: Tab shadows ::::: */
 /* #region */
@@ -544,24 +602,18 @@
   :root,
   :root .tabbrowser-tab {
     /* Light mode shadows. */
-    --uc-titlebar-shadow:
-      0 -1px var(--tabs-navbar-shadow-color, transparent) inset,
-      0 -3px 2px -3px rgb(0 0 0 / .2) inset;
-    --uc-tab-shadow:
-      0 0 0 1px var(--lwt-tab-line-color, transparent),
-      0 4px 5px rgb(0 0 0 / .21),
-      0 0px 2px rgb(0 0 0 / .18);
+    --uc-titlebar-shadow: 0 -1px var(--tabs-navbar-shadow-color, transparent) inset,
+      0 -3px 2px -3px rgb(0 0 0 / 0.2) inset;
+    --uc-tab-shadow: 0 0 0 1px var(--lwt-tab-line-color, transparent),
+      0 4px 5px rgb(0 0 0 / 0.21), 0 0px 2px rgb(0 0 0 / 0.18);
 
     & [brighttext],
     & [brighttext] .tabbrowser-tab {
       /* Dark mode shadows. */
-      --uc-titlebar-shadow:
-        0 -1px var(--tabs-navbar-shadow-color, transparent) inset,
-        0 -3px 2px -3px rgb(0 0 0 / .7) inset;
-      --uc-tab-shadow:
-        0 0 0 1px var(--lwt-tab-line-color, transparent),
-        0 5px 7px rgb(0 0 0 / .44),
-        0 0px 2px rgb(0 0 0 / .7);
+      --uc-titlebar-shadow: 0 -1px var(--tabs-navbar-shadow-color, transparent) inset,
+        0 -3px 2px -3px rgb(0 0 0 / 0.7) inset;
+      --uc-tab-shadow: 0 0 0 1px var(--lwt-tab-line-color, transparent),
+        0 5px 7px rgb(0 0 0 / 0.44), 0 0px 2px rgb(0 0 0 / 0.7);
     }
   }
 }
@@ -581,7 +633,7 @@
 #tabbrowser-arrowscrollbox {
   --uc-padding-top: 4px;
   --uc-margin-top: -4px;
-  --uc-padding-inline-end: var(--tab-border-radius)
+  --uc-padding-inline-end: var(--tab-border-radius);
 }
 
 /* Make room for the tab shadows so they aren't clipped at the top. */
@@ -598,18 +650,20 @@
     margin-inline-start: -8px !important;
     margin-inline-end: calc(-1 * var(--tab-border-radius)) !important;
 
-    #tabbrowser-arrowscrollbox .tabbrowser-tab:nth-child(1 of .tabbrowser-tab:not([hidden])) {
+    #tabbrowser-arrowscrollbox
+      .tabbrowser-tab:nth-child(1 of .tabbrowser-tab:not([hidden])) {
       margin-inline-start: 8px !important;
     }
   }
 }
 
 /* Clip the bottom of the tabs so the shadows don't bleed into other areas. */
-#tabbrowser-tabs[positionpinnedtabs] > #tabbrowser-arrowscrollbox > .tabbrowser-tab[pinned] {
+#tabbrowser-tabs[positionpinnedtabs]
+  > #tabbrowser-arrowscrollbox
+  > .tabbrowser-tab[pinned] {
   clip-path: inset(-8px -8px 0) !important;
 }
 /* #endregion */
-
 
 /* ::::: Private browsing indicator ::::: */
 /* #region */
@@ -646,19 +700,31 @@
   color: var(--button-primary-color, var(--toolbar-bgcolor)) !important;
   text-shadow: none !important;
   background: var(--uc-gradient);
-  --uc-bg-color: var(--button-primary-bgcolor, var(--toolbarbutton-icon-fill-attention));
+  --uc-bg-color: var(
+    --button-primary-bgcolor,
+    var(--toolbarbutton-icon-fill-attention)
+  );
 
   /* Primay gradient, fades to transparent on the left. */
   --uc-gradient: linear-gradient(to right, transparent, var(--uc-bg-color) 35%);
 
   /* Alternate gradient, fades to transparent on both sides. */
-  --uc-gradient-alt: linear-gradient(to right, transparent, var(--uc-bg-color) 25%, var(--uc-bg-color) 75%, transparent);
+  --uc-gradient-alt: linear-gradient(
+    to right,
+    transparent,
+    var(--uc-bg-color) 25%,
+    var(--uc-bg-color) 75%,
+    transparent
+  );
 
   /* If the titlebar buttons are on the right, then use the alternate gradient
    * if the menu bar is not permanently enabled. */
   @media (-moz-platform: windows),
-  (-moz-gtk-csd-available) and (not (-moz-gtk-csd-reversed-placement)) {
-    :root[tabsintitlebar] #toolbar-menubar:not([autohide="false"]) ~ #TabsToolbar & {
+    (-moz-gtk-csd-available) and (not (-moz-gtk-csd-reversed-placement)) {
+    :root[tabsintitlebar]
+      #toolbar-menubar:not([autohide="false"])
+      ~ #TabsToolbar
+      & {
       background: var(--uc-gradient-alt);
     }
   }

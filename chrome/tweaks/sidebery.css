@@ -8,7 +8,8 @@
 /* Since the UUIDs are randomly generated, only a generic path can be specified,
  * this can cause conflicts with other extensions that use the same file
  * structure, but is unlikely to cause any major issues. */
-@-moz-document regexp("^moz-extension://.*?/sidebar/sidebar.html") {
+@-moz-document regexp("^moz-extension://.*?/sidebar/sidebar.html")
+{
   /* Fix issues with rounded corners rendering. */
   :root {
     color-scheme: light dark !important;
@@ -31,32 +32,44 @@
   body[style*="--s-frame-bg: rgb(35, 34, 43)"],
   /* No theme enabled. */
   body:not([style*="--s-frame-bg"]) {
-    --s-frame-bg: light-dark(#cecece, #1C1C1C) !important;
-    --s-frame-fg: light-dark(#000, #FFF) !important;
-    --s-toolbar-bg: light-dark(#f7f7f7, #3B3B3B) !important;
+    --s-frame-bg: light-dark(#cecece, #1c1c1c) !important;
+    --s-frame-fg: light-dark(#000, #fff) !important;
+    --s-toolbar-bg: light-dark(#f7f7f7, #3b3b3b) !important;
     --s-toolbar-fg: light-dark(#252525, #fff) !important;
-    --s-act-el-bg: light-dark(#fff, #4D4D4D) !important;
+    --s-act-el-bg: light-dark(#fff, #4d4d4d) !important;
     --s-act-el-fg: light-dark(#000, #fff) !important;
     --s-act-el-border: transparent !important;
-    --s-popup-bg: light-dark(#fff, #4A4A4A) !important;
+    --s-popup-bg: light-dark(#fff, #4a4a4a) !important;
     --s-popup-fg: light-dark(#1c1c1c, #fff) !important;
     --s-popup-border: light-dark(#dadada, #636363) !important;
-    --s-accent: light-dark(#0078D4, #63ADE5) !important;
+    --s-accent: light-dark(#0078d4, #63ade5) !important;
   }
 
   /* Linux/GTK support, side effect: Firefox themes do not work. */
   @media (-moz-gtk-csd-available) {
     body:not([style*="--s-frame-bg"]) {
-      --s-frame-bg: light-dark(color-mix(in srgb, ActiveCaption 90%, black), ActiveCaption) !important;
+      --s-frame-bg: light-dark(
+        color-mix(in srgb, ActiveCaption 90%, black),
+        ActiveCaption
+      ) !important;
       --s-frame-fg: CaptionText !important;
-      --s-toolbar-bg: light-dark(-moz-dialog, color-mix(in srgb, -moz-dialog 92%, white)) !important;
+      --s-toolbar-bg: light-dark(
+        -moz-dialog,
+        color-mix(in srgb, -moz-dialog 92%, white)
+      ) !important;
       --s-toolbar-fg: -moz-dialogtext !important;
-      --s-act-el-bg: light-dark(-moz-dialog, color-mix(in srgb, -moz-dialog 80%, white)) !important;
+      --s-act-el-bg: light-dark(
+        -moz-dialog,
+        color-mix(in srgb, -moz-dialog 80%, white)
+      ) !important;
       --s-act-el-fg: -moz-dialogtext !important;
       --s-act-el-border: transparent !important;
       --s-popup-bg: Field !important;
       --s-popup-fg: FieldText !important;
-      --s-popup-border: light-dark(transparent, color-mix(in srgb, currentColor 17%, Field)) !important;
+      --s-popup-border: light-dark(
+        transparent,
+        color-mix(in srgb, currentColor 17%, Field)
+      ) !important;
       --s-accent: AccentColor !important;
     }
   }
@@ -75,24 +88,40 @@
     --tabs-inner-gap: 8px !important;
     --tabs-border-radius: 4px !important;
     --general-border-radius: 4px !important;
-    --tabs-activated-shadow: 0 4px 4px rgb(0 0 0 / .18), 0 0px 2px rgb(0 0 0 / .19) !important;
-    --tabs-normal-fg: color-mix(in srgb, var(--frame-fg) 87%, transparent) !important;
+    --tabs-activated-shadow: 0 4px 4px rgb(0 0 0 / 0.18),
+      0 0px 2px rgb(0 0 0 / 0.19) !important;
+    --tabs-normal-fg: color-mix(
+      in srgb,
+      var(--frame-fg) 87%,
+      transparent
+    ) !important;
     --nav-btn-height: 32px !important;
     --nav-btn-width: 32px !important;
-    --separator-color: color-mix(in srgb, var(--frame-fg) 20%, transparent) !important;
-    --nav-btn-active-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.086), inset 0 1px 3px 0 rgb(0 0 0 / 0.086) !important;
+    --separator-color: color-mix(
+      in srgb,
+      var(--frame-fg) 20%,
+      transparent
+    ) !important;
+    --nav-btn-active-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.086),
+      inset 0 1px 3px 0 rgb(0 0 0 / 0.086) !important;
 
     /* Light mode adjustments. */
     &[data-frame-color-scheme="light"] {
       color-scheme: light !important;
-      --tabs-normal-fg: color-mix(in srgb, var(--frame-fg) 82%, transparent) !important;
+      --tabs-normal-fg: color-mix(
+        in srgb,
+        var(--frame-fg) 82%,
+        transparent
+      ) !important;
     }
 
     /* Dark mode adjustments. */
     &[data-frame-color-scheme="dark"] {
       color-scheme: dark !important;
-      --tabs-activated-shadow: 0 4px 4px rgb(0 0 0 / .44), 0 0px 2px rgb(0 0 0 / .47) !important;
-      --nav-btn-active-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.071), 0 1px 3px 0 rgb(0 0 0 / 0.212) !important;
+      --tabs-activated-shadow: 0 4px 4px rgb(0 0 0 / 0.44),
+        0 0px 2px rgb(0 0 0 / 0.47) !important;
+      --nav-btn-active-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.071),
+        0 1px 3px 0 rgb(0 0 0 / 0.212) !important;
     }
 
     @media (-moz-bool-pref: "uc.tweak.rounded-corners") {
@@ -108,8 +137,11 @@
     body[style*="--s-frame-bg: rgb(35, 34, 43)"],
     body:not([style*="--s-frame-bg"]) {
       --s-frame-bg: light-dark(#f3f3f3, #202020) !important;
-      --s-act-el-bg: light-dark(#fff, #3F3F3F) !important;
-      --s-act-el-border: light-dark(transparent, rgb(255 255 255 / 0.06)) !important;
+      --s-act-el-bg: light-dark(#fff, #3f3f3f) !important;
+      --s-act-el-border: light-dark(
+        transparent,
+        rgb(255 255 255 / 0.06)
+      ) !important;
     }
 
     #root.root {
@@ -119,11 +151,12 @@
       --toolbar-bg: var(--s-frame-bg) !important;
       --toolbar-fg: var(--s-frame-fg) !important;
       --s-toolbar-bg: light-dark(#f3f3f3, #202020) !important;
-      --tabs-activated-shadow: 0 2.5px 3px 1px rgb(0 0 0 / .08), 0 0 0 1px rgb(0 0 0 / .11) !important;
+      --tabs-activated-shadow: 0 2.5px 3px 1px rgb(0 0 0 / 0.08),
+        0 0 0 1px rgb(0 0 0 / 0.11) !important;
       --tabs-border-radius: 8px !important;
 
       &[data-frame-color-scheme="dark"] {
-        --tabs-activated-shadow: 0 2px 3px rgb(0 0 0 / .12) !important;
+        --tabs-activated-shadow: 0 2px 3px rgb(0 0 0 / 0.12) !important;
       }
     }
   }
@@ -155,7 +188,10 @@
     /* Colourised tab shadow and outline. */
     &[data-colorized="true"] {
       --tabs-activated-shadow: unset !important;
-      --s-act-el-border: light-dark(rgb(0 0 0 / 0.35), rgb(255 255 255 / 0.25)) !important;
+      --s-act-el-border: light-dark(
+        rgb(0 0 0 / 0.35),
+        rgb(255 255 255 / 0.25)
+      ) !important;
     }
 
     & .ctx {
@@ -227,7 +263,7 @@
     }
 
     /* Pinned tab list. */
-    #root[data-pinned-tabs-position="panel"][data-pinned-tabs-list="true"]  & {
+    #root[data-pinned-tabs-position="panel"][data-pinned-tabs-list="true"] & {
       padding-bottom: 1px !important;
     }
 
@@ -249,7 +285,7 @@
 
     /* Add separator before new tab button. */
     &::before {
-      width: calc(100% - var(--tabs-margin)*2) !important;
+      width: calc(100% - var(--tabs-margin) * 2) !important;
       inset-inline: auto !important;
       top: 0 !important;
       border-top: 1px solid var(--separator-color) !important;
@@ -304,11 +340,15 @@
 
   /* New tab page icon. */
   #icon_ff path {
-    d: path("M3 1h10a2 2 0 01 2 2v10a2 2 0 01-2 2H3a2 2 0 01-2-2V3a2 2 0 01 2-2zm3 1H3a1 1 0 00-1 1v10a1 1 0 00 1 1h10a1 1 0 00 1-1V5H7.5A1.5 1.5 0 01 6 3.5zm1 0v1.5a.5.5 0 00 .5.5H14V3a1 1 0 00-1-1zM5 8a1 1 0 01 0 2 1 1 0 01 0-2zm3 0a1 1 0 01 0 2 1 1 0 01 0-2zm3 0a1 1 0 01 0 2 1 1 0 01 0-2z") !important;
+    d: path(
+      "M3 1h10a2 2 0 01 2 2v10a2 2 0 01-2 2H3a2 2 0 01-2-2V3a2 2 0 01 2-2zm3 1H3a1 1 0 00-1 1v10a1 1 0 00 1 1h10a1 1 0 00 1-1V5H7.5A1.5 1.5 0 01 6 3.5zm1 0v1.5a.5.5 0 00 .5.5H14V3a1 1 0 00-1-1zM5 8a1 1 0 01 0 2 1 1 0 01 0-2zm3 0a1 1 0 01 0 2 1 1 0 01 0-2zm3 0a1 1 0 01 0 2 1 1 0 01 0-2z"
+    ) !important;
   }
 
   /* Plus icon. */
   #icon_plus path {
-    d: path("M7 1a.5.5 0 01 1 0v6h6a.5.5 0 01 0 1H8v6a.5.5 0 01-1 0V8H1a.5.5 0 01 0-1h6z") !important;
+    d: path(
+      "M7 1a.5.5 0 01 1 0v6h6a.5.5 0 01 0 1H8v6a.5.5 0 01-1 0V8H1a.5.5 0 01 0-1h6z"
+    ) !important;
   }
 }

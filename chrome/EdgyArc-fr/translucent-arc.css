@@ -1,6 +1,6 @@
 /*start minimal sidebar*/
 
-@media not (-moz-bool-pref: 'af.edgyarc.edge-sidebar') {
+@media not (-moz-bool-pref: "af.edgyarc.edge-sidebar") {
   #sidebar-box {
     background-color: transparent !important;
     opacity: var(--af-minimal-opacity) !important;
@@ -11,7 +11,7 @@
       border-radius: 0 0 0 0 !important;
     }
   }
-  :root[titlepreface='᠎'] {
+  :root[titlepreface="᠎"] {
     #sidebar-box {
       padding-left: 1px !important;
       &:hover > #sidebar {
@@ -19,7 +19,7 @@
         margin-bottom: var(--uc-tweak-rounded-corners-padding) !important;
       }
       &:hover::before {
-        content: '';
+        content: "";
         display: block;
         position: absolute;
         top: 0;
@@ -45,7 +45,7 @@
   #navigator-toolbox,
   .browserContainer {
     &::before {
-      content: '';
+      content: "";
       display: block;
       position: absolute;
       top: 0;

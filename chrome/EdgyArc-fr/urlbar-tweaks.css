@@ -1,25 +1,34 @@
 /*urlbar stuff*/
-@media (-moz-bool-pref:"af.edgyarc.centered-url") {
-#urlbar:not([breakout][breakout-extend]) {
+@media (-moz-bool-pref: "af.edgyarc.centered-url") {
+  #urlbar:not([breakout][breakout-extend]) {
     #urlbar-input {
-    text-align:center !important;
+      text-align: center !important;
     }
-   
-    }
+  }
 }
 
-#urlbar:not([breakout][breakout-extend]) {    
-    #urlbar-background {
-        background-color:color-mix(in srgb, light-dark(#fff, var(--lwt-accent-color)) 70%, light-dark(rgba(255,255,255,0.5),rgba(35,35,35,0.5))) !important;
-        @media not (-moz-bool-pref:"af.edgyarc.edge-sidebar") {
-        background-color:color-mix(in srgb, light-dark(#fff, var(--lwt-accent-color)) 50%, light-dark(rgba(255,255,255,0.5),rgba(10,10,10,0.8))) !important;
-        }
-        @media (-moz-bool-pref:"af.edgyarc.macos-translucent") {
-        background-color: light-dark(rgba(255,255,255,0.7), rgba(,0,0,0.24)) !important;
-        }
+#urlbar:not([breakout][breakout-extend]) {
+  #urlbar-background {
+    background-color: color-mix(
+      in srgb,
+      light-dark(#fff, var(--lwt-accent-color)) 70%,
+      light-dark(rgba(255, 255, 255, 0.5), rgba(35, 35, 35, 0.5))
+    ) !important;
+    @media not (-moz-bool-pref: "af.edgyarc.edge-sidebar") {
+      background-color: color-mix(
+        in srgb,
+        light-dark(#fff, var(--lwt-accent-color)) 50%,
+        light-dark(rgba(255, 255, 255, 0.5), rgba(10, 10, 10, 0.8))
+      ) !important;
     }
+    @media (-moz-bool-pref: "af.edgyarc.macos-translucent") {
+      background-color: light-dark(
+        rgba(255, 255, 255, 0.7),
+        rgba(0, 0, 0, 0.24)
+      ) !important;
     }
-
+  }
+}
 
 /*----urlbar buttons height fix------*/
 /* Site information and Permissions buttons. */
@@ -27,280 +36,276 @@
 #identity-permission-box,
 .notification-anchor-icon,
 #tracking-protection-icon-container {
-    max-height: 24px !important;
-    height: 24px !important;
-    margin-top: 2px !important;
-    margin-left: -2px;
+  max-height: 24px !important;
+  height: 24px !important;
+  margin-top: 2px !important;
+  margin-left: -2px;
 }
 
 /*page actions*/
 .urlbar-page-action {
-    height: 24px !important;
-    max-height: 24px !important;
-    margin-top: -1px !important;
+  height: 24px !important;
+  max-height: 24px !important;
+  margin-top: -1px !important;
 
-    & .urlbar-icon {
-        height: 15px !important;
-        width: 15px !important;
-        padding: 0px !important;
-        margin: -2px 0 0 0 !important;
-
-    }
+  & .urlbar-icon {
+    height: 15px !important;
+    width: 15px !important;
+    padding: 0px !important;
+    margin: -2px 0 0 0 !important;
+  }
 }
 
 /* Zoom level and tab container indicators. */
 #userContext-icons,
 #urlbar-zoom-button {
-    --uc-urlbar-icon-inline-padding: 8px !important;
-    max-height: 20px !important;
-    height: 20px !important;
-    padding: 8px !important;
-    margin-inline: 3px !important;
-    padding: 4px 4px 4px 6px !important;
-    margin-inline: 3px !important;
-    font-size: .8em;
-    border-radius: var(--urlbar-icon-border-radius);
-    background-color: var(--urlbar-box-bgcolor);
-    margin-block: calc((var(--urlbar-min-height) - 20px) / 2 - 1px
-            /* border */
-            - var(--urlbar-container-padding));
+  --uc-urlbar-icon-inline-padding: 8px !important;
+  max-height: 20px !important;
+  height: 20px !important;
+  padding: 8px !important;
+  margin-inline: 3px !important;
+  padding: 4px 4px 4px 6px !important;
+  margin-inline: 3px !important;
+  font-size: 0.8em;
+  border-radius: var(--urlbar-icon-border-radius);
+  background-color: var(--urlbar-box-bgcolor);
+  margin-block: calc(
+    (var(--urlbar-min-height) - 20px) / 2 - 1px /* border */ -
+      var(--urlbar-container-padding)
+  );
 }
 
 #urlbar-zoom-button {
-    order: 98;
+  order: 98;
 }
 
 #userContext-icons {
-    order: 99;
+  order: 99;
 
-    & #userContext-indicator {
-        transform: scale(0.75) !important;
-    }
+  & #userContext-indicator {
+    transform: scale(0.75) !important;
+  }
 }
 
 #identity-box,
 #tracking-protection-icon-container,
 #page-action-buttons {
-    opacity: 0.8 !important;
-    transition: opacity 300ms ease-in-out;
+  opacity: 0.8 !important;
+  transition: opacity 300ms ease-in-out;
 }
 
-
 #urlbar[breakout][breakout-extend] {
-    z-index: 600 !important;
+  z-index: 600 !important;
 
-    #urlbar-background {
-        opacity: 1 !important;
-        margin-top: 4px !important;
-    }
+  #urlbar-background {
+    opacity: 1 !important;
+    margin-top: 4px !important;
+  }
 }
 
 .urlbar-input-box {
-    margin-top: -2px !important;
+  margin-top: -2px !important;
 }
-
 
 /*customise urlbar background*/
 #urlbar-background,
 #searchbar {
-    border: var(--af-content-border) !important;
-    opacity: 0.8 !important;
-    min-height: 28px !important;
-    padding-top: 4px;
+  border: var(--af-content-border) !important;
+  opacity: 0.8 !important;
+  min-height: 28px !important;
+  padding-top: 4px;
 }
 
 #urlbar[breakout][breakout-extend] #urlbar-background {
-    opacity: 1 !important;
-    /*todo - add blurring behind expanded urlbar-background - idfk how to*/
+  opacity: 1 !important;
+  /*todo - add blurring behind expanded urlbar-background - idfk how to*/
 }
 
 #urlbar {
-    &[breakout][breakout-extend] {
-        #urlbar-background {
-            opacity: 1 !important;
-            margin-top: -1px !important;
-            border-radius: 4px !important;
-            border-top: none !important;
-            height: 100% !important;
+  &[breakout][breakout-extend] {
+    #urlbar-background {
+      opacity: 1 !important;
+      margin-top: -1px !important;
+      border-radius: 4px !important;
+      border-top: none !important;
+      height: 100% !important;
 
-            &::before {
-                opacity: 0 !important;
-            }
-        }
+      &::before {
+        opacity: 0 !important;
+      }
     }
+  }
 }
 
 .urlbar-input-box {
-    margin-top: -2px !important;
+  margin-top: -2px !important;
 }
-
-
 
 /*minimal navbar mod*/
 
-@media (-moz-bool-pref:"af.edgyarc.minimal-navbar") {
-    :root[windowtype="navigator:browser"]:not([customizing]) #nav-bar.browser-toolbar{
-        @media (-moz-bool-pref:"af.edgyarc.thin-navbar"){
-            &:hover {
-            #urlbar:not([breakout-extend][focused]) {
-            #urlbar-background {
-                border-radius:0 !important;
-                background-color:light-dark(rgba(255,255,255,0.5),rgba(0,0,0,0.12)) !important;
-               
-                &::before {
-                    opacity:0 !important;
-                }
-              
+@media (-moz-bool-pref: "af.edgyarc.minimal-navbar") {
+  :root[windowtype="navigator:browser"]:not([customizing])
+    #nav-bar.browser-toolbar {
+    @media (-moz-bool-pref: "af.edgyarc.thin-navbar") {
+      &:hover {
+        #urlbar:not([breakout-extend][focused]) {
+          #urlbar-background {
+            border-radius: 0 !important;
+            background-color: light-dark(
+              rgba(255, 255, 255, 0.5),
+              rgba(0, 0, 0, 0.12)
+            ) !important;
+
+            &::before {
+              opacity: 0 !important;
             }
-               
-            #urlbar-input {
-                cursor: default !important;
-            }
-            }
-            
-        }}    
-    &:not(:hover) 
-{
-          #identity-icon-box,
-#identity-permission-box,
-.notification-anchor-icon,
-#tracking-protection-icon-container,
-          #urlbar-background::before, 
-          #star-button,   
-          #page-action-buttons, 
-          #fxa-toolbar-menu-button,  
-          .webextension-browser-action,  
-          #stop-reload-button,  
-    #downloads-button,
-    #urlbar:not([breakout-extend][focused]) #urlbar-background,
-          .toolbarbutton-icon
-          {opacity:0 !important;
-              width:0.1px !important;
-          transition: opacity 0ms linear, width 0ms 0ms linear !important;
           }
-    @media (-moz-bool-pref:"af.edgyarc.macos-translucent") {
-   #urlbar-input {
-        opacity:0.7 !important;
-    }}
-        } }
-}
 
-@media (-moz-bool-pref:"af.edgyarc.thin-navbar") {
-
-    /*Thin Navbar mod*/
-
-    :root[windowtype="navigator:browser"] {
-
-        #nav-bar {
-            font-size: 1em !important;
-            --toolbarbutton-border-radius: 4px !important;
-            --toolbarbutton-inner-padding: 4px !important;
-            --uc-toolbarbutton-inner-inline-padding: 8px !important;
-            --toolbarbutton-outer-padding: 2px;
-
-            height: 30px !important;
-            max-height: 30px !important;
-
+          #urlbar-input {
+            cursor: default !important;
+          }
         }
-
-        #identity-box > .identity-box-button {
-  &::after {
-    content: "";
-    position: absolute;
-    height: 16px;
-    border-right: 1px solid rgba(100,100,100,0.6);
-    right: 0;
-    inset-block: 0;
-    margin-block: auto;
-    opacity: 0;
+      }
+    }
+    &:not(:hover) {
+      #identity-icon-box,
+      #identity-permission-box,
+      .notification-anchor-icon,
+      #tracking-protection-icon-container,
+      #urlbar-background::before,
+      #star-button,
+      #page-action-buttons,
+      #fxa-toolbar-menu-button,
+      .webextension-browser-action,
+      #stop-reload-button,
+      #downloads-button,
+      #urlbar:not([breakout-extend][focused]) #urlbar-background,
+      .toolbarbutton-icon {
+        opacity: 0 !important;
+        width: 0.1px !important;
+        transition:
+          opacity 0ms linear,
+          width 0ms 0ms linear !important;
+      }
+      @media (-moz-bool-pref: "af.edgyarc.macos-translucent") {
+        #urlbar-input {
+          opacity: 0.7 !important;
+        }
+      }
+    }
   }
 }
-        
-        #urlbar {
-            --urlbar-toolbar-height: 28px !important;
-            --urlbar-height: 30px !important;
-            --urlbar-min-height: 25px !important;
 
-            margin-top: -2px !important;
+@media (-moz-bool-pref: "af.edgyarc.thin-navbar") {
+  /*Thin Navbar mod*/
 
-            #identity-box {
-                padding-top: 0 !important;
-                margin-top: -1px !important;
-               #identity-icon-label {
-                   margin-top:0px !important;
-                   font-size: 0.9em !important;}
-            }
+  :root[windowtype="navigator:browser"] {
+    #nav-bar {
+      font-size: 1em !important;
+      --toolbarbutton-border-radius: 4px !important;
+      --toolbarbutton-inner-padding: 4px !important;
+      --uc-toolbarbutton-inner-inline-padding: 8px !important;
+      --toolbarbutton-outer-padding: 2px;
 
-            #tracking-protection-icon-container {
-                margin-top: 1px !important;
-            }
-        }
-
-        #urlbar {
-            &[breakout-extend][focused] {
-                #urlbar-background {
-                    margin-top:2px !important;
-                }
-            }
-            &:not([breakout-extend][focused]) {
-                #urlbar-background {
-                    background-color: transparent !important;
-                    opacity: 1 !important;
-                    border: 0!important;
-                    border-radius: 8px !important;
-                    box-shadow: none !important;
-                    margin: 0px !important;
-                    top: 0px !important;
-
-                    &::before {
-                        opacity: 1;
-                        content: "";
-                        position: absolute;
-                        border-left: 1px solid rgba(160, 160, 160, 0.3) !important;
-                        border-right: 1px solid rgba(160, 160, 160, 0.3) !important;
-                        height: 18px !important;
-                        width: 100% !important;
-                        margin: 0 !important;
-                        top: 6px !important;
-                        bottom: 3px !important;
-                    }
-                }
-            }
-
-        }
-
-
-        .urlbar-input-box {
-            margin-top: -2px !important;
-        }
-
-
-        /* macOS specific positioning */
-        @media (-moz-platform: macos) {
-            .titlebar-buttonbox-container .titlebar-buttonbox {
-                top: -7px !important;
-            }
-        }
-
-
-        /*Windows specific positioning*/
-
-        @media (-moz-platform: windows) {
-            .titlebar-buttonbox-container {
-                z-index: 999 !important;
-            }
-
-            .titlebar-button.titlebar-restore,
-            .titlebar-button.titlebar-close,
-            .titlebar-button.titlebar-min,
-            .titlebar-button.titlebar-max,
-            .titlebar-button.titlebar-button,
-            .titlebar-button {
-                padding: 0 15px !important;
-                height: 24px !important;
-                border-radius: 6px !important;
-                margin: 3px 4px !important;
-            }
-        }
+      height: 30px !important;
+      max-height: 30px !important;
     }
+
+    #identity-box > .identity-box-button {
+      &::after {
+        content: "";
+        position: absolute;
+        height: 16px;
+        border-right: 1px solid rgba(100, 100, 100, 0.6);
+        right: 0;
+        inset-block: 0;
+        margin-block: auto;
+        opacity: 0;
+      }
+    }
+
+    #urlbar {
+      --urlbar-toolbar-height: 28px !important;
+      --urlbar-height: 30px !important;
+      --urlbar-min-height: 25px !important;
+
+      margin-top: -2px !important;
+
+      #identity-box {
+        padding-top: 0 !important;
+        margin-top: -1px !important;
+        #identity-icon-label {
+          margin-top: 0px !important;
+          font-size: 0.9em !important;
+        }
+      }
+
+      #tracking-protection-icon-container {
+        margin-top: 1px !important;
+      }
+    }
+
+    #urlbar {
+      &[breakout-extend][focused] {
+        #urlbar-background {
+          margin-top: 2px !important;
+        }
+      }
+      &:not([breakout-extend][focused]) {
+        #urlbar-background {
+          background-color: transparent !important;
+          opacity: 1 !important;
+          border: 0 !important;
+          border-radius: 8px !important;
+          box-shadow: none !important;
+          margin: 0px !important;
+          top: 0px !important;
+
+          &::before {
+            opacity: 1;
+            content: "";
+            position: absolute;
+            border-left: 1px solid rgba(160, 160, 160, 0.3) !important;
+            border-right: 1px solid rgba(160, 160, 160, 0.3) !important;
+            height: 18px !important;
+            width: 100% !important;
+            margin: 0 !important;
+            top: 6px !important;
+            bottom: 3px !important;
+          }
+        }
+      }
+    }
+
+    .urlbar-input-box {
+      margin-top: -2px !important;
+    }
+
+    /* macOS specific positioning */
+    @media (-moz-platform: macos) {
+      .titlebar-buttonbox-container .titlebar-buttonbox {
+        top: -7px !important;
+      }
+    }
+
+    /*Windows specific positioning*/
+
+    @media (-moz-platform: windows) {
+      .titlebar-buttonbox-container {
+        z-index: 999 !important;
+      }
+
+      .titlebar-button.titlebar-restore,
+      .titlebar-button.titlebar-close,
+      .titlebar-button.titlebar-min,
+      .titlebar-button.titlebar-max,
+      .titlebar-button.titlebar-button,
+      .titlebar-button {
+        padding: 0 15px !important;
+        height: 24px !important;
+        border-radius: 6px !important;
+        margin: 3px 4px !important;
+      }
+    }
+  }
 }

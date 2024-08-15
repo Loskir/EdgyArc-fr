@@ -7,20 +7,20 @@ See the above repository for updates as well as full license text. */
   Feel free to use, adapt, and elevate as needed. No support is provided, and your creativity is the limit.
   Kindly respect the original license by MrOtherGuy.
 */
-@media (-moz-bool-pref:"af.edgyarc.sidebar-always-collapsed") {
-  :root, :root[titlepreface="᠎"] { 
+@media (-moz-bool-pref: "af.edgyarc.sidebar-always-collapsed") {
+  :root,
+  :root[titlepreface="᠎"] {
     #sidebar-box {
-  --uc-sidebar-hover-width: 48px !important;
-  }
+      --uc-sidebar-hover-width: 48px !important;
+    }
   }
 }
 
-@media (-moz-bool-pref:"af.edgyarc.autohide-sidebar") {
-      :root[titlepreface="᠎"] { 
+@media (-moz-bool-pref: "af.edgyarc.autohide-sidebar") {
+  :root[titlepreface="᠎"] {
     #sidebar-box {
-  --uc-sidebar-width: 8px !important;
-  }
-  
+      --uc-sidebar-width: 8px !important;
+    }
   }
 }
 
@@ -28,7 +28,7 @@ See the above repository for updates as well as full license text. */
 :root[titlepreface="᠎"] {
   #sidebar-box {
     --uc-sidebar-width: 48px;
-    --uc-autohide-sidebar-delay: 0ms !important; 
+    --uc-autohide-sidebar-delay: 0ms !important;
     --uc-autohide-transition-duration: 100ms;
     --uc-autohide-transition-type: linear;
     position: relative;
@@ -36,15 +36,27 @@ See the above repository for updates as well as full license text. */
     width: var(--uc-sidebar-width) !important;
     max-width: var(--uc-sidebar-width) !important;
     z-index: 1;
-    @media not (-moz-bool-pref:"uc.tweak.af.sidebar-width-350") {--uc-sidebar-hover-width: 260px;}
-    @media (-moz-bool-pref:"uc.tweak.af.sidebar-width-350") {--uc-sidebar-hover-width: 350px;}
+    @media not (-moz-bool-pref: "uc.tweak.af.sidebar-width-350") {
+      --uc-sidebar-hover-width: 260px;
+    }
+    @media (-moz-bool-pref: "uc.tweak.af.sidebar-width-350") {
+      --uc-sidebar-hover-width: 350px;
+    }
   }
 
-  #sidebar-box[positionend] { direction: rtl }
-  #sidebar-box[positionend] > * { direction: ltr }
+  #sidebar-box[positionend] {
+    direction: rtl;
+  }
+  #sidebar-box[positionend] > * {
+    direction: ltr;
+  }
 
-  #sidebar-box[positionend]:-moz-locale-dir(rtl) { direction: ltr }
-  #sidebar-box[positionend]:-moz-locale-dir(rtl) > * { direction: rtl }
+  #sidebar-box[positionend]:-moz-locale-dir(rtl) {
+    direction: ltr;
+  }
+  #sidebar-box[positionend]:-moz-locale-dir(rtl) > * {
+    direction: rtl;
+  }
 
   #sidebar-splitter {
     width: 10px !important;
@@ -62,7 +74,11 @@ See the above repository for updates as well as full license text. */
   #sidebar-box:hover > #sidebar {
     min-width: var(--uc-sidebar-hover-width) !important;
     max-width: var(--uc-sidebar-hover-width) !important;
-    transition: min-width var(--uc-autohide-transition-duration) var(--uc-autohide-transition-type) var(--uc-autohide-sidebar-delay), box-shadow var(--uc-autohide-transition-duration) ease-in-out var(--uc-autohide-sidebar-delay) !important;
+    transition:
+      min-width var(--uc-autohide-transition-duration)
+        var(--uc-autohide-transition-type) var(--uc-autohide-sidebar-delay),
+      box-shadow var(--uc-autohide-transition-duration) ease-in-out
+        var(--uc-autohide-sidebar-delay) !important;
   }
 
   .sidebar-panel {

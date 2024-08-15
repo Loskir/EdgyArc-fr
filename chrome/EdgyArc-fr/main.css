@@ -219,9 +219,6 @@
 
 /*appcontent border*/
 :root:not([inDOMFullscreen="true"]) {
-  #appcontent .browserStack {
-    overflow: hidden !important;
-  }
   @media not (-moz-bool-pref:"af.edgyarc.no-content-border") {
     #appcontent .browserStack {
       border: var(--af-content-border) !important;

@@ -78,10 +78,6 @@
   transition: width 300ms ease-in-out !important;
 }
 
-#urlbar:not([focused]) .urlbar-input:not([focused]) {
-  text-align: center !important;
-}
-
 :root[windowtype="navigator:browser"] #back-button {
   list-style-image: url("icons/arrow.svg") !important;
   transform: rotate(180deg);

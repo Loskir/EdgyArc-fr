@@ -161,10 +161,6 @@
     box-shadow: var(--uc-tweak-rounded-corners-shadow) !important;
     border-radius: 6px !important;
     padding: 0px !important;
-    @media not (-moz-bool-pref: "af.edgyarc.no-content-border") {
-      border: var(--af-content-border) !important;
-      box-shadow: var(--af-content-shadow) !important;
-    }
     @media (-moz-bool-pref: "af.edgyarc.macos-translucent") {
       opacity: 0.6 !important;
       @media (-moz-bool-pref: "af.edgyarc.macos-more-translucent") {
@@ -227,51 +223,35 @@
 /*end basic sidebar*/
 
 /*appcontent border*/
-:root:not([inDOMFullscreen="true"]) {
-  @media not (-moz-bool-pref: "af.edgyarc.no-content-border") {
-    #appcontent .browserStack {
-      border: var(--af-content-border) !important;
-      box-shadow: var(--af-content-shadow) !important;
-    }
-  }
-}
-
 #sidebar-header {
   background-color: var(--lwt-accent-color) !important;
 }
 
-:root:not([customizing]):has(
-    #sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]:not(
-        [hidden]
-      )
-  ),
-:root:not([customizing]):has(
-    #sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]:not(
-        [hidden]
-      )
-  ),
-:root:not([customizing]):has(
-    #sidebar-box[sidebarcommand="tabcenter-reborn_ariasuni-sidebar-action"]:not(
-        [hidden]
-      )
-  ) {
-  /* Height of navbar, used for determining height and position of window controls */
-  --uc-navbar-height: 38px;
-
-  /* Hide tabs when vertical tab extensions are present */
-  & #TabsToolbar {
-    visibility: collapse !important;
+:root:not([customizing]) {
+  &:has(
+      #sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]:not(
+          [hidden]
+        )
+    ),
+  &:has(
+      #sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]:not(
+          [hidden]
+        )
+    ),
+  &:has(
+      #sidebar-box[sidebarcommand="tabcenter-reborn_ariasuni-sidebar-action"]:not(
+          [hidden]
+        )
+    ) {
+    /* Adjust navbar padding */
+    &[tabsintitlebar] #nav-bar {
+      --uc-tab-top-margin: 0px;
+      margin-top: 1px !important;
+    }
   }
 
-  /* Fix issue with missing window controls. */
-  &[tabsintitlebar] #titlebar {
-    will-change: auto !important;
-  }
-
-  /* Adjust navbar padding */
-  &[tabsintitlebar] #nav-bar {
+  @media (-moz-bool-pref: "uc.tweak.hide-tabs-bar.always") {
     --uc-tab-top-margin: 0px;
-    padding-top: var(--uc-tab-top-margin, 0) !important;
     margin-top: 1px !important;
   }
 }
@@ -290,7 +270,7 @@
 /* macOS specific positioning */
 @media (-moz-platform: macos) {
   /* Offset navbar contents to make space for the window controls */
-  &[tabsintitlebar] #nav-bar:not([inFullscreen]) {
+  &[tabsintitlebar]:not([inFullscreen]) #nav-bar {
     padding-left: calc(0px + var(--uc-titlebar-drag-space)) !important;
 
     /* Remove the padding from the side of the navbar */
@@ -411,7 +391,7 @@
 /* macOS specific positioning */
 @media (-moz-platform: macos) {
   /* Offset navbar contents to make space for the window controls */
-  &[tabsintitlebar] #nav-bar:not([inFullscreen]) {
+  &[tabsintitlebar]:not([inFullscreen]) #nav-bar {
     padding-left: calc(0px + var(--uc-titlebar-drag-space)) !important;
 
     /* Remove the padding from the side of the navbar */

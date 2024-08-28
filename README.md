@@ -6,8 +6,6 @@ Because Arc and Edge look pretty af but FOSS FTW
 
 ## Prerequisites
 
-**The following is only valid from v1.0.0.b.10 onwards!**
-
 - [Sidebery](https://addons.mozilla.org/firefox/addon/sidebery/)
 - [UserChrome Toggle](https://addons.mozilla.org/firefox/addon/userchrome-toggle/)
 - Optional Addons:
@@ -25,6 +23,16 @@ Because Arc and Edge look pretty af but FOSS FTW
 - `macOS only` Translucent windows
 - Custom Sidebery theme
 - Auto-hide native top tabs when Sidebery or TST is active
+
+## Differences compared to artsyfriedchicken/EdgyArc-fr
+
+- The code is formatted with prettier (easier to maintain and contribute)
+- The color scheme from edge-frfox is disabled by default (can be enabled with `af.edgyarc.edge-styles`)
+- The shadow around the content is disabled making it more consistent
+- Various fixes (centered url, rounded corners, margins)
+- New option `af.edgyarc.separate-extended-urlbar` that makes the url not jump around when clicking on it
+- New option `uc.tweak.hide-tabs-bar.always` that permanently hides native tabs
+
 
 ## Usage
 
@@ -81,6 +89,8 @@ Before you start using the theme as-is, you might want to have a look at all the
 | **Translucent Effects** `macos Only` <br> `af.edgyarc.macos-translucent`                                                                                                                   | <video src="https://github.com/artsyfriedchicken/EdgyArc-fr/assets/100123017/dd122094-0545-4145-9733-ef9776b40a6b">                             |
 | **More Translucent** <br> ⚠️ Decreased text contrast/visibility <br> `af.edgyarc.macos-more-translucent`                                                                                   |                                                                                                                                                 |
 | **🔵 UI Tweaks**                                                                                                                                                                           |                                                                                                                                                 |
+| **Always hide native tabs** <br> `uc.tweak.hide-tabs-bar.always` <br>                                                            | ![uc.tweak.hide-tabs-bar.always](https://github.com/user-attachments/assets/4b528bf3-b920-4bd2-8c35-3701210cae14)                         |
+| **Separate extended URL bar** <br> `af.edgyarc.separate-extended-urlbar` <br> ❗ Does not work well with `af.edgyarc.thin-navbar`                                                             | ![af.edgyarc.separate-extended-urlbar](https://github.com/user-attachments/assets/6cc3cd72-2459-4a9c-95ef-93285c57b4fe)                         |
 | **Thin Navigation Bar** <br> `af.edgyarc.thin-navbar`                                                                                                                                      | ![Screen Shot 2024-05-04 at 11 52 25 PM](https://github.com/artsyfriedchicken/EdgyArc-fr/assets/100123017/0b030f04-c10d-48a2-8462-b61c52e4f8de) |
 | **Minimal Navigation Bar**<br> `af.edgyarc.minimal-navbar`                                                                                                                                 | <video src="https://github.com/artsyfriedchicken/EdgyArc-fr/assets/100123017/1e56cc7c-1b54-4602-b825-b68000f6f92c">                             |
 | **Greyscale webextensions icons** <br> `uc.tweak.af.greyscale-webext-icons`                                                                                                                | <video src="https://github.com/artsyfriedchicken/EdgyArc-fr/assets/100123017/7e3c4b3d-43ae-4a5e-bdbb-f067105ee346">                             |

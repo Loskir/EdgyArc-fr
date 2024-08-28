@@ -1,0 +1,31 @@
+:root {
+  --toolbar-field-focus-background-color: var(
+    --toolbar-field-background-color
+  ) !important;
+}
+
+#urlbar[breakout-extend] {
+  top: 4px !important;
+
+  .urlbar-input-container {
+    height: var(--urlbar-height) !important;
+    padding: var(--urlbar-container-padding) !important;
+  }
+
+  /* Changes urlbar background */
+  --toolbar-field-focus-background-color: light-dark(#fff, #000);
+}
+
+#urlbar-background {
+  height: var(--urlbar-height) !important;
+  box-shadow: none !important;
+}
+
+.urlbarView {
+  margin-top: 4px;
+  border-radius: calc(var(--urlbar-icon-border-radius) + 2px) !important;
+  background: var(--toolbar-field-focus-background-color);
+  border: var(--af-content-border) !important;
+
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.13);
+}

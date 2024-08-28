@@ -1,3 +1,24 @@
-/* === import EdgyArc-fr === */
+@import url("EdgyArc-fr/main.css");
+@import url("separate-extended-urlbar.css")
+(-moz-bool-pref: "af.edgyarc.separate-extended-urlbar");
 
-@import url("EdgyArc-fr/main.css"); /* === Add your own css === */
+/* Make the sidebar button behave as if it's always unchecked (otherwise it's always active when Sidebery is shown) */
+#sidebar-button[checked] {
+  .toolbarbutton-icon {
+    background-color: inherit !important;
+  }
+  &:hover .toolbarbutton-icon {
+    background-color: var(--toolbarbutton-hover-background) !important;
+  }
+  &:hover:active .toolbarbutton-icon {
+    background-color: var(--toolbarbutton-active-background) !important;
+  }
+}
+
+/* Fix margins for the buttons in the url bar */
+#page-action-buttons {
+  margin-right: 2px;
+}
+#identity-box {
+  margin-left: 4px;
+}

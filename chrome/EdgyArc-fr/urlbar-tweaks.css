@@ -46,7 +46,6 @@
 .urlbar-page-action {
   height: 24px !important;
   max-height: 24px !important;
-  margin-top: -1px !important;
 
   & .urlbar-icon {
     height: 15px !important;
@@ -96,11 +95,6 @@
 
 #urlbar[breakout][breakout-extend] {
   z-index: 600 !important;
-
-  #urlbar-background {
-    opacity: 1 !important;
-    margin-top: 4px !important;
-  }
 }
 
 .urlbar-input-box {
@@ -116,23 +110,13 @@
   padding-top: 4px;
 }
 
-#urlbar[breakout][breakout-extend] #urlbar-background {
-  opacity: 1 !important;
-  /*todo - add blurring behind expanded urlbar-background - idfk how to*/
-}
+#urlbar[breakout][breakout-extend] {
+  #urlbar-background {
+    opacity: 1 !important;
+    /*todo - add blurring behind expanded urlbar-background - idfk how to*/
 
-#urlbar {
-  &[breakout][breakout-extend] {
-    #urlbar-background {
-      opacity: 1 !important;
-      margin-top: -1px !important;
-      border-radius: 4px !important;
-      border-top: none !important;
-      height: 100% !important;
-
-      &::before {
-        opacity: 0 !important;
-      }
+    &::before {
+      opacity: 0 !important;
     }
   }
 }

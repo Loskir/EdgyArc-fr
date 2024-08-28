@@ -243,16 +243,15 @@
           [hidden]
         )
     ) {
-    /* Adjust navbar padding */
     &[tabsintitlebar] #nav-bar {
       --uc-tab-top-margin: 0px;
-      margin-top: 1px !important;
     }
   }
 
   @media (-moz-bool-pref: "uc.tweak.hide-tabs-bar.always") {
-    --uc-tab-top-margin: 0px;
-    margin-top: 1px !important;
+    &[tabsintitlebar] #nav-bar {
+      --uc-tab-top-margin: 0px;
+    }
   }
 }
 

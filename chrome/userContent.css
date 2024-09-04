@@ -4,3 +4,58 @@
 @import url("tweaks/sidebery.css") (-moz-bool-pref: "uc.tweak.theme.sidebery");
 @import url("EdgyArc-fr/sidebery.css")
 (-moz-bool-pref: "af.sidebery.edgyarc-theme");
+@import url("tweaks/sidebery-translucent.css")
+(-moz-bool-pref: "af.edgyarc.macos-translucent");
+
+@-moz-document regexp("^moz-extension://.*?/sidebar/sidebar.html")
+{
+  #root {
+    --color-change-duration: 200ms;
+    --color-change-easing: ease;
+    transition:
+      background-color var(--color-change-duration) var(--color-change-easing),
+      color var(--color-change-duration) var(--color-change-easing) !important;
+  }
+
+  .bottom-space {
+    transition:
+      transform var(--d-fast),
+      z-index var(--d-fast) var(--d-fast),
+      background-color var(--color-change-duration) var(--color-change-easing),
+      color var(--color-change-duration) var(--color-change-easing) !important;
+  }
+
+  .new-tab-btns {
+    transition:
+      transform var(--d-fast),
+      opacity var(--d-fast),
+      z-index var(--d-fast) var(--d-fast),
+      background-color var(--color-change-duration) var(--color-change-easing),
+      color var(--color-change-duration) var(--color-change-easing) !important;
+  }
+
+  .Tab .title {
+    transition:
+      transform var(--d-fast),
+      color var(--color-change-duration) var(--color-change-easing) !important;
+  }
+
+  .TabsPanel .new-tab-btn > svg,
+  .TabsPanel .new-tab-btn > img {
+    transition: fill var(--color-change-duration) var(--color-change-easing);
+  }
+
+  .TabsPanel .new-tab-btns::after {
+    transition: background-color var(--color-change-duration)
+      var(--color-change-easing);
+  }
+
+  .NavigationBar .nav-item .icon {
+    transition:
+      opacity var(--d-fast),
+      fill var(--color-change-duration) var(--color-change-easing) !important;
+  }
+  .NavigationBar .nav-item .len {
+    transition: color var(--color-change-duration) var(--color-change-easing);
+  }
+}

@@ -1,0 +1,62 @@
+#sidebar-box {
+  box-shadow: var(--uc-tweak-rounded-corners-shadow) !important;
+  border-radius: 6px !important;
+  padding: 0px !important;
+}
+@media not (-moz-bool-pref: "af.edgyarc.show-sidebar-header") {
+  #sidebar {
+    border-radius: 6px 6px 6px 6px !important;
+  }
+}
+@media (-moz-bool-pref: "af.edgyarc.show-sidebar-header") {
+  :root:not([titlepreface="᠎"]) #sidebar {
+    border-radius: 0px 0px 6px 6px !important;
+  }
+  :root[titlepreface="᠎"] #sidebar {
+    border-radius: 6px 6px 6px 6px !important;
+  }
+}
+
+#sidebar-header {
+  border-radius: 6px 6px 0 0 !important;
+}
+
+:root {
+  --af-normal-opacity: 0.15 !important;
+  @media (-moz-bool-pref: "af.edgyarc.macos-more-translucent") {
+    --af-normal-opacity: 0.05 !important;
+  }
+}
+
+/*add tint overlay to window*/
+#main-window::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-color: var(--lwt-accent-color) !important;
+  filter: saturate(400%) !important;
+  opacity: var(--af-normal-opacity) !important;
+  transition: var(--af-bg-transition) !important;
+}
+
+@media not (-moz-bool-pref: "af.edgyarc.macos-translucent") {
+  #main-window::after,
+  #browser::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+    background-color: light-dark(#cdcdcd, #444) !important;
+    opacity: 0.3;
+  }
+}

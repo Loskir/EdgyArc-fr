@@ -17,8 +17,7 @@
 @import url("translucent-base.css");
 @import url("translucent-arc.css");
 @import url("urlbar-tweaks.css");
-/**/
-/**/
+@import url("edge-sidebar.css") (-moz-bool-pref: "af.edgyarc.edge-sidebar");
 /*Other tweaks*/
 @import url("icons.css");
 
@@ -35,20 +34,19 @@
 }
 
 :root {
-  --af-minimal-opacity: 0.53;
-  --af-normal-opacity: 0.15 !important;
+  --af-minimal-opacity: 1;
+  @media (-moz-bool-pref: "af.edgyarc.macos-translucent") {
+    --af-minimal-opacity: 0.53;
+  }
   @media (-moz-bool-pref: "af.edgyarc.macos-more-translucent") {
-    --af-minimal-opacity: 0.45 !important;
-    --af-normal-opacity: 0.05 !important;
+    --af-minimal-opacity: 0.45;
   }
   --af-bg-transition: background-color 0ms linear !important;
   --af-content-border: 1px solid
     light-dark(rgba(0, 0, 0, 0.2), rgba(220, 220, 220, 0.2));
   --af-content-shadow: 0 0 1px 1px
     light-dark(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
-  /**/
   --urlbar-icon-border-radius: 5px !important;
-  /**/
   --toolbarbutton-border-radius: 8px !important;
   --toolbarbutton-inner-padding: 8px !important;
   --uc-toolbarbutton-inner-inline-padding: 8px !important;
@@ -58,9 +56,7 @@
     rgba(255, 255, 255, 0.6),
     rgba(180, 180, 180, 0.4)
   ) !important;
-  /**/
   --uc-titlebar-drag-space: 8px !important;
-  /**/
   --uc-sidebar-shadow: 0px 0px 0px 1px
       light-dark(rgba(0, 0, 0, 0.2), rgba(200, 200, 200, 0.4)),
     0px 0px 18px 4px light-dark(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4));
@@ -69,10 +65,6 @@
   @media (-moz-bool-pref: "uc.tweak.rounded-corners") {
     --uc-tweak-rounded-corners-padding: 8px !important;
     --uc-tweak-rounded-corners-radius: 7px !important;
-  }
-  /*full opacity when translucency is disabled*/
-  @media not (-moz-bool-pref: "af.edgyarc.macos-translucent") {
-    --af-minimal-opacity: 1 !important;
   }
 }
 
@@ -154,73 +146,6 @@
     display: none !important;
   }
 }
-
-/*Start basic sidebar*/
-@media (-moz-bool-pref: "af.edgyarc.edge-sidebar") {
-  #sidebar-box {
-    box-shadow: var(--uc-tweak-rounded-corners-shadow) !important;
-    border-radius: 6px !important;
-    padding: 0px !important;
-    @media (-moz-bool-pref: "af.edgyarc.macos-translucent") {
-      opacity: 0.6 !important;
-      @media (-moz-bool-pref: "af.edgyarc.macos-more-translucent") {
-        opacity: 0.5 !important;
-      }
-    }
-  }
-  @media not (-moz-bool-pref: "af.edgyarc.show-sidebar-header") {
-    #sidebar {
-      border-radius: 6px 6px 6px 6px !important;
-    }
-  }
-  @media (-moz-bool-pref: "af.edgyarc.show-sidebar-header") {
-    :root:not([titlepreface="᠎"]) #sidebar {
-      border-radius: 0px 0px 6px 6px !important;
-    }
-    :root[titlepreface="᠎"] #sidebar {
-      border-radius: 6px 6px 6px 6px !important;
-    }
-  }
-
-  #sidebar-header {
-    border-radius: 6px 6px 0 0 !important;
-  }
-
-  /*add tint overlay to window*/
-  #main-window::before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 0;
-    pointer-events: none;
-    background-color: var(--lwt-accent-color) !important;
-    filter: saturate(400%) !important;
-    opacity: var(--af-normal-opacity) !important;
-    transition: var(--af-bg-transition) !important;
-  }
-
-  @media not (-moz-bool-pref: "af.edgyarc.macos-translucent") {
-    #main-window::after,
-    #browser::before {
-      content: "";
-      display: block;
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      pointer-events: none;
-      background-color: light-dark(#cdcdcd, #444) !important;
-      opacity: 0.3;
-    }
-  }
-}
-
-/*end basic sidebar*/
 
 /*appcontent border*/
 #sidebar-header {

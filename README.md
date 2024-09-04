@@ -32,6 +32,7 @@ Because Arc and Edge look pretty af but FOSS FTW
 - Various fixes (centered url, rounded corners, margins)
 - New option `af.edgyarc.separate-extended-urlbar` that makes the url not jump around when clicking on it
 - New option `uc.tweak.hide-tabs-bar.always` that permanently hides native tabs
+- Proper translucency support for Sidebery (introduced in FF 130.0)
 
 
 ## Usage
@@ -78,6 +79,8 @@ Because Arc and Edge look pretty af but FOSS FTW
 
   `widget.macos.titlebar-blend-mode.behind-window` [Required for translucent macos in FF126+]
 
+  `browser.tabs.allow_transparent_browser`
+
   </details>
 
 ### Step 2 Configure EdgyArc
@@ -87,7 +90,7 @@ Before you start using the theme as-is, you might want to have a look at all the
 | Feature Description                                                                                                                                                                        | Screenshot                                                                                                                                      |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Translucent Effects** `macos Only` <br> `af.edgyarc.macos-translucent`                                                                                                                   | <video src="https://github.com/artsyfriedchicken/EdgyArc-fr/assets/100123017/dd122094-0545-4145-9733-ef9776b40a6b">                             |
-| **More Translucent** <br> ⚠️ Decreased text contrast/visibility <br> `af.edgyarc.macos-more-translucent`                                                                                   |                                                                                                                                                 |
+| **More Translucent** <br> `af.edgyarc.macos-more-translucent`                                                                                   |                                                                                                                                                 |
 | **🔵 UI Tweaks**                                                                                                                                                                           |                                                                                                                                                 |
 | **Always hide native tabs** <br> `uc.tweak.hide-tabs-bar.always` <br>                                                            | ![uc.tweak.hide-tabs-bar.always](https://github.com/user-attachments/assets/4b528bf3-b920-4bd2-8c35-3701210cae14)                         |
 | **Separate extended URL bar** <br> `af.edgyarc.separate-extended-urlbar` <br> ❗ Does not work well with `af.edgyarc.thin-navbar`                                                             | ![af.edgyarc.separate-extended-urlbar](https://github.com/user-attachments/assets/6cc3cd72-2459-4a9c-95ef-93285c57b4fe)                         |

@@ -97,7 +97,7 @@
     box-shadow: var(--uc-tweak-rounded-corners-shadow) !important;
     background-color: var(--tabpanel-background-color) !important;
     position: relative !important;
-
+    overflow: hidden !important;
     /* Use pseudo element overlay to simulate rounded corners, similar to the
      * tab corners, fixes bug with backdrop-filter. */
     &::after {

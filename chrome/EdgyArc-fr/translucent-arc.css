@@ -43,7 +43,8 @@
   }
 
   #navigator-toolbox,
-  .browserContainer {
+  #sidebar-box,
+  .browserSidebarContainer {
     &::before {
       content: "";
       display: block;
@@ -52,7 +53,7 @@
       right: 0;
       bottom: 0;
       left: 0;
-      z-index: 0;
+      z-index: -1;
       pointer-events: none;
       background-color: var(--lwt-accent-color) !important;
       opacity: var(--af-minimal-opacity) !important;

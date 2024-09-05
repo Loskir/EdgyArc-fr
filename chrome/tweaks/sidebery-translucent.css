@@ -1,22 +1,7 @@
 /* Translucency support for Sidebery */
 @-moz-document regexp("^moz-extension://.*?/sidebar/sidebar.html")
 {
-  :root {
-    --af-minimal-opacity: 100%;
-    @media (-moz-bool-pref: "af.edgyarc.macos-translucent") {
-      --af-minimal-opacity: 53% !important;
-    }
-    @media (-moz-bool-pref: "af.edgyarc.macos-more-translucent") {
-      --af-minimal-opacity: 45% !important;
-    }
-  }
-  #root {
-    background-color: color-mix(
-      in srgb,
-      var(--frame-bg) var(--af-minimal-opacity),
-      transparent
-    ) !important;
-  }
+  #root,
   :root,
   .TabsPanel .bottom-space,
   .TabsPanel .new-tab-btns,

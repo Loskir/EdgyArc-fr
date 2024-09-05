@@ -191,25 +191,6 @@
   }
 }
 
-/* macOS specific positioning */
-@media (-moz-platform: macos) {
-  /* Offset navbar contents to make space for the window controls */
-  &[tabsintitlebar]:not([inFullscreen]) #nav-bar {
-    padding-left: calc(0px + var(--uc-titlebar-drag-space)) !important;
-
-    /* Remove the padding from the side of the navbar */
-    &
-      #nav-bar-customization-target
-      > :is(toolbarbutton, toolbaritem):first-child {
-      padding-inline-start: 0px !important;
-    }
-  }
-
-  .titlebar-buttonbox-container .titlebar-buttonbox {
-    top: -2px !important;
-  }
-}
-
 /* indicator for private browsing mode with tabs hidden */
 
 :root[privatebrowsingmode="temporary"] {
@@ -326,11 +307,11 @@
     }
   }
   .titlebar-buttonbox-container .titlebar-buttonbox {
-    top: -2px !important;
+    top: -3px;
   }
 }
-/*Windows specific positioning*/
 
+/*Windows specific positioning*/
 @media (-moz-platform: windows) {
   .titlebar-buttonbox-container {
     z-index: 999 !important;

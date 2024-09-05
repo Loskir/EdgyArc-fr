@@ -1,0 +1,13 @@
+body::before {
+  background-image: url("noise-dark.png");
+  background-size: 110px;
+
+  @media (prefers-color-scheme: dark) {
+    background-image: url("noise-light.png");
+  }
+}
+@media (prefers-color-scheme: dark) {
+  body::before {
+    background-image: url("noise-light.png");
+  }
+}

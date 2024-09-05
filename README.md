@@ -33,6 +33,7 @@ Because Arc and Edge look pretty af but FOSS FTW
 - New option `af.edgyarc.separate-extended-urlbar` that makes the url not jump around when clicking on it
 - New option `uc.tweak.hide-tabs-bar.always` that permanently hides native tabs
 - Proper translucency support for Sidebery (introduced in FF 130.0)
+- Noise texture background tweak
 
 
 ## Usage
@@ -94,6 +95,7 @@ Before you start using the theme as-is, you might want to have a look at all the
 | **🔵 UI Tweaks**                                                                                                                                                                           |                                                                                                                                                 |
 | **Always hide native tabs** <br> `uc.tweak.hide-tabs-bar.always` <br>                                                            | ![uc.tweak.hide-tabs-bar.always](https://github.com/user-attachments/assets/4b528bf3-b920-4bd2-8c35-3701210cae14)                         |
 | **Separate extended URL bar** <br> `af.edgyarc.separate-extended-urlbar` <br> ❗ Does not work well with `af.edgyarc.thin-navbar`                                                             | ![af.edgyarc.separate-extended-urlbar](https://github.com/user-attachments/assets/6cc3cd72-2459-4a9c-95ef-93285c57b4fe)                         |
+| **Noise texture background** <br> `af.edgyarc.noise-texture`                                                             | ![af.edgyarc.noise-texture](https://github.com/user-attachments/assets/1dc41944-4dcf-480a-9f12-f424169adf12)                         |
 | **Thin Navigation Bar** <br> `af.edgyarc.thin-navbar`                                                                                                                                      | ![Screen Shot 2024-05-04 at 11 52 25 PM](https://github.com/artsyfriedchicken/EdgyArc-fr/assets/100123017/0b030f04-c10d-48a2-8462-b61c52e4f8de) |
 | **Minimal Navigation Bar**<br> `af.edgyarc.minimal-navbar`                                                                                                                                 | <video src="https://github.com/artsyfriedchicken/EdgyArc-fr/assets/100123017/1e56cc7c-1b54-4602-b825-b68000f6f92c">                             |
 | **Greyscale webextensions icons** <br> `uc.tweak.af.greyscale-webext-icons`                                                                                                                | <video src="https://github.com/artsyfriedchicken/EdgyArc-fr/assets/100123017/7e3c4b3d-43ae-4a5e-bdbb-f067105ee346">                             |

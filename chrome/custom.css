@@ -1,6 +1,8 @@
 @import url("EdgyArc-fr/main.css");
 @import url("separate-extended-urlbar.css")
 (-moz-bool-pref: "af.edgyarc.separate-extended-urlbar");
+@import url("tweaks/noise-texture/style.css")
+(-moz-bool-pref: "af.edgyarc.noise-texture");
 
 /* Make the sidebar button behave as if it's always unchecked (otherwise it's always active when Sidebery is shown) */
 #sidebar-button[checked] {

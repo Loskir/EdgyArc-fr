@@ -2,57 +2,42 @@
   background-color: transparent !important;
 }
 
-@media not (-moz-bool-pref: "af.edgyarc.edge-sidebar") {
+:root[titlepreface="᠎"] {
   #sidebar-box {
-    margin: 0px !important;
-    padding: 0px !important;
-    &,
-    #sidebar {
-      border-radius: 0 0 0 0 !important;
+    &:hover::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 0;
+      pointer-events: none;
+      background-color: var(--lwt-accent-color) !important;
+      opacity: var(--af-minimal-opacity) !important;
     }
   }
-  :root[titlepreface="᠎"] {
-    #sidebar-box {
-      padding-left: 1px !important;
-      &:hover > #sidebar {
-        margin-left: var(--uc-tweak-rounded-corners-padding) !important;
-        margin-bottom: var(--uc-tweak-rounded-corners-padding) !important;
-      }
-      &:hover::before {
-        content: "";
-        display: block;
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        z-index: 0;
-        pointer-events: none;
-        background-color: var(--lwt-accent-color) !important;
-        opacity: var(--af-minimal-opacity) !important;
-      }
-    }
-  }
-  /* :root:not([customizing]):has(#sidebar-box:not([hidden])) {} */
-  :root:has(#sidebar-box:not([hidden])) {
-    /* This cancels left padding and margin on all immediate descendants (content, findbar, bottom-docked devtools) */
-    #appcontent .browserContainer > * {
-      padding-left: 0 !important;
-      margin-left: 0 !important;
-    }
-  }
+}
 
-  body::before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: -1;
-    pointer-events: none;
-    background-color: var(--lwt-accent-color) !important;
-    opacity: var(--af-minimal-opacity) !important;
-  }
+body::before,
+/* We don't need a pseudo element here for coloring (it's done on the element itself), but it's needed for noise texture */
+:root[inFullscreen] #navigator-toolbox[style*="transform"]::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-color: var(--lwt-accent-color) !important;
+  opacity: var(--af-minimal-opacity) !important;
+}
+
+/* Fixes transparent toolbar in fullscreen on macos */
+/* Only apply solid background when toolbox moves over the content */
+:root[inFullscreen] #navigator-toolbox[style*="transform"] {
+  background-color: var(--lwt-accent-color) !important;
 }

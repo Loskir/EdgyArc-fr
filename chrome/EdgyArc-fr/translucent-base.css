@@ -1,18 +1,10 @@
 @media (-moz-bool-pref: "af.edgyarc.macos-translucent") {
   :root {
-    /*translucent stuff*/
+    appearance: -moz-window-titlebar !important;
+    
+    &,
     #navigator-toolbox,
     #browser {
-      background-color: transparent !important;
-    }
-
-    &,
-    #navigator-toolbox {
-      background-color: transparent !important;
-      appearance: -moz-window-titlebar !important;
-    }
-
-    &[windowtype="navigator:browser"] {
       background-color: transparent !important;
     }
   }

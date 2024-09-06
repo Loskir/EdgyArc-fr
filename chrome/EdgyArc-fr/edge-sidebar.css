@@ -21,31 +21,31 @@
   border-radius: 6px 6px 0 0 !important;
 }
 
-:root {
-  --af-normal-opacity: 0.15 !important;
-  @media (-moz-bool-pref: "af.edgyarc.macos-more-translucent") {
-    --af-normal-opacity: 0.05 !important;
-  }
-}
-
-/*add tint overlay to window*/
-#main-window::before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 0;
-  pointer-events: none;
-  background-color: var(--lwt-accent-color) !important;
-  filter: saturate(400%) !important;
-  opacity: var(--af-normal-opacity) !important;
-  transition: var(--af-bg-transition) !important;
-}
-
 @media not (-moz-bool-pref: "af.edgyarc.macos-translucent") {
+  :root {
+    --af-normal-opacity: 0.15 !important;
+    @media (-moz-bool-pref: "af.edgyarc.macos-more-translucent") {
+      --af-normal-opacity: 0.05 !important;
+    }
+  }
+
+  /*add tint overlay to window*/
+  #main-window::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-color: var(--lwt-accent-color) !important;
+    filter: saturate(400%) !important;
+    opacity: var(--af-normal-opacity) !important;
+    transition: var(--af-bg-transition) !important;
+  }
+  
   #main-window::after,
   #browser::before {
     content: "";
@@ -58,5 +58,11 @@
     pointer-events: none;
     background-color: light-dark(#cdcdcd, #444) !important;
     opacity: 0.3;
+  }
+}
+
+@media (-moz-bool-pref: "af.edgyarc.macos-translucent") {
+  #sidebar-box {
+    background-color: light-dark(#cdcdcd4d, #0000004d) !important;
   }
 }

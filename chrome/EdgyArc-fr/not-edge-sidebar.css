@@ -1,0 +1,25 @@
+#sidebar-box {
+  margin: 0px !important;
+  padding: 0px !important;
+  &,
+  #sidebar {
+    border-radius: 0 0 0 0 !important;
+  }
+}
+:root[titlepreface="᠎"] {
+  #sidebar-box {
+    padding-left: 1px !important;
+    &:hover > #sidebar {
+      margin-left: var(--uc-tweak-rounded-corners-padding) !important;
+      margin-bottom: var(--uc-tweak-rounded-corners-padding) !important;
+    }
+  }
+}
+/* :root:not([customizing]):has(#sidebar-box:not([hidden])) {} */
+:root:has(#sidebar-box:not([hidden])) {
+  /* This cancels left padding and margin on all immediate descendants (content, findbar, bottom-docked devtools) */
+  #appcontent .browserContainer > * {
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+  }
+}

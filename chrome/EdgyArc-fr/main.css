@@ -17,6 +17,8 @@
 @import url("translucent-base.css");
 @import url("translucent-arc.css");
 @import url("urlbar-tweaks.css");
+@import url("not-edge-sidebar.css") not
+  (-moz-bool-pref: "af.edgyarc.edge-sidebar");
 @import url("edge-sidebar.css") (-moz-bool-pref: "af.edgyarc.edge-sidebar");
 /*Other tweaks*/
 @import url("icons.css");

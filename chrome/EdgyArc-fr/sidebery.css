@@ -56,60 +56,32 @@
     --ntb-btn-height: 32px !important;
     --tabs-border-radius: 4px !important;
     --general-border-radius: 4px !important;
-    --frame-el-overlay-hover-bg: light-dark(
-      rgba(255, 255, 255, 0.8),
-      rgba(255, 255, 255, 0.11)
-    ) !important;
+    --frame-el-overlay-hover-bg: light-dark(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.11)) !important;
     /**/
-    --tabs-activated-shadow: inset 0 0 0 1px
-        light-dark(rgba(0, 0, 0, 0.1689), rgba(255, 255, 255, 0.14)),
+    --tabs-activated-shadow: inset 0 0 0 1px light-dark(rgba(0, 0, 0, 0.1689), rgba(255, 255, 255, 0.14)),
       0 0 1px 0px light-dark(rgba(0, 0, 0, 0.07), rgba(0, 0, 0, 0.6)) !important;
 
     @media (min-width: 100px) {
       .PinnedTabsBar .Tab[data-pin="true"] {
-        --tabs-activated-shadow: inset 0 0 0 1px
-          light-dark(rgba(0, 0, 0, 0.4), rgba(255, 255, 255, 0.6)) !important;
+        --tabs-activated-shadow: inset 0 0 0 1px light-dark(rgba(0, 0, 0, 0.4), rgba(255, 255, 255, 0.6)) !important;
         &[data-colorized="false"][data-active="true"] .body {
-          background-color: light-dark(
-            white,
-            rgba(100, 100, 100, 0.5)
-          ) !important;
+          background-color: light-dark(white, rgba(100, 100, 100, 0.5)) !important;
         }
         &[data-colorized="true"] {
-          --tabs-activated-shadow: inset 0 0 0 1px
-            light-dark(rgba(0, 0, 0, 1), rgba(255, 255, 255, 0.6)) !important;
+          --tabs-activated-shadow: inset 0 0 0 1px light-dark(rgba(0, 0, 0, 1), rgba(255, 255, 255, 0.6)) !important;
         }
       }
     }
     /**/
-    --tabs-activated-bg: light-dark(
-      rgba(255, 255, 255, 0.9),
-      rgba(100, 100, 100, 0.5)
-    ) !important;
-    --separator-color: color-mix(
-      in srgb,
-      var(--frame-fg) 20%,
-      transparent
-    ) !important;
-    --nav-btn-active-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.086),
-      inset 0 1px 3px 0 rgb(0 0 0 / 0.086) !important;
+    --tabs-activated-bg: light-dark(rgba(255, 255, 255, 0.9), rgba(100, 100, 100, 0.5)) !important;
+    --separator-color: color-mix(in srgb, var(--frame-fg) 20%, transparent) !important;
+    --nav-btn-active-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.086), inset 0 1px 3px 0 rgb(0 0 0 / 0.086) !important;
     /**/
     /*edgyarc variables*/
-    --af-hidden-popup-bg: color-mix(
-      in srgb,
-      var(--frame-bg) 50%,
-      light-dark(rgb(255, 255, 255), rgb(20, 20, 20))
-    );
-    --af-fade-tab-text: linear-gradient(
-      90deg,
-      black 93%,
-      #f1f1f100 99%
-    ) !important;
+    --af-hidden-popup-bg: color-mix(in srgb, var(--frame-bg) 50%, light-dark(rgb(255, 255, 255), rgb(20, 20, 20)));
+    --af-fade-tab-text: linear-gradient(90deg, black 93%, #f1f1f100 99%) !important;
     --af-total-pinned-width: calc(100vw - 6px);
-    --af-searchbar-bg-color: light-dark(
-      rgba(200, 200, 200, 0.3),
-      rgba(80, 80, 80, 0.4)
-    );
+    --af-searchbar-bg-color: light-dark(rgba(200, 200, 200, 0.3), rgba(80, 80, 80, 0.4));
     /*tabs*/
     --tabs-indent: 14px !important;
     --tabs-inner-gap: 6px !important;
@@ -137,22 +109,12 @@
     --history-item-margin: 5px !important;
     --history-item-border-radius: 4px !important;
     /*popups*/
-    --notification-bg: color-mix(
-      in srgb,
-      var(--frame-bg) 50%,
-      light-dark(rgb(250, 250, 250), rgb(0, 0, 0))
-    ) !important;
-    --ctx-menu-shadow: 0 0 0 1px
-        light-dark(rgba(0, 0, 0, 0.4), rgba(255, 255, 255, 0.6)),
+    --notification-bg: color-mix(in srgb, var(--frame-bg) 50%, light-dark(rgb(250, 250, 250), rgb(0, 0, 0))) !important;
+    --ctx-menu-shadow: 0 0 0 1px light-dark(rgba(0, 0, 0, 0.4), rgba(255, 255, 255, 0.6)),
       0 0 5px 5px light-dark(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)) !important;
-    --ctx-menu-bg: color-mix(
-      in srgb,
-      var(--frame-bg) 50%,
-      light-dark(rgb(255, 255, 255), rgb(20, 20, 20))
-    ) !important;
+    --ctx-menu-bg: color-mix(in srgb, var(--frame-bg) 50%, light-dark(rgb(255, 255, 255), rgb(20, 20, 20))) !important;
     --ctx-menu-min-width: 160px !important;
-    --popup-shadow: 0 0 5px 5px
-      light-dark(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)) !important;
+    --popup-shadow: 0 0 5px 5px light-dark(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)) !important;
     --ctx-menu-fg: light-dark(black, white) !important;
     --ctx-menu-icon-opt-height: 30px !important;
     --ctx-menu-text-opt-inner-gap: 6px !important;
@@ -166,17 +128,12 @@
     /* Light mode adjustments. */
     &[data-frame-color-scheme="light"] {
       color-scheme: light !important;
-      --tabs-normal-fg: color-mix(
-        in srgb,
-        var(--frame-fg) 82%,
-        transparent
-      ) !important;
+      --tabs-normal-fg: color-mix(in srgb, var(--frame-fg) 82%, transparent) !important;
     }
     /* Dark mode adjustments. */
     &[data-frame-color-scheme="dark"] {
       color-scheme: dark !important;
-      --nav-btn-active-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.071),
-        0 1px 3px 0 rgb(0 0 0 / 0.212) !important;
+      --nav-btn-active-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.071), 0 1px 3px 0 rgb(0 0 0 / 0.212) !important;
     }
 
     /*==== css properties ====*/
@@ -208,8 +165,7 @@
       }
 
       .hidden-panels-popup {
-        border: 1px solid
-          light-dark(rgba(0, 0, 0, 0.4), rgba(255, 255, 255, 0.6)) !important;
+        border: 1px solid light-dark(rgba(0, 0, 0, 0.4), rgba(255, 255, 255, 0.6)) !important;
         .nav-item {
           margin: 3px !important;
           .len {
@@ -242,17 +198,11 @@
 
         /*add a slight bg colour*/
         .body {
-          background-color: light-dark(
-            rgba(200, 200, 200, 0.3),
-            rgba(200, 200, 200, 0.1)
-          ) !important;
+          background-color: light-dark(rgba(200, 200, 200, 0.3), rgba(200, 200, 200, 0.1)) !important;
         }
         &[data-active="true"] {
           .body {
-            background-color: light-dark(
-              rgba(250, 250, 250, 0.3),
-              rgba(200, 200, 200, 0.3)
-            ) !important;
+            background-color: light-dark(rgba(250, 250, 250, 0.3), rgba(200, 200, 200, 0.3)) !important;
           }
         }
       }
@@ -275,10 +225,7 @@
       }
       &[data-active="true"] .body {
         box-shadow: inset 0 0 0.5px 1px rgba(255, 80, 80, 0.8) !important;
-        background: light-dark(
-          rgba(255, 80, 80, 0.5),
-          rgba(255, 100, 100, 0.3)
-        ) !important;
+        background: light-dark(rgba(255, 80, 80, 0.5), rgba(255, 100, 100, 0.3)) !important;
       }
     }
     .Tab[data-pin="false"] {
@@ -299,11 +246,7 @@
       }
 
       .title {
-        background: linear-gradient(
-          90deg,
-          light-dark(black, white) 92%,
-          #f1f1f100 99%
-        ) !important;
+        background: linear-gradient(90deg, light-dark(black, white) 92%, #f1f1f100 99%) !important;
         background-clip: text !important;
         color: transparent !important;
       }
@@ -507,10 +450,7 @@
 
       .tab-wrapper {
         --calc-pinned-tab-width: calc(
-          (
-              var(--af-total-pinned-width) -
-                (var(--tabs-margin) * var(--pinned-tabs-col))
-            ) / var(--pinned-tabs-col)
+          (var(--af-total-pinned-width) - (var(--tabs-margin) * var(--pinned-tabs-col))) / var(--pinned-tabs-col)
         );
         --tabs-pinned-width: var(--calc-pinned-tab-width);
       }
@@ -677,8 +617,7 @@
         height: 32px !important;
         margin-bottom: 3px !important;
         margin-left: 2px !important;
-        border: 1px solid
-          light-dark(rgba(0, 0, 0, 0.4), rgba(255, 255, 255, 0.2)) !important;
+        border: 1px solid light-dark(rgba(0, 0, 0, 0.4), rgba(255, 255, 255, 0.2)) !important;
         opacity: 1 !important;
         filter: contrast(140%) !important;
       }
@@ -766,8 +705,7 @@
         height: 32px !important;
         margin-bottom: 3px !important;
         margin-left: 2px !important;
-        border: 1px solid
-          light-dark(rgba(0, 0, 0, 0.4), rgba(255, 255, 255, 0.2)) !important;
+        border: 1px solid light-dark(rgba(0, 0, 0, 0.4), rgba(255, 255, 255, 0.2)) !important;
         opacity: 1 !important;
         filter: contrast(140%) !important;
       }
@@ -794,9 +732,7 @@
 
     /* Plus icon. */
     #icon_plus path {
-      d: path(
-        "M7 1a.5.5 0 01 1 0v6h6a.5.5 0 01 0 1H8v6a.5.5 0 01-1 0V8H1a.5.5 0 01 0-1h6z"
-      ) !important;
+      d: path("M7 1a.5.5 0 01 1 0v6h6a.5.5 0 01 0 1H8v6a.5.5 0 01-1 0V8H1a.5.5 0 01 0-1h6z") !important;
     }
   } /*end of root*/
 }

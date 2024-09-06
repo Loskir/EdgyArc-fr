@@ -8,8 +8,8 @@
   --bookmark-inline-margin: 2px !important;
   --uc-bookmark-toolbar-padding-bottom: 2px;
   --bookmarks-toolbar-overlapping-browser-height: calc(
-    var(--uc-bookmark-toolbar-padding-bottom) + 16px +
-      (var(--bookmark-block-margin) + var(--bookmark-block-padding)) * 2
+    var(--uc-bookmark-toolbar-padding-bottom) + 16px + (var(--bookmark-block-margin) + var(--bookmark-block-padding)) *
+      2
   ) !important;
 }
 
@@ -61,16 +61,13 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
 
 /* Left and Right padding of bookmarks bar */
 #PersonalToolbar {
-  padding-inline: calc(var(--toolbar-start-end-padding) - 2px)
-    calc(var(--toolbar-start-end-padding) + 4px) !important;
+  padding-inline: calc(var(--toolbar-start-end-padding) - 2px) calc(var(--toolbar-start-end-padding) + 4px) !important;
 }
 
 /* Spacing between icon and label for bookmarks bar items */
 #managed-bookmarks > .toolbarbutton-icon,
 #bookmarks-toolbar-placeholder > .toolbarbutton-icon,
-#PlacesToolbarItems
-  > .bookmark-item
-  > .toolbarbutton-icon[label]:not([label=""]),
+#PlacesToolbarItems > .bookmark-item > .toolbarbutton-icon[label]:not([label=""]),
 #OtherBookmarks.bookmark-item[container] > .toolbarbutton-icon {
   margin-inline-end: 8px !important;
 }

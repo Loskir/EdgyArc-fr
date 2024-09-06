@@ -1,7 +1,5 @@
 :root {
-  --toolbar-field-focus-background-color: var(
-    --toolbar-field-background-color
-  ) !important;
+  --toolbar-field-focus-background-color: var(--toolbar-field-background-color) !important;
 }
 
 #urlbar[breakout-extend] {

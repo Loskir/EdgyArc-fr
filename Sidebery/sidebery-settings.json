@@ -369,23 +369,11 @@
       "separator-1",
       {
         "name": "%menu.tab.move_to_sub_menu_name",
-        "opts": [
-          "moveToNewWin",
-          "moveToWin",
-          "separator-5",
-          "moveToPanel",
-          "moveToNewPanel"
-        ]
+        "opts": ["moveToNewWin", "moveToWin", "separator-5", "moveToPanel", "moveToNewPanel"]
       },
       {
         "name": "%menu.tab.reopen_in_sub_menu_name",
-        "opts": [
-          "reopenInNewWin",
-          "reopenInWin",
-          "separator-6",
-          "reopenInCtr",
-          "reopenInNewCtr"
-        ]
+        "opts": ["reopenInNewWin", "reopenInWin", "separator-6", "reopenInCtr", "reopenInNewCtr"]
       },
       {
         "name": "%menu.tab.colorize_",

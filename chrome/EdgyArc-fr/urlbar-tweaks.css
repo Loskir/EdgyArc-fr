@@ -22,10 +22,7 @@
       ) !important;
     }
     @media (-moz-bool-pref: "af.edgyarc.macos-translucent") {
-      background-color: light-dark(
-        rgba(255, 255, 255, 0.7),
-        rgba(0, 0, 0, 0.24)
-      ) !important;
+      background-color: light-dark(rgba(255, 255, 255, 0.7), rgba(0, 0, 0, 0.24)) !important;
     }
   }
 }
@@ -68,10 +65,7 @@
   font-size: 0.8em;
   border-radius: var(--urlbar-icon-border-radius);
   background-color: var(--urlbar-box-bgcolor);
-  margin-block: calc(
-    (var(--urlbar-min-height) - 20px) / 2 - 1px /* border */ -
-      var(--urlbar-container-padding)
-  );
+  margin-block: calc((var(--urlbar-min-height) - 20px) / 2 - 1px /* border */ - var(--urlbar-container-padding));
 }
 
 #urlbar-zoom-button {
@@ -128,17 +122,13 @@
 /*minimal navbar mod*/
 
 @media (-moz-bool-pref: "af.edgyarc.minimal-navbar") {
-  :root[windowtype="navigator:browser"]:not([customizing])
-    #nav-bar.browser-toolbar {
+  :root[windowtype="navigator:browser"]:not([customizing]) #nav-bar.browser-toolbar {
     @media (-moz-bool-pref: "af.edgyarc.thin-navbar") {
       &:hover {
         #urlbar:not([breakout-extend][focused]) {
           #urlbar-background {
             border-radius: 0 !important;
-            background-color: light-dark(
-              rgba(255, 255, 255, 0.5),
-              rgba(0, 0, 0, 0.12)
-            ) !important;
+            background-color: light-dark(rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.12)) !important;
 
             &::before {
               opacity: 0 !important;

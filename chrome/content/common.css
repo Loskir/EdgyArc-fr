@@ -7,26 +7,14 @@
     --in-content-page-background: light-dark(#f7f7f7, #252525) !important;
     --in-content-deemphasized-text: light-dark(#666, #bbb) !important;
     --in-content-box-background: light-dark(#fff, #333) !important;
-    --in-content-box-background-odd: light-dark(
-      rgb(0 0 0 / 0.05),
-      rgb(255 255 255 / 0.05)
-    ) !important;
-    --in-content-box-info-background: light-dark(
-      #f7f7f7,
-      rgb(255 255 255 / 0.15)
-    ) !important;
+    --in-content-box-background-odd: light-dark(rgb(0 0 0 / 0.05), rgb(255 255 255 / 0.05)) !important;
+    --in-content-box-info-background: light-dark(#f7f7f7, rgb(255 255 255 / 0.15)) !important;
     --in-content-icon-color: light-dark(#666, #fff) !important;
     --in-content-accent-color: light-dark(#006cbe, #75b6e8) !important;
     --in-content-accent-color-active: light-dark(#1683d8, #4c98d1) !important;
-    --in-content-border-hover: light-dark(
-      rgb(0 0 0 / 0.5),
-      rgb(255 255 255 / 0.3)
-    ) !important;
+    --in-content-border-hover: light-dark(rgb(0 0 0 / 0.5), rgb(255 255 255 / 0.3)) !important;
     --in-content-border-invalid: var(--red-50) !important;
-    --in-content-border-color: light-dark(
-      #bebebe,
-      rgb(255 255 255 / 0.2)
-    ) !important;
+    --in-content-border-color: light-dark(#bebebe, rgb(255 255 255 / 0.2)) !important;
     --in-content-error-text-color: light-dark(#ff848a, #ff9aa2) !important;
     --in-content-link-color: light-dark(#0078d4, #75b6e8) !important;
     --in-content-link-color-hover: light-dark(#006cbe, #63ade5) !important;
@@ -37,59 +25,27 @@
     --link-color-active: var(--in-content-link-color-active) !important;
     --link-color-visited: var(--in-content-link-color-visited) !important;
     --in-content-button-text-color: var(--in-content-text-color) !important;
-    --in-content-button-text-color-hover: var(
-      --in-content-text-color
-    ) !important;
-    --in-content-button-text-color-active: var(
-      --in-content-button-text-color-hover
-    ) !important;
+    --in-content-button-text-color-hover: var(--in-content-text-color) !important;
+    --in-content-button-text-color-active: var(--in-content-button-text-color-hover) !important;
     --in-content-button-background: light-dark(#ededed, #3b3b3b) !important;
-    --in-content-button-background-hover: light-dark(
-      #e5e5e5,
-      #545454
-    ) !important;
-    --in-content-button-background-active: light-dark(
-      #d5d5d5,
-      #606060
-    ) !important;
+    --in-content-button-background-hover: light-dark(#e5e5e5, #545454) !important;
+    --in-content-button-background-active: light-dark(#d5d5d5, #606060) !important;
     --in-content-primary-button-text-color: light-dark(#fff, #fff) !important;
-    --in-content-primary-button-background: light-dark(
-      #0061e0,
-      #006cbe
-    ) !important;
-    --in-content-primary-button-background-hover: light-dark(
-      #0250bb,
-      #0078d4
-    ) !important;
-    --in-content-primary-button-background-active: light-dark(
-      #053e94,
-      #005ca3
-    ) !important;
+    --in-content-primary-button-background: light-dark(#0061e0, #006cbe) !important;
+    --in-content-primary-button-background-hover: light-dark(#0250bb, #0078d4) !important;
+    --in-content-primary-button-background-active: light-dark(#053e94, #005ca3) !important;
     --color-accent-primary: light-dark(#0078d4, #006cbe) !important;
     --color-accent-primary-hover: light-dark(#006cbe, #0078d4) !important;
     --color-accent-primary-active: light-dark(#0749ac, #005ca3) !important;
-    --in-content-danger-button-background: light-dark(
-      #df4951,
-      #e12424
-    ) !important;
-    --in-content-danger-button-background-hover: light-dark(
-      #ea656c,
-      #f94343
-    ) !important;
-    --in-content-danger-button-background-active: light-dark(
-      #bb353c,
-      #aa1e1e
-    ) !important;
-    --in-content-focus-outline-color: light-dark(
-      rgb(0 85 215 / 0.5),
-      #63ade5
-    ) !important;
+    --in-content-danger-button-background: light-dark(#df4951, #e12424) !important;
+    --in-content-danger-button-background-hover: light-dark(#ea656c, #f94343) !important;
+    --in-content-danger-button-background-active: light-dark(#bb353c, #aa1e1e) !important;
+    --in-content-focus-outline-color: light-dark(rgb(0 85 215 / 0.5), #63ade5) !important;
     --focus-outline-color: var(--in-content-focus-outline-color) !important;
     --in-content-table-background: light-dark(#f7f7f7, #252525) !important;
     --in-content-text-color: var(--in-content-page-color) !important;
     --border-interactive-color: light-dark(#929292, #858585) !important;
-    scrollbar-color: light-dark(rgb(37 37 37 / 0.4), rgb(255 255 255 / 0.4))
-      light-dark(#f7f7f7, #252525) !important;
+    scrollbar-color: light-dark(rgb(37 37 37 / 0.4), rgb(255 255 255 / 0.4)) light-dark(#f7f7f7, #252525) !important;
   }
 
   ::selection {
@@ -139,8 +95,7 @@ url-prefix(about:addons) {
     --toggle-dot-background-color: var(--in-content-page-color) !important;
     --toggle-dot-background-color-on-pressed: #fff !important;
     --toggle-dot-transform-x: calc(
-      var(--toggle-width) - 2 * var(--toggle-dot-margin) - 2 *
-        var(--toggle-border-width) - var(--toggle-dot-width)
+      var(--toggle-width) - 2 * var(--toggle-dot-margin) - 2 * var(--toggle-border-width) - var(--toggle-dot-width)
     ) !important;
   }
 }

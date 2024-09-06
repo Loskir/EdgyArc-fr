@@ -17,8 +17,7 @@
 @import url("translucent-base.css");
 @import url("translucent-arc.css");
 @import url("urlbar-tweaks.css");
-@import url("not-edge-sidebar.css") not
-  (-moz-bool-pref: "af.edgyarc.edge-sidebar");
+@import url("not-edge-sidebar.css") not (-moz-bool-pref: "af.edgyarc.edge-sidebar");
 @import url("edge-sidebar.css") (-moz-bool-pref: "af.edgyarc.edge-sidebar");
 /*Other tweaks*/
 @import url("icons.css");
@@ -44,23 +43,17 @@
     --af-minimal-opacity: 0.45;
   }
   --af-bg-transition: background-color 0ms linear !important;
-  --af-content-border: 1px solid
-    light-dark(rgba(0, 0, 0, 0.2), rgba(220, 220, 220, 0.2));
-  --af-content-shadow: 0 0 1px 1px
-    light-dark(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
+  --af-content-border: 1px solid light-dark(rgba(0, 0, 0, 0.2), rgba(220, 220, 220, 0.2));
+  --af-content-shadow: 0 0 1px 1px light-dark(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
   --urlbar-icon-border-radius: 5px !important;
   --toolbarbutton-border-radius: 8px !important;
   --toolbarbutton-inner-padding: 8px !important;
   --uc-toolbarbutton-inner-inline-padding: 8px !important;
   --toolbarbutton-outer-padding: 2px !important;
   --tabs-navbar-shadow-size: 0px !important;
-  --tab-selected-bgcolor: light-dark(
-    rgba(255, 255, 255, 0.6),
-    rgba(180, 180, 180, 0.4)
-  ) !important;
+  --tab-selected-bgcolor: light-dark(rgba(255, 255, 255, 0.6), rgba(180, 180, 180, 0.4)) !important;
   --uc-titlebar-drag-space: 8px !important;
-  --uc-sidebar-shadow: 0px 0px 0px 1px
-      light-dark(rgba(0, 0, 0, 0.2), rgba(200, 200, 200, 0.4)),
+  --uc-sidebar-shadow: 0px 0px 0px 1px light-dark(rgba(0, 0, 0, 0.2), rgba(200, 200, 200, 0.4)),
     0px 0px 18px 4px light-dark(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4));
 
   /* Make corners more rounded */
@@ -150,21 +143,9 @@
 }
 
 :root:not([customizing]) {
-  &:has(
-      #sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]:not(
-          [hidden]
-        )
-    ),
-  &:has(
-      #sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]:not(
-          [hidden]
-        )
-    ),
-  &:has(
-      #sidebar-box[sidebarcommand="tabcenter-reborn_ariasuni-sidebar-action"]:not(
-          [hidden]
-        )
-    ) {
+  &:has(#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]:not([hidden])),
+  &:has(#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]:not([hidden])),
+  &:has(#sidebar-box[sidebarcommand="tabcenter-reborn_ariasuni-sidebar-action"]:not([hidden])) {
     &[tabsintitlebar] #nav-bar {
       --uc-tab-top-margin: 0px;
     }
@@ -297,9 +278,7 @@
     padding-left: calc(0px + var(--uc-titlebar-drag-space)) !important;
 
     /* Remove the padding from the side of the navbar */
-    &
-      #nav-bar-customization-target
-      > :is(toolbarbutton, toolbaritem):first-child {
+    & #nav-bar-customization-target > :is(toolbarbutton, toolbaritem):first-child {
       padding-inline-start: 0px !important;
     }
   }
@@ -336,10 +315,7 @@
 }
 
 .infobar {
-  background-color: light-dark(
-    rgba(255, 255, 255, 1),
-    rgba(30, 30, 30, 0.6)
-  ) !important;
+  background-color: light-dark(rgba(255, 255, 255, 1), rgba(30, 30, 30, 0.6)) !important;
   &::before {
     opacity: 0.6 !important;
   }
@@ -359,10 +335,7 @@
 }
 
 .findbar-textbox {
-  background-color: light-dark(
-    rgba(255, 255, 255, 0.8),
-    rgba(20, 20, 20, 0.6)
-  ) !important;
+  background-color: light-dark(rgba(255, 255, 255, 0.8), rgba(20, 20, 20, 0.6)) !important;
 }
 
 .browserContainer > findbar {

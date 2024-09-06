@@ -10,9 +10,7 @@
 }
 
 #nav-bar .toolbarbutton-1 > .toolbarbutton-icon {
-  width: calc(
-    2 * var(--uc-toolbarbutton-inner-inline-padding) + 16px
-  ) !important;
+  width: calc(2 * var(--uc-toolbarbutton-inner-inline-padding) + 16px) !important;
 }
 
 #nav-bar .toolbarbutton-1 > .toolbarbutton-icon,
@@ -27,11 +25,8 @@
   top: calc(50% - 10px) !important;
 }
 
-#nav-bar-customization-target
-  :where(#reload-button, #stop-button)
-  > .toolbarbutton-icon {
-  padding: var(--toolbarbutton-inner-padding)
-    var(--uc-toolbarbutton-inner-inline-padding) !important;
+#nav-bar-customization-target :where(#reload-button, #stop-button) > .toolbarbutton-icon {
+  padding: var(--toolbarbutton-inner-padding) var(--uc-toolbarbutton-inner-inline-padding) !important;
 }
 
 toolbar .toolbaritem-combined-buttons {
@@ -47,16 +42,12 @@ toolbar .toolbaritem-combined-buttons {
 
 .browser-toolbar #fxa-toolbar-menu-button > .toolbarbutton-badge-stack {
   padding: var(--toolbarbutton-inner-padding) !important;
-  margin-inline: calc(
-    var(--uc-toolbarbutton-inner-inline-padding) -
-      var(--toolbarbutton-inner-padding)
-  ) !important;
+  margin-inline: calc(var(--uc-toolbarbutton-inner-inline-padding) - var(--toolbarbutton-inner-padding)) !important;
 }
 
 #TabsToolbar #fxa-toolbar-menu-button > .toolbarbutton-badge-stack {
   margin-inline: calc(
-    var(--uc-toolbarbutton-inner-inline-padding) -
-      (var(--toolbarbutton-inner-padding) + 2px)
+    var(--uc-toolbarbutton-inner-inline-padding) - (var(--toolbarbutton-inner-padding) + 2px)
   ) !important;
 }
 
@@ -87,33 +78,14 @@ toolbar .toolbaritem-combined-buttons {
     transition: background-color 0.25s ease !important;
   }
 
-  .toolbarbutton-1:not([disabled="true"]):is([open], [checked], :hover:active)
-    > .toolbarbutton-icon,
-  .toolbarbutton-1:not([disabled="true"]):is([open], [checked], :hover:active)
-    > .toolbarbutton-text,
-  .toolbarbutton-1:not([disabled="true"]):is([open], [checked], :hover:active)
-    > .toolbarbutton-badge-stack,
+  .toolbarbutton-1:not([disabled="true"]):is([open], [checked], :hover:active) > .toolbarbutton-icon,
+  .toolbarbutton-1:not([disabled="true"]):is([open], [checked], :hover:active) > .toolbarbutton-text,
+  .toolbarbutton-1:not([disabled="true"]):is([open], [checked], :hover:active) > .toolbarbutton-badge-stack,
   :not(.panel-subview-body > toolbaritem)
-    > .bookmark-item:not(menu, menuitem):not([disabled="true"]):is(
-      [open],
-      [checked],
-      :hover:active
-    ),
-  .urlbar-page-action:not([disabled="true"]):is(
-      [open],
-      [checked],
-      :hover:active
-    ),
-  .identity-box-button:not([disabled="true"]):is(
-      [open],
-      [checked],
-      :hover:active
-    ),
-  #tracking-protection-icon-container:not([disabled="true"]):is(
-      [open],
-      [checked],
-      :hover:active
-    ),
+    > .bookmark-item:not(menu, menuitem):not([disabled="true"]):is([open], [checked], :hover:active),
+  .urlbar-page-action:not([disabled="true"]):is([open], [checked], :hover:active),
+  .identity-box-button:not([disabled="true"]):is([open], [checked], :hover:active),
+  #tracking-protection-icon-container:not([disabled="true"]):is([open], [checked], :hover:active),
   panel button:not([disabled="true"]):is([open], [checked], :hover:active),
   panel menulist:not([disabled="true"]):is([open], [checked], :hover:active),
   .titlebar-button:not([disabled="true"]):hover:active {

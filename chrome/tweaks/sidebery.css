@@ -48,28 +48,16 @@
   /* Linux/GTK support, side effect: Firefox themes do not work. */
   @media (-moz-gtk-csd-available) {
     body:not([style*="--s-frame-bg"]) {
-      --s-frame-bg: light-dark(
-        color-mix(in srgb, ActiveCaption 90%, black),
-        ActiveCaption
-      ) !important;
+      --s-frame-bg: light-dark(color-mix(in srgb, ActiveCaption 90%, black), ActiveCaption) !important;
       --s-frame-fg: CaptionText !important;
-      --s-toolbar-bg: light-dark(
-        -moz-dialog,
-        color-mix(in srgb, -moz-dialog 92%, white)
-      ) !important;
+      --s-toolbar-bg: light-dark(-moz-dialog, color-mix(in srgb, -moz-dialog 92%, white)) !important;
       --s-toolbar-fg: -moz-dialogtext !important;
-      --s-act-el-bg: light-dark(
-        -moz-dialog,
-        color-mix(in srgb, -moz-dialog 80%, white)
-      ) !important;
+      --s-act-el-bg: light-dark(-moz-dialog, color-mix(in srgb, -moz-dialog 80%, white)) !important;
       --s-act-el-fg: -moz-dialogtext !important;
       --s-act-el-border: transparent !important;
       --s-popup-bg: Field !important;
       --s-popup-fg: FieldText !important;
-      --s-popup-border: light-dark(
-        transparent,
-        color-mix(in srgb, currentColor 17%, Field)
-      ) !important;
+      --s-popup-border: light-dark(transparent, color-mix(in srgb, currentColor 17%, Field)) !important;
       --s-accent: AccentColor !important;
     }
   }
@@ -88,40 +76,24 @@
     --tabs-inner-gap: 8px !important;
     --tabs-border-radius: 4px !important;
     --general-border-radius: 4px !important;
-    --tabs-activated-shadow: 0 4px 4px rgb(0 0 0 / 0.18),
-      0 0px 2px rgb(0 0 0 / 0.19) !important;
-    --tabs-normal-fg: color-mix(
-      in srgb,
-      var(--frame-fg) 87%,
-      transparent
-    ) !important;
+    --tabs-activated-shadow: 0 4px 4px rgb(0 0 0 / 0.18), 0 0px 2px rgb(0 0 0 / 0.19) !important;
+    --tabs-normal-fg: color-mix(in srgb, var(--frame-fg) 87%, transparent) !important;
     --nav-btn-height: 32px !important;
     --nav-btn-width: 32px !important;
-    --separator-color: color-mix(
-      in srgb,
-      var(--frame-fg) 20%,
-      transparent
-    ) !important;
-    --nav-btn-active-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.086),
-      inset 0 1px 3px 0 rgb(0 0 0 / 0.086) !important;
+    --separator-color: color-mix(in srgb, var(--frame-fg) 20%, transparent) !important;
+    --nav-btn-active-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.086), inset 0 1px 3px 0 rgb(0 0 0 / 0.086) !important;
 
     /* Light mode adjustments. */
     &[data-frame-color-scheme="light"] {
       color-scheme: light !important;
-      --tabs-normal-fg: color-mix(
-        in srgb,
-        var(--frame-fg) 82%,
-        transparent
-      ) !important;
+      --tabs-normal-fg: color-mix(in srgb, var(--frame-fg) 82%, transparent) !important;
     }
 
     /* Dark mode adjustments. */
     &[data-frame-color-scheme="dark"] {
       color-scheme: dark !important;
-      --tabs-activated-shadow: 0 4px 4px rgb(0 0 0 / 0.44),
-        0 0px 2px rgb(0 0 0 / 0.47) !important;
-      --nav-btn-active-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.071),
-        0 1px 3px 0 rgb(0 0 0 / 0.212) !important;
+      --tabs-activated-shadow: 0 4px 4px rgb(0 0 0 / 0.44), 0 0px 2px rgb(0 0 0 / 0.47) !important;
+      --nav-btn-active-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.071), 0 1px 3px 0 rgb(0 0 0 / 0.212) !important;
     }
 
     @media (-moz-bool-pref: "uc.tweak.rounded-corners") {
@@ -138,10 +110,7 @@
     body:not([style*="--s-frame-bg"]) {
       --s-frame-bg: light-dark(#f3f3f3, #202020) !important;
       --s-act-el-bg: light-dark(#fff, #3f3f3f) !important;
-      --s-act-el-border: light-dark(
-        transparent,
-        rgb(255 255 255 / 0.06)
-      ) !important;
+      --s-act-el-border: light-dark(transparent, rgb(255 255 255 / 0.06)) !important;
     }
 
     #root.root {
@@ -151,8 +120,7 @@
       --toolbar-bg: var(--s-frame-bg) !important;
       --toolbar-fg: var(--s-frame-fg) !important;
       --s-toolbar-bg: light-dark(#f3f3f3, #202020) !important;
-      --tabs-activated-shadow: 0 2.5px 3px 1px rgb(0 0 0 / 0.08),
-        0 0 0 1px rgb(0 0 0 / 0.11) !important;
+      --tabs-activated-shadow: 0 2.5px 3px 1px rgb(0 0 0 / 0.08), 0 0 0 1px rgb(0 0 0 / 0.11) !important;
       --tabs-border-radius: 8px !important;
 
       &[data-frame-color-scheme="dark"] {
@@ -188,10 +156,7 @@
     /* Colourised tab shadow and outline. */
     &[data-colorized="true"] {
       --tabs-activated-shadow: unset !important;
-      --s-act-el-border: light-dark(
-        rgb(0 0 0 / 0.35),
-        rgb(255 255 255 / 0.25)
-      ) !important;
+      --s-act-el-border: light-dark(rgb(0 0 0 / 0.35), rgb(255 255 255 / 0.25)) !important;
     }
 
     & .ctx {
@@ -347,8 +312,6 @@
 
   /* Plus icon. */
   #icon_plus path {
-    d: path(
-      "M7 1a.5.5 0 01 1 0v6h6a.5.5 0 01 0 1H8v6a.5.5 0 01-1 0V8H1a.5.5 0 01 0-1h6z"
-    ) !important;
+    d: path("M7 1a.5.5 0 01 1 0v6h6a.5.5 0 01 0 1H8v6a.5.5 0 01-1 0V8H1a.5.5 0 01 0-1h6z") !important;
   }
 }

@@ -8,9 +8,7 @@
     1px + var(--uc-urlbar-inline-padding) + var(--uc-urlbar-icon-inline-padding)
   ) !important;
   --urlbar-icon-border-radius: 99px !important;
-  --urlbar-icon-padding: calc(
-    var(--toolbarbutton-inner-padding) - 2px
-  ) !important;
+  --urlbar-icon-padding: calc(var(--toolbarbutton-inner-padding) - 2px) !important;
   --urlbar-margin-inline: 6px !important;
   --identity-box-margin-inline: 6px !important;
   --uc-urlbar-icon-inline-padding: var(--uc-toolbarbutton-inner-inline-padding);
@@ -20,21 +18,13 @@
 
   /* urlbar height */
   & #urlbar-container {
-    --urlbar-container-height: calc(
-      8px + 16px + var(--toolbarbutton-inner-padding) * 2
-    ) !important;
+    --urlbar-container-height: calc(8px + 16px + var(--toolbarbutton-inner-padding) * 2) !important;
   }
 
   & #urlbar {
-    --urlbar-toolbar-height: calc(
-      8px + 16px + var(--toolbarbutton-inner-padding) * 2
-    ) !important;
-    --urlbar-height: calc(
-      16px + var(--toolbarbutton-inner-padding) * 2
-    ) !important;
-    --urlbar-min-height: calc(
-      16px + var(--toolbarbutton-inner-padding) * 2
-    ) !important;
+    --urlbar-toolbar-height: calc(8px + 16px + var(--toolbarbutton-inner-padding) * 2) !important;
+    --urlbar-height: calc(16px + var(--toolbarbutton-inner-padding) * 2) !important;
+    --urlbar-min-height: calc(16px + var(--toolbarbutton-inner-padding) * 2) !important;
   }
 
   /* Spacing for urlbar suggestion icons. */
@@ -100,23 +90,18 @@
   /* Vertically align search suggestion thumbnail images. */
   &[rich-suggestion] > .urlbarView-row-inner > .urlbarView-favicon {
     margin-inline-start: calc(
-      var(--urlbarView-icon-margin-start) +
-        (16px - var(--urlbarView-rich-suggestion-default-icon-size)) / 2
+      var(--urlbarView-icon-margin-start) + (16px - var(--urlbarView-rich-suggestion-default-icon-size)) / 2
     ) !important;
     margin-inline-end: calc(
-      var(--urlbarView-icon-margin-end) +
-        (16px - var(--urlbarView-rich-suggestion-default-icon-size)) / 2
+      var(--urlbarView-icon-margin-end) + (16px - var(--urlbarView-rich-suggestion-default-icon-size)) / 2
     ) !important;
   }
 }
 
 /* Add highlighted marker to the left of selected URL bar items. */
-.urlbarView-row:not([type="tip"], [type="dynamic"])[selected]
-  > .urlbarView-row-inner,
+.urlbarView-row:not([type="tip"], [type="dynamic"])[selected] > .urlbarView-row-inner,
 .urlbarView-row-inner[selected] {
-  box-shadow: 3px 0
-    var(--uc-urlbarView-accent-color, var(--toolbar-field-focus-border-color))
-    inset !important;
+  box-shadow: 3px 0 var(--uc-urlbarView-accent-color, var(--toolbar-field-focus-border-color)) inset !important;
 }
 
 /* Keep URL bar in place when expanding. */
@@ -202,10 +187,7 @@
 }
 
 /* Pin icon for URL bar suggested sites. */
-.urlbarView-row[pinned]
-  > .urlbarView-row-inner
-  > .urlbarView-no-wrap
-  > .urlbarView-type-icon {
+.urlbarView-row[pinned] > .urlbarView-row-inner > .urlbarView-no-wrap > .urlbarView-type-icon {
   fill: var(--toolbar-field-color) !important;
 }
 
@@ -215,9 +197,7 @@
 }
 
 /* Make the lock icon brighter in dark mode. */
-#nav-bar[brighttext]
-  #identity-box:not([pageproxystate="invalid"])
-  #identity-icon {
+#nav-bar[brighttext] #identity-box:not([pageproxystate="invalid"]) #identity-icon {
   fill-opacity: calc(var(--urlbar-icon-fill-opacity) * 1.8) !important;
 }
 
@@ -227,12 +207,7 @@
 }
 
 /* Label on the left of the URL bar, shown when viewing Firefox or extension pages. */
-#identity-box[pageproxystate="valid"]:is(
-    .notSecureText,
-    .chromeUI,
-    .extensionPage
-  )
-  > .identity-box-button {
+#identity-box[pageproxystate="valid"]:is(.notSecureText, .chromeUI, .extensionPage) > .identity-box-button {
   position: relative;
   width: unset !important;
 

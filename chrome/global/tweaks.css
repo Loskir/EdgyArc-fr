@@ -37,10 +37,7 @@ bugs with certain themes eg. dark text on dark background.) */
     --toolbar-bgcolor: light-dark(#fff, #3f3f3f) !important;
     --lwt-tab-text: light-dark(#262626, #fff) !important;
     --chrome-content-separator-color: light-dark(#bfbfbf, #535353) !important;
-    --lwt-tab-line-color: light-dark(
-      transparent,
-      rgb(255 255 255 / 0.06)
-    ) !important;
+    --lwt-tab-line-color: light-dark(transparent, rgb(255 255 255 / 0.06)) !important;
   }
 
   /* Uses :root body to avoid affecting other variables by changing
@@ -51,14 +48,8 @@ bugs with certain themes eg. dark text on dark background.) */
     --toolbarbutton-icon-fill: var(--lwt-text-color) !important;
 
     &:-moz-window-inactive {
-      --toolbar-color: var(
-        --lwt-text-color-inactive,
-        var(--lwt-text-color)
-      ) !important;
-      --toolbarbutton-icon-fill: var(
-        --lwt-text-color-inactive,
-        var(--lwt-text-color)
-      ) !important;
+      --toolbar-color: var(--lwt-text-color-inactive, var(--lwt-text-color)) !important;
+      --toolbarbutton-icon-fill: var(--lwt-text-color-inactive, var(--lwt-text-color)) !important;
     }
   }
 
@@ -112,8 +103,7 @@ bugs with certain themes eg. dark text on dark background.) */
   }
 
   .tab-background[selected] {
-    border: 1px solid
-      var(--lwt-tab-line-color, var(--lwt-tabs-border-color, transparent)) !important;
+    border: 1px solid var(--lwt-tab-line-color, var(--lwt-tabs-border-color, transparent)) !important;
     outline: 1px solid var(--uc-tab-shadow-outline) !important;
 
     /* Fractional scaling adjustments (150%, 175%, etc.) */
@@ -201,8 +191,7 @@ bugs with certain themes eg. dark text on dark background.) */
 }
 
 @media (-moz-bool-pref: "uc.tweak.context-menu.hide-access-key") {
-  :where(menuitem, menu)
-    > :is(.menu-text, .menu-iconic-text)[value]:not([value=""]) {
+  :where(menuitem, menu) > :is(.menu-text, .menu-iconic-text)[value]:not([value=""]) {
     &::before {
       /* The default value is -moz-label-content, which takes the data from the
        * value attribute and highlights the character found in the accesskey
@@ -213,9 +202,7 @@ bugs with certain themes eg. dark text on dark background.) */
 }
 
 @media (-moz-bool-pref: "uc.tweak.show-tab-close-button-on-hover") {
-  #tabbrowser-tabs[closebuttons="activetab"]
-    .tabbrowser-tab:not([pinned], [selected]):hover
-    .tab-close-button {
+  #tabbrowser-tabs[closebuttons="activetab"] .tabbrowser-tab:not([pinned], [selected]):hover .tab-close-button {
     display: flex !important;
   }
 }

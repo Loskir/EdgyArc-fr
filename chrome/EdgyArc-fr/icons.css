@@ -37,10 +37,7 @@
   --uc-toolbarbutton-inner-inline-padding: 6px !important;
   --toolbarbutton-outer-padding: 2px;
   --toolbarbutton-hover-background: var(--urlbar-box-hover-bgcolor) !important;
-  margin-left: calc(
-    -16px - 2 * (var(--toolbarbutton-inner-padding) +
-          var(--uc-toolbarbutton-inner-inline-padding))
-  );
+  margin-left: calc(-16px - 2 * (var(--toolbarbutton-inner-padding) + var(--uc-toolbarbutton-inner-inline-padding)));
   margin-right: cacl(var(--toolbarbutton-inner-padding) * 2);
   z-index: 9999 !important;
 }
@@ -101,28 +98,18 @@
 }
 
 /* uBlock Origin => custom svg icon */
-:is(
-    .webextension-browser-action,
-    .eom-addon-button
-  )[data-extensionid="uBlock0@raymondhill.net"]
-  .toolbarbutton-icon {
+:is(.webextension-browser-action, .eom-addon-button)[data-extensionid="uBlock0@raymondhill.net"] .toolbarbutton-icon {
   list-style-image: url("icons/ublock.svg");
 }
 
 /* Bitwarden => custom svg icon */
-:is(
-    .webextension-browser-action,
-    .eom-addon-button
-  )[data-extensionid="{446900e4-71c2-419f-a6a7-df9c091e268b}"]
+:is(.webextension-browser-action, .eom-addon-button)[data-extensionid="{446900e4-71c2-419f-a6a7-df9c091e268b}"]
   .toolbarbutton-icon {
   list-style-image: url("icons/bitwarden.svg");
 }
 
 /* Privacy Badger => it's own monochrome icon */
-:is(
-    .webextension-browser-action,
-    .eom-addon-button
-  )[data-extensionid="jid1-MnnxcxisBPnSXQ@jetpack"]
+:is(.webextension-browser-action, .eom-addon-button)[data-extensionid="jid1-MnnxcxisBPnSXQ@jetpack"]
   .toolbarbutton-icon {
   list-style-image: image-set(
     url("moz-extension://51ac6f66-1bb5-4473-93a0-41ead025ec8f/icons/badger-19-disabled.png"),
@@ -131,10 +118,6 @@
 }
 
 /* Dark Reader => custom svg icon (moon) */
-:is(
-    .webextension-browser-action,
-    .eom-addon-button
-  )[data-extensionid="addon@darkreader.org"]
-  .toolbarbutton-icon {
+:is(.webextension-browser-action, .eom-addon-button)[data-extensionid="addon@darkreader.org"] .toolbarbutton-icon {
   list-style-image: url("icons/dr.svg");
 }

@@ -8,36 +8,12 @@ url-prefix("about:firefoxview") {
     --newtab-background-color-secondary: #fff !important;
     --newtab-text-primary-color: #252525 !important;
     --newtab-primary-action-background: #0078d4 !important;
-    --newtab-text-secondary-color: color-mix(
-      in srgb,
-      var(--newtab-text-primary-color) 80%,
-      transparent
-    ) !important;
-    --newtab-element-hover-color: color-mix(
-      in srgb,
-      var(--newtab-background-color) 95%,
-      #000
-    ) !important;
-    --newtab-element-active-color: color-mix(
-      in srgb,
-      var(--newtab-background-color) 90%,
-      #000
-    ) !important;
-    --newtab-element-secondary-color: color-mix(
-      in srgb,
-      currentColor 5%,
-      transparent
-    ) !important;
-    --newtab-element-secondary-hover-color: color-mix(
-      in srgb,
-      currentColor 12%,
-      transparent
-    ) !important;
-    --newtab-element-secondary-active-color: color-mix(
-      in srgb,
-      currentColor 25%,
-      transparent
-    ) !important;
+    --newtab-text-secondary-color: color-mix(in srgb, var(--newtab-text-primary-color) 80%, transparent) !important;
+    --newtab-element-hover-color: color-mix(in srgb, var(--newtab-background-color) 95%, #000) !important;
+    --newtab-element-active-color: color-mix(in srgb, var(--newtab-background-color) 90%, #000) !important;
+    --newtab-element-secondary-color: color-mix(in srgb, currentColor 5%, transparent) !important;
+    --newtab-element-secondary-hover-color: color-mix(in srgb, currentColor 12%, transparent) !important;
+    --newtab-element-secondary-active-color: color-mix(in srgb, currentColor 25%, transparent) !important;
     --newtab-primary-element-hover-color: color-mix(
       in srgb,
       var(--newtab-primary-action-background) 90%,
@@ -54,27 +30,16 @@ url-prefix("about:firefoxview") {
       var(--newtab-primary-action-background) 25%,
       transparent
     ) !important;
-    --newtab-border-color: color-mix(
-      in srgb,
-      var(--newtab-background-color) 75%,
-      #000
-    ) !important;
+    --newtab-border-color: color-mix(in srgb, var(--newtab-background-color) 75%, #000) !important;
     --newtab-wordmark-color: #737373 !important;
     --newtab-status-success: #50b080 !important;
     --newtab-status-error: #ff848a !important;
     --newtab-inner-box-shadow-color: rgb(0 0 0 / 0.1) !important;
-    --newtab-overlay-color: color-mix(
-      in srgb,
-      var(--newtab-background-color) 85%,
-      transparent
-    ) !important;
+    --newtab-overlay-color: color-mix(in srgb, var(--newtab-background-color) 85%, transparent) !important;
     --newtab-text-emphasis-background: #ffed32 !important;
     --newtab-text-emphasis-text-color: #000 !important;
-    --newtab-textbox-focus-color: var(
-      --newtab-primary-action-background
-    ) !important;
-    --newtab-textbox-focus-boxshadow: 0 0 0 1px
-        var(--newtab-primary-action-background),
+    --newtab-textbox-focus-color: var(--newtab-primary-action-background) !important;
+    --newtab-textbox-focus-boxshadow: 0 0 0 1px var(--newtab-primary-action-background),
       0 0 0 4px rgba(var(--newtab-primary-action-background), 0.3) !important;
     --newtab-button-secondary-color: inherit !important;
   }
@@ -84,36 +49,12 @@ url-prefix("about:firefoxview") {
     --newtab-background-color-secondary: #4a4a4a !important;
     --newtab-text-primary-color: #fff !important;
     --newtab-primary-action-background: #75b6e8 !important;
-    --newtab-element-hover-color: color-mix(
-      in srgb,
-      var(--newtab-background-color) 95%,
-      #fff
-    ) !important;
-    --newtab-element-active-color: color-mix(
-      in srgb,
-      var(--newtab-background-color) 90%,
-      #fff
-    ) !important;
-    --newtab-element-secondary-color: color-mix(
-      in srgb,
-      currentColor 10%,
-      transparent
-    ) !important;
-    --newtab-element-secondary-hover-color: color-mix(
-      in srgb,
-      currentColor 17%,
-      transparent
-    ) !important;
-    --newtab-element-secondary-active-color: color-mix(
-      in srgb,
-      currentColor 30%,
-      transparent
-    ) !important;
-    --newtab-border-color: color-mix(
-      in srgb,
-      var(--newtab-background-color) 75%,
-      #fff
-    ) !important;
+    --newtab-element-hover-color: color-mix(in srgb, var(--newtab-background-color) 95%, #fff) !important;
+    --newtab-element-active-color: color-mix(in srgb, var(--newtab-background-color) 90%, #fff) !important;
+    --newtab-element-secondary-color: color-mix(in srgb, currentColor 10%, transparent) !important;
+    --newtab-element-secondary-hover-color: color-mix(in srgb, currentColor 17%, transparent) !important;
+    --newtab-element-secondary-active-color: color-mix(in srgb, currentColor 30%, transparent) !important;
+    --newtab-border-color: color-mix(in srgb, var(--newtab-background-color) 75%, #fff) !important;
     --newtab-primary-element-text-color: #252525 !important;
     --newtab-wordmark-color: #fff !important;
     --newtab-status-success: #50b080 !important;
@@ -127,14 +68,8 @@ url-prefix("about:firefoxview") {
         color-mix(in oklch, AccentColor 92%, black),
         color-mix(in oklch, AccentColor 60%, white)
       );
-      --newtab-background-color: light-dark(
-        -moz-dialog,
-        color-mix(in srgb, -moz-dialog 82%, black)
-      ) !important;
-      --newtab-background-color-secondary: light-dark(
-        Field,
-        color-mix(in srgb, -moz-dialog 86%, white)
-      ) !important;
+      --newtab-background-color: light-dark(-moz-dialog, color-mix(in srgb, -moz-dialog 82%, black)) !important;
+      --newtab-background-color-secondary: light-dark(Field, color-mix(in srgb, -moz-dialog 86%, white)) !important;
       --newtab-text-primary-color: -moz-dialogtext !important;
       --newtab-wordmark-color: light-dark(
         color-mix(in srgb, -moz-dialogtext 65%, transparent),
@@ -155,11 +90,7 @@ url-prefix("about:firefoxview") {
 
     /* If there is no secondary background, create one from other colours. */
     &:not([style*="--newtab-background-color-secondary"]) {
-      --newtab-background-color-secondary: color-mix(
-        in srgb,
-        var(--newtab-background-color) 15%,
-        white
-      ) !important;
+      --newtab-background-color-secondary: color-mix(in srgb, var(--newtab-background-color) 15%, white) !important;
     }
 
     /* Dark adjustments for themes. */
@@ -207,8 +138,7 @@ url-prefix("about:home") {
       --elevation: 4;
       box-shadow:
         0 0 calc((var(--elevation) * 0.225px) + 2px) rgb(0 0 0 / 0.11),
-        0 calc(var(--elevation) * 0.4px) calc((var(--elevation) * 0.9px))
-          rgb(0 0 0 / 0.13) !important;
+        0 calc(var(--elevation) * 0.4px) calc((var(--elevation) * 0.9px)) rgb(0 0 0 / 0.13) !important;
 
       &:hover {
         --elevation: 6;
@@ -313,12 +243,7 @@ url-prefix("about:home") {
     }
 
     & .card-preview-image-outer,
-    &
-      .ds-card-grid.ds-card-grid-border
-      .ds-card:not(.placeholder)
-      .img-wrapper
-      .img
-      img {
+    & .ds-card-grid.ds-card-grid-border .ds-card:not(.placeholder) .img-wrapper .img img {
       border-radius: var(--uc-border-radius) var(--uc-border-radius) 0 0 !important;
     }
   }
@@ -364,14 +289,8 @@ url-prefix("about:home") {
         color-mix(in oklch, AccentColor 92%, black),
         color-mix(in oklch, AccentColor 60%, white)
       );
-      --in-content-page-background: light-dark(
-        -moz-dialog,
-        color-mix(in srgb, -moz-dialog 82%, black)
-      ) !important;
-      --uc-background-color-secondary: light-dark(
-        Field,
-        color-mix(in srgb, -moz-dialog 86%, white)
-      ) !important;
+      --in-content-page-background: light-dark(-moz-dialog, color-mix(in srgb, -moz-dialog 82%, black)) !important;
+      --uc-background-color-secondary: light-dark(Field, color-mix(in srgb, -moz-dialog 86%, white)) !important;
       --in-content-page-color: -moz-dialogtext !important;
       --in-content-focus-outline-color: var(--uc-accent-adjusted) !important;
     }
@@ -391,8 +310,7 @@ url-prefix("about:home") {
       --elevation: 4;
       box-shadow:
         0 0 calc((var(--elevation) * 0.225px) + 2px) rgb(0 0 0 / 0.11),
-        0 calc(var(--elevation) * 0.4px) calc((var(--elevation) * 0.9px))
-          rgb(0 0 0 / 0.13) !important;
+        0 calc(var(--elevation) * 0.4px) calc((var(--elevation) * 0.9px)) rgb(0 0 0 / 0.13) !important;
 
       &:hover {
         --elevation: 6;

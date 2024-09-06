@@ -44,16 +44,10 @@ findbar .close-icon {
   border-radius: var(--toolbarbutton-border-radius) !important;
 
   &:not([disabled]):hover {
-    background-color: var(
-      --toolbarbutton-hover-background,
-      rgb(190 190 190 / 0.2)
-    ) !important;
+    background-color: var(--toolbarbutton-hover-background, rgb(190 190 190 / 0.2)) !important;
 
     &:active {
-      background-color: var(
-        --toolbarbutton-active-background,
-        rgb(190 190 190 / 0.4)
-      ) !important;
+      background-color: var(--toolbarbutton-active-background, rgb(190 190 190 / 0.4)) !important;
     }
   }
 }
@@ -62,16 +56,12 @@ findbar .close-icon {
 @media (-moz-bool-pref: "uc.tweak.rounded-corners") {
   findbar {
     border: none !important;
-    margin-top: calc(
-      -1 * var(--uc-tweak-rounded-corners-padding, 0px)
-    ) !important;
+    margin-top: calc(-1 * var(--uc-tweak-rounded-corners-padding, 0px)) !important;
     background-color: transparent !important;
     padding-inline: var(--uc-tweak-rounded-corners-padding, 0px) !important;
 
     &[hidden] {
-      margin-bottom: calc(
-        var(--uc-tweak-rounded-corners-padding, 0px) - 40px
-      ) !important;
+      margin-bottom: calc(var(--uc-tweak-rounded-corners-padding, 0px) - 40px) !important;
     }
   }
 }

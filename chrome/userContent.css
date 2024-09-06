@@ -2,10 +2,8 @@
 @import url("content/common.css") (-moz-bool-pref: "af.edgyarc.edge-styles");
 @import url("content/newtab.css") (-moz-bool-pref: "af.edgyarc.edge-styles");
 @import url("tweaks/sidebery.css") (-moz-bool-pref: "uc.tweak.theme.sidebery");
-@import url("EdgyArc-fr/sidebery.css")
-(-moz-bool-pref: "af.sidebery.edgyarc-theme");
-@import url("tweaks/sidebery-translucent.css")
-(-moz-bool-pref: "af.edgyarc.macos-translucent");
+@import url("EdgyArc-fr/sidebery.css") (-moz-bool-pref: "af.sidebery.edgyarc-theme");
+@import url("tweaks/sidebery-translucent.css") (-moz-bool-pref: "af.edgyarc.macos-translucent");
 
 @-moz-document regexp("^moz-extension://.*?/sidebar/sidebar.html")
 {
@@ -46,8 +44,7 @@
   }
 
   .TabsPanel .new-tab-btns::after {
-    transition: background-color var(--color-change-duration)
-      var(--color-change-easing);
+    transition: background-color var(--color-change-duration) var(--color-change-easing);
   }
 
   .NavigationBar .nav-item .icon {

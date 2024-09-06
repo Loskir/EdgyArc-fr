@@ -1,9 +1,16 @@
 #sidebar-box {
-  margin: 0px !important;
   padding: 0px !important;
   &,
   #sidebar {
     border-radius: 0 0 0 0 !important;
+  }
+
+  margin-block-end: calc(-1 * var(--uc-tweak-rounded-corners-padding));
+  &:not([positionend]) {
+    margin-inline-start: calc(-1 * var(--uc-tweak-rounded-corners-padding));
+  }
+  &[positionend] {
+    margin-inline-end: calc(-1 * var(--uc-tweak-rounded-corners-padding));
   }
 }
 :root[titlepreface="᠎"] {

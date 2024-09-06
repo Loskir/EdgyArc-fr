@@ -143,7 +143,6 @@ Import the following into sidebery (`Sideberry Settings` > `Help` > `Import Addo
 
 - `windows` Translucency / blur does not work on windows
 - `linux` Translucency / blur does not work out of the box
-- `windows` `linux` `macos` Sidebar on right is misaligned
 
 ## Screenshots
 

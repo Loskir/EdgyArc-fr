@@ -1,12 +1,12 @@
 /* Translucency support for Sidebery */
 @-moz-document regexp("^moz-extension://.*?/sidebar/sidebar.html")
 {
-  #root,
-  :root,
-  .TabsPanel .bottom-space,
-  .TabsPanel .new-tab-btns,
-  .TabsPanel .new-tab-btns::after,
-  .BookmarkNode > .body {
+  #root {
+    --toolbar-bg: transparent !important;
+    --frame-bg: transparent !important;
+  }
+
+  :root {
     background-color: transparent !important;
   }
 }

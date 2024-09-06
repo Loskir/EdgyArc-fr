@@ -9,4 +9,8 @@
   :root {
     background-color: transparent !important;
   }
+
+  .NavigationBar .hidden-panels-popup {
+    --toolbar-bg: var(--s-toolbar-bg, #fafafa);
+  }
 }

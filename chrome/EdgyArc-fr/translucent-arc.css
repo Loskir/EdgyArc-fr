@@ -2,6 +2,16 @@
   background-color: transparent !important;
 }
 
+:root {
+  --af-minimal-opacity: 1;
+  @media (-moz-bool-pref: "af.edgyarc.macos-translucent") {
+    --af-minimal-opacity: 0.53;
+  }
+  @media (-moz-bool-pref: "af.edgyarc.macos-more-translucent") {
+    --af-minimal-opacity: 0.45;
+  }
+}
+
 :root[titlepreface="᠎"] {
   #sidebar-box {
     &:hover::before {
@@ -30,7 +40,7 @@ body::before,
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: -1;
+  z-index: 1;
   pointer-events: none;
   background-color: var(--lwt-accent-color) !important;
   opacity: var(--af-minimal-opacity) !important;

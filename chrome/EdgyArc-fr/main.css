@@ -35,13 +35,6 @@
 }
 
 :root {
-  --af-minimal-opacity: 1;
-  @media (-moz-bool-pref: "af.edgyarc.macos-translucent") {
-    --af-minimal-opacity: 0.53;
-  }
-  @media (-moz-bool-pref: "af.edgyarc.macos-more-translucent") {
-    --af-minimal-opacity: 0.45;
-  }
   --af-bg-transition: background-color 0ms linear !important;
   --af-content-border: 1px solid light-dark(rgba(0, 0, 0, 0.2), rgba(220, 220, 220, 0.2));
   --af-content-shadow: 0 0 1px 1px light-dark(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));

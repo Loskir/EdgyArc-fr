@@ -1,5 +1,5 @@
 body::before,
-:root[inFullscreen] #navigator-toolbox::before {
+:root[inFullscreen] #navigator-toolbox[style*="transform"]::before {
   background-image: url("noise-dark.png");
   background-size: 110px;
 
@@ -9,7 +9,7 @@ body::before,
 }
 @media (prefers-color-scheme: dark) {
   body::before,
-  :root[inFullscreen] #navigator-toolbox::before {
+  :root[inFullscreen] #navigator-toolbox[style*="transform"]::before {
     background-image: url("noise-light.png");
   }
 }

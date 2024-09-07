@@ -15,7 +15,6 @@
   /* Fix issues with rounded corners rendering. */
   :root {
     color-scheme: light dark !important;
-    background: light-dark(#aaa, #222) !important;
   }
 
   /* On macOS, ensure that text is rendered correctly. */
@@ -48,7 +47,6 @@
 
   /* ::::: Variables ::::: */
   #root.root {
-    --frame-bg: var(--s-frame-bg) !important;
     --frame-fg: var(--s-toolbar-fg) !important;
     --general-margin: 6px !important;
     --tabs-font: 0.9rem system-ui !important;

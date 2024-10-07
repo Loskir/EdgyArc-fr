@@ -1,14 +1,16 @@
-body::before,
+#main-window > body::before,
 :root[inFullscreen] #navigator-toolbox[style*="transform"]::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
   background-image: url("noise-dark.png");
   background-size: 110px;
 
-  @media (prefers-color-scheme: dark) {
-    background-image: url("noise-light.png");
-  }
+  opacity: 0.53;
 }
 @media (prefers-color-scheme: dark) {
-  body::before,
+  #main-window > body::before,
   :root[inFullscreen] #navigator-toolbox[style*="transform"]::before {
     background-image: url("noise-light.png");
   }

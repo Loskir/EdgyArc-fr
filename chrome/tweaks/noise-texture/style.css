@@ -8,6 +8,8 @@
   background-size: 110px;
 
   opacity: 0.53;
+
+  pointer-events: none;
 }
 @media (prefers-color-scheme: dark) {
   #main-window > body::before,

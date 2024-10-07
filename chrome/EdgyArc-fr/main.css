@@ -285,16 +285,14 @@
   .titlebar-buttonbox-container {
     z-index: 999 !important;
   }
-  .titlebar-button.titlebar-restore,
-  .titlebar-button.titlebar-close,
-  .titlebar-button.titlebar-min,
-  .titlebar-button.titlebar-max,
-  .titlebar-button.titlebar-button,
   .titlebar-button {
     padding: 0 15px !important;
     height: 32px !important;
     border-radius: 6px !important;
-    margin: 6px 4px !important;
+    margin: 4px !important;
+  }
+  :root[sizemode="normal"][tabsintitlebar]:not([inFullscreen]) .titlebar-button {
+    margin-top: 5px !important;
   }
   #urlbar,
   #urlbar[breakout][breakout-extend] {

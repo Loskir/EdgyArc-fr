@@ -88,33 +88,29 @@
     --uc-tweak-rounded-corners-shadow: unset;
   }
 
-  /* Apply rounded corners to the browser container. */
   #appcontent .browserStack {
     border-radius: var(--uc-tweak-rounded-corners-radius) !important;
     box-shadow: var(--uc-tweak-rounded-corners-shadow) !important;
-    background-color: var(--tabpanel-background-color) !important;
+  }
+
+  /* Apply rounded corners to the browser container. */
+  #appcontent .browserStack {
     position: relative !important;
     overflow: hidden !important;
-    /* Use pseudo element overlay to simulate rounded corners, similar to the
-     * tab corners, fixes bug with backdrop-filter. */
-    &::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border-radius: inherit;
-      /* Draw toolbar background on the negative corner space, then draw the
-       * same shadow from the browser window on top. */
-      box-shadow:
-        var(--uc-tweak-rounded-corners-shadow, 0 0 transparent),
-        0 0 0 16px var(--browser-frame-bgcolor) !important;
-      clip-path: inset(0);
-      pointer-events: none;
+
+    /* For some reason it seems to do the trick with some pages that overflow rounded corners */
+    /* Completely illogical, but it works */
+    & > browser {
+      clip-path: inset(0 round 1px);
     }
   }
 
   /* Devtools bottom */
-  #appcontent .browserStack:not(:last-child) {
-    margin-block-end: var(--uc-tweak-rounded-corners-padding);
+  #appcontent .browserStack:has(~ .devtools-toolbox-bottom-iframe) {
+    margin-block-end: calc(var(--uc-tweak-rounded-corners-padding) / 2);
+  }
+  .devtools-toolbox-bottom-iframe {
+    margin-block-start: calc(var(--uc-tweak-rounded-corners-padding) / 2);
   }
   /* Devtools right */
   #appcontent .browserContainer:not(:last-child) {
@@ -129,10 +125,8 @@
     background-color: transparent !important;
 
     & .rdm-toolbar {
-      margin-inline: var(--uc-tweak-rounded-corners-padding) !important;
       border-top-left-radius: var(--uc-tweak-rounded-corners-radius) !important;
       border-top-right-radius: var(--uc-tweak-rounded-corners-radius) !important;
-      width: calc(100% - var(--uc-tweak-rounded-corners-padding) * 2) !important;
     }
   }
 

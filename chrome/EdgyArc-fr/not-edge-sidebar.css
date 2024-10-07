@@ -22,11 +22,3 @@
     }
   }
 }
-/* :root:not([customizing]):has(#sidebar-box:not([hidden])) {} */
-:root:has(#sidebar-box:not([hidden])) {
-  /* This cancels left padding and margin on all immediate descendants (content, findbar, bottom-docked devtools) */
-  #appcontent .browserContainer > * {
-    padding-left: 0 !important;
-    margin-left: 0 !important;
-  }
-}

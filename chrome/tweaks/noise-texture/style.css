@@ -1,19 +1,18 @@
-#main-window > body::before,
-:root[inFullscreen] #navigator-toolbox[style*="transform"]::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-
-  background-image: url("noise-dark.png");
-  background-size: 110px;
-
-  opacity: 0.53;
-
-  pointer-events: none;
+:root {
+  --lwt-additional-images: url("noise-dark.svg") !important;
+  --lwt-background-tiling: repeat
 }
 @media (prefers-color-scheme: dark) {
-  #main-window > body::before,
-  :root[inFullscreen] #navigator-toolbox[style*="transform"]::before {
-    background-image: url("noise-light.png");
+  :root {
+    --lwt-additional-images: url("noise-light.svg") !important;
   }
+}
+
+#navigator-toolbox {
+  background-image: none !important;
+}
+
+#main-window > body,
+:root[inFullscreen] #navigator-toolbox[style*="transform"] {
+  background-image: var(--lwt-additional-images) !important;
 }

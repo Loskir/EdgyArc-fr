@@ -12,29 +12,11 @@
   }
 }
 
-:root[titlepreface="᠎"] {
-  #sidebar-box {
-    &:hover::before {
-      content: "";
-      display: block;
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      z-index: 0;
-      pointer-events: none;
-      background-color: var(--lwt-accent-color) !important;
-      opacity: var(--af-minimal-opacity) !important;
-    }
-  }
-}
-
 /* Only affect the root body, not, for example, the adaptive design control one */
 #main-window > body {
   background-color: color-mix(
     in srgb,
-    var(--lwt-accent-color),
+    var(--browser-frame-bgcolor),
     transparent calc((1 - var(--af-minimal-opacity)) * 100%)
   ) !important;
 }
@@ -42,5 +24,5 @@
 /* Fixes transparent toolbar in fullscreen on macos */
 /* Only apply solid background when toolbox moves over the content */
 :root[inFullscreen] #navigator-toolbox[style*="transform"] {
-  background-color: var(--lwt-accent-color) !important;
+  background-color: var(--browser-frame-bgcolor) !important;
 }

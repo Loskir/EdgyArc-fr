@@ -34,6 +34,7 @@ Because Arc and Edge look pretty af but FOSS FTW
 - New option `uc.tweak.hide-tabs-bar.always` that permanently hides native tabs
 - Proper translucency support for Sidebery (introduced in FF 130.0)
 - Noise texture background tweak
+- `af.edgyarc.autohide-sidebar-slide`
 
 ## Usage
 
@@ -101,6 +102,7 @@ Before you start using the theme as-is, you might want to have a look at all the
 | **Centered URL** <br>`af.edgyarc.centered-url`                                                                                                                                             | <video src="https://github.com/artsyfriedchicken/EdgyArc-fr/assets/100123017/aa9a89cb-320f-434c-b66d-8b474bfbdc0a">                             |
 | **🔵 Sidebar Tweaks**<br> ⚠️ Note: Requires [UserChrome Toggle](https://addons.mozilla.org/firefox/addon/userchrome-toggle/) to <br>make use of auto-collapse/auto-hide                    |                                                                                                                                                 |
 | **Enable Sidebery Theme** <br> `af.sidebery.edgyarc-theme`                                                                                                                                 | <video src="https://github.com/artsyfriedchicken/EdgyArc-fr/assets/100123017/504574e5-609b-4192-b061-fc29caea7c48">                             |
+| **Sliding hidden sidebar**<br> `af.edgyarc.autohide-sidebar-slide`                                                                                                                         | <video src="https://github.com/user-attachments/assets/a68b3416-4708-44b6-a410-ae2db6c041ef">                                                   |
 | **Minimal Sidebery when Collapsed**<br> `af.sidebery.minimal-collapsed`                                                                                                                    | <video src="https://github.com/artsyfriedchicken/EdgyArc-fr/assets/100123017/84ccb725-3ca9-4332-82a7-b9dc17909d5b">                             |
 | **Edge-like Sidebar** <br> `af.edgyarc.edge-sidebar`                                                                                                                                       | <video src="https://github.com/artsyfriedchicken/EdgyArc-fr/assets/100123017/7216bcd1-ac58-4264-ba83-61db7f342db0">                             |
 | **Show Sidebar Header** <br> `af.edgyarc.show-sidebar-header`                                                                                                                              | <video src="https://github.com/artsyfriedchicken/EdgyArc-fr/assets/100123017/e72e9f59-e49d-4f79-ad9b-fc12b3f56bcc">                             |

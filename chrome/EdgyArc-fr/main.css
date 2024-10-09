@@ -12,7 +12,8 @@
 */
 
 /* Import external styles */
-@import url("autohide-sidebar-modified.css");
+@import url("autohide-sidebar-modified.css") not (-moz-bool-pref: "af.edgyarc.autohide-sidebar-slide");
+@import url("autohide-sidebar-slide.css") (-moz-bool-pref: "af.edgyarc.autohide-sidebar-slide");
 
 @import url("translucent-base.css");
 @import url("translucent-arc.css");
@@ -67,26 +68,6 @@
 #sidebar-box {
   overflow: visible !important;
   position: relative !important;
-}
-
-/* fix sidebar opacity when auto collapse enabled **/
-:root[titlepreface="᠎"] {
-  #sidebar-header {
-    visibility: collapse !important;
-  }
-
-  #sidebar-box {
-    &:hover {
-      opacity: 1 !important;
-    }
-  }
-
-  /*Add shadow to auto-expanded sidebar on hover*/
-  #sidebar-box:hover > #sidebar {
-    box-shadow: var(--uc-sidebar-shadow) !important;
-    z-index: 3 !important;
-    border-radius: var(--uc-tweak-rounded-corners-radius) !important;
-  }
 }
 
 /* Styles for .sidebar-splitter */

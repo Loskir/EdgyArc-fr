@@ -1,24 +1,6 @@
 #sidebar-box {
   padding: 0px !important;
-  &,
-  #sidebar {
-    border-radius: 0 0 0 0 !important;
-  }
 
   margin-block-end: calc(-1 * var(--uc-tweak-rounded-corners-padding));
-  &:not([positionend]) {
-    margin-inline-start: calc(-1 * var(--uc-tweak-rounded-corners-padding));
-  }
-  &[positionend] {
-    margin-inline-end: calc(-1 * var(--uc-tweak-rounded-corners-padding));
-  }
-}
-:root[titlepreface="᠎"] {
-  #sidebar-box {
-    padding-left: 1px !important;
-    &:hover > #sidebar {
-      margin-left: var(--uc-tweak-rounded-corners-padding) !important;
-      margin-bottom: var(--uc-tweak-rounded-corners-padding) !important;
-    }
-  }
+  margin-inline-start: calc(-1 * var(--uc-tweak-rounded-corners-padding));
 }

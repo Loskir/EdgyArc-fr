@@ -88,13 +88,15 @@
     --uc-tweak-rounded-corners-shadow: unset;
   }
 
-  #appcontent .browserStack {
+  #appcontent .browserStack,
+  #tabbrowser-tabpanels .browserStack {
     border-radius: var(--uc-tweak-rounded-corners-radius) !important;
     box-shadow: var(--uc-tweak-rounded-corners-shadow) !important;
   }
 
   /* Apply rounded corners to the browser container. */
-  #appcontent .browserStack {
+  #appcontent .browserStack,
+  #tabbrowser-tabpanels .browserStack {
     position: relative !important;
     overflow: hidden !important;
 
@@ -106,18 +108,21 @@
   }
 
   /* Devtools bottom */
-  #appcontent .browserStack:has(~ .devtools-toolbox-bottom-iframe) {
+  #appcontent .browserStack:has(~ .devtools-toolbox-bottom-iframe),
+  #tabbrowser-tabpanels .browserStack:has(~ .devtools-toolbox-bottom-iframe) {
     margin-block-end: calc(var(--uc-tweak-rounded-corners-padding) / 2);
   }
   .devtools-toolbox-bottom-iframe {
     margin-block-start: calc(var(--uc-tweak-rounded-corners-padding) / 2);
   }
   /* Devtools right */
-  #appcontent .browserContainer:not(:last-child) {
+  #appcontent .browserContainer:not(:last-child),
+  #tabbrowser-tabpanels .browserContainer:not(:last-child) {
     margin-inline-end: var(--uc-tweak-rounded-corners-padding);
   }
   /* Devtools left */
-  #appcontent .browserContainer:not(:first-child) {
+  #appcontent .browserContainer:not(:first-child),
+  #tabbrowser-tabpanels .browserContainer:not(:first-child) {
     margin-inline-start: var(--uc-tweak-rounded-corners-padding);
   }
 

@@ -123,12 +123,10 @@
 
 /* Apply colours to the default 'Auto' theme. */
 :root:not([lwtheme]) #navigator-toolbox {
-  background-color: var(--lwt-accent-color) !important;
   color: var(--lwt-text-color) !important;
 
-  /* Inactive window background colours. */
+  /* Inactive window colours. */
   &:-moz-window-inactive {
-    background-color: var(--lwt-accent-color-inactive, var(--lwt-accent-color)) !important;
     color: var(--lwt-text-color-inactive, var(--lwt-text-color)) !important;
   }
 }

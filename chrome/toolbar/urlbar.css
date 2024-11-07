@@ -104,12 +104,6 @@
   box-shadow: 3px 0 var(--uc-urlbarView-accent-color, var(--toolbar-field-focus-border-color)) inset !important;
 }
 
-/* Keep URL bar in place when expanding. */
-#urlbar[breakout][breakout-extend] {
-  left: 0 !important;
-  width: 100% !important;
-}
-
 /* Search engine selector */
 .search-one-offs:not([hidden]) {
   padding-block: 6px !important;

@@ -30,7 +30,7 @@ Because Arc and Edge look pretty af but FOSS FTW
 - The color scheme from edge-frfox is disabled by default (can be enabled with `af.edgyarc.edge-styles`)
 - The shadow around the content is disabled making it more consistent
 - Various fixes (centered url, rounded corners, margins)
-- New option `af.edgyarc.separate-extended-urlbar` that makes the url not jump around when clicking on it
+- New option `af.edgyarc.separate-extended-urlbar`
 - New option `uc.tweak.hide-tabs-bar.always` that permanently hides native tabs
 - Proper translucency support for Sidebery (introduced in FF 130.0)
 - Noise texture background tweak

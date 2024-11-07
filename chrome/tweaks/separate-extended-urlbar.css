@@ -5,6 +5,17 @@
 #urlbar[breakout-extend] {
   top: 4px !important;
 
+  /* FF 132- */
+  hbox& {
+    left: 0 !important;
+    width: 100% !important;
+  }
+  /* FF 133+ */
+  div& {
+    margin-left: 0 !important;
+    width: var(--urlbar-width) !important;
+  }
+
   .urlbar-input-container {
     height: var(--urlbar-height) !important;
     padding: var(--urlbar-container-padding) !important;

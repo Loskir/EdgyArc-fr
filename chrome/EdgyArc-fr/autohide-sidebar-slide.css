@@ -5,7 +5,7 @@
     min-width: var(--uc-sidebar-width) !important;
     width: var(--uc-sidebar-width) !important;
     max-width: var(--uc-sidebar-width) !important;
-    z-index: 1;
+    z-index: 3;
 
     --uc-sidebar-extended-width: 260px;
     @media (-moz-bool-pref: "uc.tweak.af.sidebar-width-350") {
@@ -72,6 +72,8 @@
     }
 
     border: solid 1px #ffffff30;
+
+    box-shadow: 0 2px 14px rgba(0, 0, 0, 0.2)
   }
   @media (-moz-bool-pref: "uc.tweak.rounded-corners") {
     #sidebar {

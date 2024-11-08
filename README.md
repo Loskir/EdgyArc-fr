@@ -4,15 +4,6 @@ Because Arc and Edge look pretty af but FOSS FTW
 
 ![Screen Shot 2024-05-04 at 11 44 39 PM](https://github.com/artsyfriedchicken/EdgyArc-fr/assets/100123017/6f0879fa-f08b-4e36-91dd-29e321f81193)
 
-## Prerequisites
-
-- [Sidebery](https://addons.mozilla.org/firefox/addon/sidebery/)
-- [UserChrome Toggle](https://addons.mozilla.org/firefox/addon/userchrome-toggle/)
-- Optional Addons:
-  - [Adaptive Tab Bar Color](https://addons.mozilla.org/en-GB/firefox/addon/adaptive-tab-bar-colour/)
-    `[OR]`
-  - [Firefox Color](https://addons.mozilla.org/en-US/firefox/addon/firefox-color/)
-
 ## Features
 
 - Based on [Edge-frfox](https://github.com/bmFtZQ/edge-frfox)
@@ -38,14 +29,17 @@ Because Arc and Edge look pretty af but FOSS FTW
 
 ## Usage
 
-### Step 1 - Prerequisites
+### Step 1 - Installation
 
 <details>
   <summary> 🔵 Install recommended addons </summary>
 
 - [Sidebery](https://addons.mozilla.org/firefox/addon/sidebery/)
 - [UserChrome Toggle](https://addons.mozilla.org/firefox/addon/userchrome-toggle/) `Required for sidebar autohide`
-- [Adaptive Tab Bar Colour](https://addons.mozilla.org/en-GB/firefox/addon/adaptive-tab-bar-colour/)
+- Optional Addons:
+  - [Adaptive Tab Bar Color](https://addons.mozilla.org/en-GB/firefox/addon/adaptive-tab-bar-colour/)
+    `[OR]`
+  - [Firefox Color](https://addons.mozilla.org/en-US/firefox/addon/firefox-color/)
 
 </details>
 
@@ -54,39 +48,40 @@ Because Arc and Edge look pretty af but FOSS FTW
   
   - Clone or download the repository to your local machine.
   - Copy the contents of the `chrome` folder into your Firefox profile's `chrome` folder.
-  - Enable/Add the following settings in `about:config` to enable some base features
+  - Go to `about:config` and set these properties to `true`
+
+    `toolkit.legacyUserProfileCustomizations.stylesheets`
+
+    `svg.context-properties.content.enabled`
+
+    `layout.css.color-mix.enabled`
+
+    `layout.css.light-dark.enabled`
+
+    `layout.css.has-selector.enabled`
+
+    `widget.macos.titlebar-blend-mode.behind-window` [Required for translucency on macos in FF126+]
+
+    `browser.tabs.allow_transparent_browser` [Required for translucency on macos in FF126+]
+
+  - Set these properties to `true` as well
 
     **Make sure to initialise all of these as Booleans**
 
-    `uc.tweak.hide-tabs-bar` to `true`
+    `uc.tweak.hide-tabs-bar`
 
-    `uc.tweak.hide-forward-button` to `true`
+    `uc.tweak.hide-forward-button`
 
-    `uc.tweak.rounded-corners` to `true`
+    `uc.tweak.rounded-corners`
 
-    `uc.tweak.floating-tabs` to `true`
+    `uc.tweak.floating-tabs`
 
-- Please make sure you also have the following perquisites set to `true`
-
-  `toolkit.legacyUserProfileCustomizations.stylesheets`
-
-  `svg.context-properties.content.enabled`
-
-  `layout.css.color-mix.enabled`
-
-  `layout.css.light-dark.enabled`
-
-  `layout.css.has-selector.enabled`
-
-  `widget.macos.titlebar-blend-mode.behind-window` [Required for translucent macos in FF126+]
-
-  `browser.tabs.allow_transparent_browser`
-
-  </details>
+</details>
 
 ### Step 2 Configure EdgyArc
 
-Before you start using the theme as-is, you might want to have a look at all the style variants built into EdgyArc-fr
+<details>
+<summary>Although the theme can be used as is, you can customize some aspects of it</summary>
 
 | Feature Description                                                                                                                                                                        | Screenshot                                                                                                                                      |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -111,6 +106,7 @@ Before you start using the theme as-is, you might want to have a look at all the
 | **Wider Expanded Sidebar on Hover** <br> `uc.tweak.af.sidebar-width-350`                                                                                                                   |                                                                                                                                                 |
 | **Sidebery Horizontal Navbar <br> on Top Tab List** <br> `af.sidebery.nav-on-top`                                                                                                          |                                                                                                                                                 |
 | **Disable Dynamic Width Pinned Tabs**<br>`af.sidebery.static-pinned-tab-width`                                                                                                             |                                                                                                                                                 |
+</details>
 
 ### Step 3 - Import Sidebery configs
 
@@ -233,7 +229,7 @@ Import the following into sidebery (`Sideberry Settings` > `Help` > `Import Addo
 
 ## Issues and Contributions
 
-If you encounter any issues or have suggestions for improvement, please [open an issue](https://github.com/artsyfriedchicken/EdgyArc-fr/issues). Contributions are always welcome!
+If you encounter any issues or have suggestions for improvement, please [open an issue](https://github.com/Loskir/EdgyArc-fr/issues). Contributions are always welcome!
 
 ## License
 

@@ -21,7 +21,7 @@
    * the bookmarks bar overlaps the #browser element. */
 
   #browser {
-    margin: 0 var(--uc-tweak-rounded-corners-padding) var(--uc-tweak-rounded-corners-padding)
+    padding: 0 var(--uc-tweak-rounded-corners-padding) var(--uc-tweak-rounded-corners-padding)
       var(--uc-tweak-rounded-corners-padding);
   }
 

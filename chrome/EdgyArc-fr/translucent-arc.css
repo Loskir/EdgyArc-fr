@@ -12,8 +12,7 @@
   }
 }
 
-/* Only affect the root body, not, for example, the adaptive design control one */
-#main-window > body {
+#navigator-toolbox, #browser {
   background-color: color-mix(
     in srgb,
     var(--browser-frame-bgcolor),

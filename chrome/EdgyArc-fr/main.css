@@ -320,11 +320,6 @@
   background-color: var(--arrowpanel-background) !important;
 }
 
-/* Make some parts always transparent */
-#navigator-toolbox, #browser {
-  background-color: transparent !important;
-}
-
 /* Prevent pages from being completely transparent */
 .browserStack > browser {
   background-color: var(--lwt-accent-color);

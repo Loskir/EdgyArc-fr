@@ -104,6 +104,15 @@
   list-style-image: url("sidebars.svg") !important;
 }
 
+/* Userchrome Toggle => sidebar icon */
+:is(.webextension-browser-action, .eom-addon-button):is(
+    [data-extensionid="userchrome-toggle-extended@n2ezr.ru"],
+    [data-extensionid="userchrome-toggle@joolee.nl"]
+  )
+  .toolbarbutton-icon {
+  list-style-image: url("sidebars.svg");
+}
+
 #downloads-button,
 #downloads-indicator-anchor,
 #appMenu-downloads-button,

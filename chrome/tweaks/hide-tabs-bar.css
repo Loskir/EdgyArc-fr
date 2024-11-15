@@ -29,14 +29,6 @@
     padding-top: var(--uc-tab-top-margin, 0) !important;
   }
 
-  /* Set background colour of the menu bar to maintain consistency with the navbar */
-  @media not (-moz-bool-pref: "uc.tweak.floating-tabs") {
-    #toolbar-menubar {
-      background-color: var(--toolbar-bgcolor) !important;
-      color: var(--toolbar-color) !important;
-    }
-  }
-
   /* Make sure window controls are removed in full screen mode. */
   &[inDOMFullscreen] #TabsToolbar .titlebar-buttonbox,
   &[inFullscreen] #navigator-toolbox[style*="margin-top"] #TabsToolbar .titlebar-buttonbox {
@@ -173,7 +165,6 @@
   :where(&) #sidebar-box {
     position: relative;
     border-radius: 0 !important;
-    box-shadow: none !important;
 
     & #sidebar-header {
       border-bottom: 0 !important;
@@ -253,14 +244,6 @@
     /* Add some padding to the top of the navbar */
     &[tabsintitlebar] #nav-bar {
       padding-top: var(--uc-tab-top-margin, 0) !important;
-    }
-
-    /* Set background colour of the menu bar to maintain consistency with the navbar */
-    @media not (-moz-bool-pref: "uc.tweak.floating-tabs") {
-      #toolbar-menubar {
-        background-color: var(--toolbar-bgcolor) !important;
-        color: var(--toolbar-color) !important;
-      }
     }
 
     /* Make sure window controls are removed in full screen mode. */
@@ -399,7 +382,6 @@
     :where(&) #sidebar-box {
       position: relative;
       border-radius: 0 !important;
-      box-shadow: none !important;
 
       & #sidebar-header {
         border-bottom: 0 !important;

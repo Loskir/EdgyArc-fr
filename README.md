@@ -66,15 +66,9 @@ Because Arc and Edge look pretty af but FOSS FTW
 
   - Set these properties to `true` as well
 
-    **Make sure to initialise all of these as Booleans**
-
     `uc.tweak.hide-tabs-bar`
 
-    `uc.tweak.hide-forward-button`
-
     `uc.tweak.rounded-corners`
-
-    `uc.tweak.floating-tabs`
 
 </details>
 

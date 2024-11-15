@@ -40,19 +40,6 @@ bugs with certain themes eg. dark text on dark background.) */
     --lwt-tab-line-color: light-dark(transparent, rgb(255 255 255 / 0.06)) !important;
   }
 
-  /* Uses :root body to avoid affecting other variables by changing
-   * --toolbar-color. */
-  :root body {
-    /* Use tabbar colours for better readability when using custom themes. */
-    --toolbar-color: var(--lwt-text-color) !important;
-    --toolbarbutton-icon-fill: var(--lwt-text-color) !important;
-
-    &:-moz-window-inactive {
-      --toolbar-color: var(--lwt-text-color-inactive, var(--lwt-text-color)) !important;
-      --toolbarbutton-icon-fill: var(--lwt-text-color-inactive, var(--lwt-text-color)) !important;
-    }
-  }
-
   @media (-moz-gtk-csd-available) {
     :root:not([lwtheme]) {
       --toolbar-bgcolor: color-mix(in srgb, -moz-dialog 80%, #fff) !important;
@@ -84,12 +71,6 @@ bugs with certain themes eg. dark text on dark background.) */
     & #TabsToolbar {
       --tab-border-radius: 8px !important;
     }
-  }
-
-  /* remove toolbar bg */
-  #nav-bar,
-  #PersonalToolbar {
-    background-color: transparent !important;
   }
 
   /* invert bottom corner radius for tabs */

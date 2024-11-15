@@ -64,7 +64,6 @@
   margin-inline: 3px !important;
   font-size: 0.8em;
   border-radius: var(--urlbar-icon-border-radius);
-  background-color: var(--urlbar-box-bgcolor);
   margin-block: calc((var(--urlbar-min-height) - 20px) / 2 - 1px /* border */ - var(--urlbar-container-padding));
 }
 
@@ -81,10 +80,17 @@
 }
 
 #identity-box,
-#tracking-protection-icon-container,
-#page-action-buttons {
-  opacity: 0.8 !important;
-  transition: opacity 300ms ease-in-out;
+#tracking-protection-icon-container {
+  opacity: 0.7 !important;
+}
+
+#page-action-buttons .urlbar-page-action:not([open]) {
+  opacity: 0.7 !important;
+}
+
+/*only show urlbar buttons on hover*/
+#urlbar:not(:hover) #page-action-buttons .urlbar-page-action:not([open]) {
+  visibility: collapse;
 }
 
 #urlbar[breakout][breakout-extend] {

@@ -46,9 +46,6 @@
   #sidebar,
   #sidebar-header {
     background-color: var(--browser-frame-bgcolor) !important;
-    background-image: var(--lwt-additional-images);
-    background-repeat: var(--lwt-background-tiling);
-    background-position: var(--lwt-background-alignment);
     width: var(--uc-sidebar-extended-width) !important;
 
     transition: transform 200ms ease;

@@ -217,7 +217,10 @@
   }
 }
 
-/*remove tab panel bg*/
+/* remove toolbar bg */
+#nav-bar,
+#PersonalToolbar,
+ /*remove tab panel bg*/
 #tabbrowser-tabpanels {
   background-color: transparent !important;
 }
@@ -235,14 +238,6 @@
 /*add padding to toolbar items*/
 .panel-no-padding {
   padding: 2px !important;
-}
-/* Opacity for toolbar buttons */
-#navigator-toolbox {
-  .toolbarbutton-1,
-  .toolbarbutton-1 .toolbarbutton-icon {
-    opacity: 0.8;
-    transition: opacity 300ms linear !important;
-  }
 }
 
 /* macOS specific positioning */

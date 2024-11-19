@@ -96,12 +96,6 @@
   #tabbrowser-tabpanels .browserStack {
     position: relative !important;
     overflow: hidden !important;
-
-    /* For some reason it seems to do the trick with some pages that overflow rounded corners */
-    /* Completely illogical, but it works */
-    & > browser {
-      clip-path: inset(0 round 1px);
-    }
   }
 
   /* Devtools bottom */

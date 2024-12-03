@@ -35,7 +35,7 @@ See the above repository for updates as well as full license text. */
     min-width: var(--uc-sidebar-width) !important;
     width: var(--uc-sidebar-width) !important;
     max-width: var(--uc-sidebar-width) !important;
-    z-index: 1;
+    z-index: 3;
     @media not (-moz-bool-pref: "uc.tweak.af.sidebar-width-350") {
       --uc-sidebar-hover-width: 260px;
     }

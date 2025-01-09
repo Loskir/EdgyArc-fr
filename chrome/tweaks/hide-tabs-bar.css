@@ -20,12 +20,12 @@
   }
 
   /* Fix issue with missing window controls. */
-  &[tabsintitlebar] #titlebar {
+  &:not([drawtitle]) #titlebar {
     will-change: auto !important;
   }
 
   /* Add some padding to the top of the navbar */
-  &[tabsintitlebar] #nav-bar {
+  &:not([drawtitle]) #nav-bar {
     padding-top: var(--uc-tab-top-margin, 0) !important;
   }
 
@@ -38,7 +38,7 @@
   /* macOS specific positioning */
   @media (-moz-platform: macos) {
     /* Offset navbar contents to make space for the window controls */
-    &[tabsintitlebar]:not([inFullscreen]) #nav-bar {
+    &:not([drawtitle]):not([inFullscreen]) #nav-bar {
       padding-left: calc(70px + var(--uc-titlebar-drag-space)) !important;
 
       /* Remove the padding from the side of the navbar */
@@ -65,7 +65,7 @@
   /* Windows specific positioning */
   @media (-moz-platform: windows) {
     /* Offset navbar contents to make space for the window controls */
-    &:where([inFullscreen], [tabsintitlebar]) #nav-bar {
+    &:where([inFullscreen], :not([drawtitle])) #nav-bar {
       padding-inline-end: calc(140px + var(--uc-titlebar-drag-space)) !important;
 
       /* Remove the padding from the side of the navbar */
@@ -108,7 +108,7 @@
     }
 
     /* Offset navbar contents to make space for the window controls */
-    &:where([inFullscreen], [tabsintitlebar]) #nav-bar {
+    &:where([inFullscreen], :not([drawtitle])) #nav-bar {
       /* Window controls on the right. */
       @media not (-moz-gtk-csd-reversed-placement) {
         padding-inline-end: calc(var(--uc-window-controls-width, 0px) + var(--uc-titlebar-drag-space)) !important;
@@ -237,12 +237,12 @@
     }
 
     /* Fix issue with missing window controls. */
-    &[tabsintitlebar] #titlebar {
+    &:not([drawtitle]) #titlebar {
       will-change: auto !important;
     }
 
     /* Add some padding to the top of the navbar */
-    &[tabsintitlebar] #nav-bar {
+    &:not([drawtitle]) #nav-bar {
       padding-top: var(--uc-tab-top-margin, 0) !important;
     }
 
@@ -255,7 +255,7 @@
     /* macOS specific positioning */
     @media (-moz-platform: macos) {
       /* Offset navbar contents to make space for the window controls */
-      &[tabsintitlebar]:not([inFullscreen]) #nav-bar {
+      &:not([drawtitle]):not([inFullscreen]) #nav-bar {
         padding-left: calc(70px + var(--uc-titlebar-drag-space)) !important;
 
         /* Remove the padding from the side of the navbar */
@@ -282,7 +282,7 @@
     /* Windows specific positioning */
     @media (-moz-platform: windows) {
       /* Offset navbar contents to make space for the window controls */
-      &:where([inFullscreen], [tabsintitlebar]) #nav-bar {
+      &:where([inFullscreen], :not([drawtitle])) #nav-bar {
         padding-inline-end: calc(140px + var(--uc-titlebar-drag-space)) !important;
 
         /* Remove the padding from the side of the navbar */
@@ -325,7 +325,7 @@
       }
 
       /* Offset navbar contents to make space for the window controls */
-      &:where([inFullscreen], [tabsintitlebar]) #nav-bar {
+      &:where([inFullscreen], :not([drawtitle])) #nav-bar {
         /* Window controls on the right. */
         @media not (-moz-gtk-csd-reversed-placement) {
           padding-inline-end: calc(var(--uc-window-controls-width, 0px) + var(--uc-titlebar-drag-space)) !important;

@@ -9,7 +9,7 @@
   /* Remove extra space at the top of the window when in fullscreen or when
    * title bars are enabled. */
   &[inFullscreen],
-  &:not([tabsintitlebar]) {
+  &[drawtitle] {
     --uc-tab-top-margin: 0px !important;
   }
 
@@ -655,7 +655,7 @@
   /* If the titlebar buttons are on the right, then use the alternate gradient
    * if the menu bar is not permanently enabled. */
   @media (-moz-platform: windows), (-moz-gtk-csd-available) and (not (-moz-gtk-csd-reversed-placement)) {
-    :root[tabsintitlebar] #toolbar-menubar:not([autohide="false"]) ~ #TabsToolbar & {
+    :root:not([drawtitle]) #toolbar-menubar:not([autohide="false"]) ~ #TabsToolbar & {
       background: var(--uc-gradient-alt);
     }
   }

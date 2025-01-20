@@ -191,7 +191,7 @@
 /*fade toolbar background image for lwthemes - goes really great with Firefox Color setups!*/
 #navigator-toolbox {
   border-bottom: none !important;
-  
+
   :root[lwtheme] & {
     background-image: none !important; /*remove the background image from the actual toolbox*/
     &::after {
@@ -251,9 +251,6 @@
     & #nav-bar-customization-target > :is(toolbarbutton, toolbaritem):first-child {
       padding-inline-start: 0px !important;
     }
-  }
-  .titlebar-buttonbox-container .titlebar-buttonbox {
-    top: -3px;
   }
 }
 

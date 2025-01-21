@@ -120,13 +120,13 @@
   &:has(#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]:not([hidden])),
   &:has(#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]:not([hidden])),
   &:has(#sidebar-box[sidebarcommand="tabcenter-reborn_ariasuni-sidebar-action"]:not([hidden])) {
-    &[tabsintitlebar] #nav-bar {
+    &:not([drawtitle]) #nav-bar {
       --uc-tab-top-margin: 0px;
     }
   }
 
   @media (-moz-bool-pref: "uc.tweak.hide-tabs-bar.always") {
-    &[tabsintitlebar] #nav-bar {
+    &:not([drawtitle]) #nav-bar {
       --uc-tab-top-margin: 0px;
     }
   }
@@ -191,7 +191,8 @@
 /*fade toolbar background image for lwthemes - goes really great with Firefox Color setups!*/
 #navigator-toolbox {
   border-bottom: none !important;
-  &:-moz-lwtheme {
+
+  :root[lwtheme] & {
     background-image: none !important; /*remove the background image from the actual toolbox*/
     &::after {
       content: "";
@@ -243,16 +244,13 @@
 /* macOS specific positioning */
 @media (-moz-platform: macos) {
   /* Offset navbar contents to make space for the window controls */
-  &[tabsintitlebar]:not([inFullscreen]) #nav-bar {
+  &:not([drawtitle]):not([inFullscreen]) #nav-bar {
     padding-left: calc(0px + var(--uc-titlebar-drag-space)) !important;
 
     /* Remove the padding from the side of the navbar */
     & #nav-bar-customization-target > :is(toolbarbutton, toolbaritem):first-child {
       padding-inline-start: 0px !important;
     }
-  }
-  .titlebar-buttonbox-container .titlebar-buttonbox {
-    top: -3px;
   }
 }
 
@@ -267,7 +265,7 @@
     border-radius: 6px !important;
     margin: 4px !important;
   }
-  :root[sizemode="normal"][tabsintitlebar]:not([inFullscreen]) .titlebar-button {
+  :root[sizemode="normal"]:not([drawtitle]):not([inFullscreen]) .titlebar-button {
     margin-top: 5px !important;
   }
   #urlbar,

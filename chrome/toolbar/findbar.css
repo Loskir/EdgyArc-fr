@@ -53,7 +53,7 @@ findbar .close-icon {
 }
 
 /* Rounded corners optimisations. */
-@media (-moz-bool-pref: "uc.tweak.rounded-corners") {
+@media (-moz-pref("uc.tweak.rounded-corners")) {
   findbar {
     border: none !important;
     background-color: transparent !important;

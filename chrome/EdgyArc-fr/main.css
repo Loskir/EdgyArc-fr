@@ -12,19 +12,19 @@
 */
 
 /* Import external styles */
-@import url("autohide-sidebar-modified.css") not (-moz-bool-pref: "af.edgyarc.autohide-sidebar-slide");
-@import url("autohide-sidebar-slide.css") (-moz-bool-pref: "af.edgyarc.autohide-sidebar-slide");
+@import url("autohide-sidebar-modified.css") not (-moz-pref("af.edgyarc.autohide-sidebar-slide"));
+@import url("autohide-sidebar-slide.css") (-moz-pref("af.edgyarc.autohide-sidebar-slide"));
 
 @import url("translucent-base.css");
 @import url("translucent-arc.css");
 @import url("urlbar-tweaks.css");
-@import url("not-edge-sidebar.css") not (-moz-bool-pref: "af.edgyarc.edge-sidebar");
-@import url("edge-sidebar.css") (-moz-bool-pref: "af.edgyarc.edge-sidebar");
+@import url("not-edge-sidebar.css") not (-moz-pref("af.edgyarc.edge-sidebar"));
+@import url("edge-sidebar.css") (-moz-pref("af.edgyarc.edge-sidebar"));
 /*Other tweaks*/
 @import url("icons.css");
 
 /*variables*/
-@media (-moz-bool-pref: "uc.tweak.floating-tabs") {
+@media (-moz-pref("uc.tweak.floating-tabs")) {
   :root:not([lwtheme]),
   :root[privatebrowsingmode="temporary"]:where(
       [style*="--lwt-accent-color: rgb(28, 27, 34)"]:not(
@@ -51,7 +51,7 @@
     0px 0px 18px 4px light-dark(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4));
 
   /* Make corners more rounded */
-  @media (-moz-bool-pref: "uc.tweak.rounded-corners") {
+  @media (-moz-pref("uc.tweak.rounded-corners")) {
     --uc-tweak-rounded-corners-padding: 8px !important;
     --uc-tweak-rounded-corners-radius: 7px !important;
   }
@@ -88,17 +88,17 @@
   & * {
     font-size: 0.94em !important;
   }
-  @media (-moz-bool-pref: "af.edgyarc.bottom-sidebar-header") {
+  @media (-moz-pref("af.edgyarc.bottom-sidebar-header")) {
     order: 4 !important;
-    @media not (-moz-bool-pref: "af.edgyarc.edge-sidebar") {
+    @media not (-moz-pref("af.edgyarc.edge-sidebar")) {
       #sidebar-switcher-target {
         margin-bottom: 10px !important;
       }
     }
-    @media (-moz-bool-pref: "af.edgyarc.edge-sidebar") {
+    @media (-moz-pref("af.edgyarc.edge-sidebar")) {
     }
   }
-  @media not (-moz-bool-pref: "af.edgyarc.show-sidebar-header") {
+  @media not (-moz-pref("af.edgyarc.show-sidebar-header")) {
     visibility: collapse !important; /*hide sidebar by default*/
   }
 
@@ -125,7 +125,7 @@
     }
   }
 
-  @media (-moz-bool-pref: "uc.tweak.hide-tabs-bar.always") {
+  @media (-moz-pref("uc.tweak.hide-tabs-bar.always")) {
     &:not([drawtitle]) #nav-bar {
       --uc-tab-top-margin: 0px;
     }

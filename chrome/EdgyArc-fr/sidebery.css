@@ -87,7 +87,7 @@
     --tabs-pinned-width: 42px !important;
     --tabs-color-layer-opacity: 0.4 !important;
     --tabs-activated-color-layer-opacity: 0.6 !important;
-    @media (-moz-bool-pref: "af.edgyarc.macos-translucent") {
+    @media (-moz-pref("af.edgyarc.macos-translucent")) {
       --tabs-color-layer-opacity: 0.5 !important;
       --tabs-activated-color-layer-opacity: 0.6 !important;
     }
@@ -332,10 +332,10 @@
     .TabsPanel .new-tab-btns {
       /* Add space for the separator. */
       padding-top: calc(var(--tabs-margin) + 1px) !important;
-      @media (-moz-bool-pref: "af.sidebery.nav-on-top") {
+      @media (-moz-pref("af.sidebery.nav-on-top")) {
         margin-bottom: 10px !important;
       }
-      @media (-moz-bool-pref: "af.sidebery.top-new-tab-btn") {
+      @media (-moz-pref("af.sidebery.top-new-tab-btn")) {
         margin-bottom: 0px !important;
 
         .new-tab-btn {
@@ -348,7 +348,7 @@
         width: calc(100% - var(--tabs-margin) * 2) !important;
         inset-inline: auto !important;
         top: 0 !important;
-        @media not (-moz-bool-pref: "af.sidebery.top-new-tab-btn") {
+        @media not (-moz-pref("af.sidebery.top-new-tab-btn")) {
           border-top: 1px solid var(--separator-color) !important;
         }
 
@@ -391,7 +391,7 @@
           color: var(--frame-fg) !important;
         }
       }
-      @media (-moz-bool-pref: "af.sidebery.top-new-tab-btn") {
+      @media (-moz-pref("af.sidebery.top-new-tab-btn")) {
         order: -5 !important;
       }
     }
@@ -399,7 +399,7 @@
     /* Navigation box */
     .top-horizontal-box {
       display: flex;
-      @media not (-moz-bool-pref: "af.sidebery.nav-on-top") {
+      @media not (-moz-pref("af.sidebery.nav-on-top")) {
         order: 3 !important;
       }
 
@@ -415,7 +415,7 @@
           height 100ms ease-in-out 0ms,
           width 100ms ease-in-out 0ms;
 
-        @media not (-moz-bool-pref: "af.sidebery.always-panel-show-tab-count") {
+        @media not (-moz-pref("af.sidebery.always-panel-show-tab-count")) {
           .nav-item:not(:hover):not([data-active="true"]) .len {
             opacity: 0 !important;
             transition: opacity 200ms linear !important;
@@ -465,7 +465,7 @@
     /*------------on narrow sidebar*/
     @media (min-width: 150px) and (max-width: 239px) {
       --pinned-tabs-col: 3;
-      @media not (-moz-bool-pref: "af.sidebery.static-pinned-tab-width") {
+      @media not (-moz-pref("af.sidebery.static-pinned-tab-width")) {
         .PinnedTabsBar .tab-wrapper {
           /* when one tab in bottom row */
           &:nth-child(3n + 1):last-child {
@@ -484,7 +484,7 @@
     /*--------------on regular sidebar*/
     @media (min-width: 240px) and (max-width: 280px) {
       --pinned-tabs-col: 4;
-      @media not (-moz-bool-pref: "af.sidebery.static-pinned-tab-width") {
+      @media not (-moz-pref("af.sidebery.static-pinned-tab-width")) {
         .PinnedTabsBar .tab-wrapper {
           /* when one tab in bottom row */
           &:nth-child(4n-3):last-child {
@@ -526,7 +526,7 @@
     /*----------- Collapsed sidebar stuff from here ----------------------------*/
 
     @media (max-width: 150px) {
-      @media (-moz-bool-pref: "af.sidebery.minimal-collapsed") {
+      @media (-moz-pref("af.sidebery.minimal-collapsed")) {
         .PinnedTabsBar,
         .top-horizontal-box {
           visibility: collapse !important;
@@ -626,7 +626,7 @@
     /*----------- Collapsed sidebar stuff from here ----------------------------*/
 
     @media (max-width: 160px) {
-      @media (-moz-bool-pref: "af.sidebery.minimal-collapsed") {
+      @media (-moz-pref("af.sidebery.minimal-collapsed")) {
         .PinnedTabsBar,
         .PinnedTabsBar .Tab,
         .top-horizontal-box * {

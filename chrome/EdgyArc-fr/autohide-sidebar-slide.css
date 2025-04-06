@@ -8,7 +8,7 @@
     z-index: 3;
 
     --uc-sidebar-extended-width: 260px;
-    @media (-moz-bool-pref: "uc.tweak.af.sidebar-width-350") {
+    @media (-moz-pref("uc.tweak.af.sidebar-width-350")) {
       --uc-sidebar-extended-width: 350px;
     }
   }
@@ -70,9 +70,9 @@
 
     border: solid 1px #ffffff30;
 
-    box-shadow: 0 2px 14px rgba(0, 0, 0, 0.2)
+    box-shadow: 0 2px 14px rgba(0, 0, 0, 0.2);
   }
-  @media (-moz-bool-pref: "uc.tweak.rounded-corners") {
+  @media (-moz-pref("uc.tweak.rounded-corners")) {
     #sidebar {
       border-radius: var(--uc-tweak-rounded-corners-radius) !important;
     }

@@ -5,7 +5,7 @@
 @import url("toolbar/personalbar.css");
 @import url("toolbar/findbar.css");
 @import url("toolbar/urlbar.css");
-@import url("global/colors.css") (-moz-bool-pref: "af.edgyarc.edge-styles");
+@import url("global/colors.css") (-moz-pref("af.edgyarc.edge-styles"));
 @import url("global/popup.css");
 @import url("global/browser.css");
 @import url("global/tree.css");
@@ -13,8 +13,8 @@
 /* Edge-Frfox tweaks */
 @import url("global/tweaks.css");
 @import url("tweaks/hide-tabs-bar.css");
-@import url("tweaks/separate-extended-urlbar.css") (-moz-bool-pref: "af.edgyarc.separate-extended-urlbar");
-@import url("tweaks/noise-texture/style.css") (-moz-bool-pref: "af.edgyarc.noise-texture");
+@import url("tweaks/separate-extended-urlbar.css") (-moz-pref("af.edgyarc.separate-extended-urlbar"));
+@import url("tweaks/noise-texture/style.css") (-moz-pref("af.edgyarc.noise-texture"));
 
 /* Import custom stylesheet instead of modifying Edge-Frfox theme files. */
 @import url("custom.css");

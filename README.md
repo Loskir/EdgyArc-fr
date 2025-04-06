@@ -4,6 +4,8 @@ Because Arc and Edge look pretty af but FOSS FTW
 
 ![Screen Shot 2024-05-04 at 11 44 39 PM](https://github.com/artsyfriedchicken/EdgyArc-fr/assets/100123017/6f0879fa-f08b-4e36-91dd-29e321f81193)
 
+### This branch only supports Firefox v137+. For older versions, please see the [v136 branch](https://github.com/Loskir/EdgyArc-fr/tree/v136).
+
 ## Features
 
 - Based on [Edge-frfox](https://github.com/bmFtZQ/edge-frfox)
@@ -26,6 +28,7 @@ Because Arc and Edge look pretty af but FOSS FTW
 - Proper translucency support for Sidebery (introduced in FF 130.0)
 - Noise texture background tweak
 - `af.edgyarc.autohide-sidebar-slide`
+- Support for Firefox v137+
 
 ## Usage
 
@@ -60,15 +63,15 @@ Because Arc and Edge look pretty af but FOSS FTW
 
     `layout.css.has-selector.enabled`
 
-    `widget.macos.titlebar-blend-mode.behind-window` [Required for translucency on macos in FF126+]
+    `widget.macos.titlebar-blend-mode.behind-window` [Required for translucency on macos]
 
-    `browser.tabs.allow_transparent_browser` [Required for translucency on macos in FF126+]
+    `browser.tabs.allow_transparent_browser` [Required for translucency on macos]
 
-  - Set these properties to `true` as well
+- Set these properties to `true` as well
 
-    `uc.tweak.hide-tabs-bar`
+  `uc.tweak.hide-tabs-bar`
 
-    `uc.tweak.rounded-corners`
+  `uc.tweak.rounded-corners`
 
 </details>
 
@@ -100,6 +103,7 @@ Because Arc and Edge look pretty af but FOSS FTW
 | **Wider Expanded Sidebar on Hover** <br> `uc.tweak.af.sidebar-width-350`                                                                                                                   |                                                                                                                                                 |
 | **Sidebery Horizontal Navbar <br> on Top Tab List** <br> `af.sidebery.nav-on-top`                                                                                                          |                                                                                                                                                 |
 | **Disable Dynamic Width Pinned Tabs**<br>`af.sidebery.static-pinned-tab-width`                                                                                                             |                                                                                                                                                 |
+
 </details>
 
 ### Step 3 - Import Sidebery configs

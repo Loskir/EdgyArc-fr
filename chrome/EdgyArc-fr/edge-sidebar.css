@@ -3,19 +3,19 @@
   border-radius: 6px !important;
   padding: 0px !important;
 
-  @media (-moz-bool-pref: "uc.tweak.rounded-corners") {
+  @media (-moz-pref("uc.tweak.rounded-corners")) {
     margin-inline-end: var(--uc-tweak-rounded-corners-padding);
     &[positionend] {
       margin-inline-start: var(--uc-tweak-rounded-corners-padding);
     }
   }
 }
-@media not (-moz-bool-pref: "af.edgyarc.show-sidebar-header") {
+@media not (-moz-pref("af.edgyarc.show-sidebar-header")) {
   #sidebar {
     border-radius: 6px 6px 6px 6px !important;
   }
 }
-@media (-moz-bool-pref: "af.edgyarc.show-sidebar-header") {
+@media (-moz-pref("af.edgyarc.show-sidebar-header")) {
   :root:not([titlepreface="᠎"]) #sidebar {
     border-radius: 0px 0px 6px 6px !important;
   }
@@ -28,10 +28,10 @@
   border-radius: 6px 6px 0 0 !important;
 }
 
-@media not (-moz-bool-pref: "af.edgyarc.macos-translucent") {
+@media not (-moz-pref("af.edgyarc.macos-translucent")) {
   :root {
     --af-normal-opacity: 0.15 !important;
-    @media (-moz-bool-pref: "af.edgyarc.macos-more-translucent") {
+    @media (-moz-pref("af.edgyarc.macos-more-translucent")) {
       --af-normal-opacity: 0.05 !important;
     }
   }
@@ -67,7 +67,7 @@
   }
 }
 
-@media (-moz-bool-pref: "af.edgyarc.macos-translucent") {
+@media (-moz-pref("af.edgyarc.macos-translucent")) {
   #sidebar-box {
     background-color: light-dark(#cdcdcd4d, #0000004d) !important;
   }

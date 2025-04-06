@@ -1,4 +1,4 @@
-@media (-moz-bool-pref: "uc.tweak.af.greyscale-webext-icons") {
+@media (-moz-pref("uc.tweak.af.greyscale-webext-icons")) {
   /* Greyscale extension buttons */
   #navigator-toolbox:not(:hover) .toolbarbutton-1 {
     filter: grayscale(100%);

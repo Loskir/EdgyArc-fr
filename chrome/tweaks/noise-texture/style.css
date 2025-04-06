@@ -1,5 +1,7 @@
 /* Only affect sidebar when it's detached */
-#navigator-toolbox, #browser, :root[titlepreface*="᠎"] #sidebar {
+#navigator-toolbox,
+#browser,
+:root[titlepreface*="᠎"] #sidebar {
   background-image: var(--noise-texture-image) !important;
   background-repeat: repeat !important;
 }

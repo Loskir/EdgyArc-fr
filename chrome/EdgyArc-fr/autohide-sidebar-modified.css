@@ -7,7 +7,7 @@ See the above repository for updates as well as full license text. */
   Feel free to use, adapt, and elevate as needed. No support is provided, and your creativity is the limit.
   Kindly respect the original license by MrOtherGuy.
 */
-@media (-moz-bool-pref: "af.edgyarc.sidebar-always-collapsed") {
+@media (-moz-pref("af.edgyarc.sidebar-always-collapsed")) {
   :root,
   :root[titlepreface="᠎"] {
     #sidebar-box {
@@ -16,7 +16,7 @@ See the above repository for updates as well as full license text. */
   }
 }
 
-@media (-moz-bool-pref: "af.edgyarc.autohide-sidebar") {
+@media (-moz-pref("af.edgyarc.autohide-sidebar")) {
   :root[titlepreface="᠎"] {
     #sidebar-box {
       --uc-sidebar-width: 8px !important;
@@ -36,10 +36,10 @@ See the above repository for updates as well as full license text. */
     width: var(--uc-sidebar-width) !important;
     max-width: var(--uc-sidebar-width) !important;
     z-index: 3;
-    @media not (-moz-bool-pref: "uc.tweak.af.sidebar-width-350") {
+    @media not (-moz-pref("uc.tweak.af.sidebar-width-350")) {
       --uc-sidebar-hover-width: 260px;
     }
-    @media (-moz-bool-pref: "uc.tweak.af.sidebar-width-350") {
+    @media (-moz-pref("uc.tweak.af.sidebar-width-350")) {
       --uc-sidebar-hover-width: 350px;
     }
   }

@@ -1,4 +1,4 @@
-@media (-moz-bool-pref: "af.edgyarc.macos-translucent") {
+@media (-moz-pref("af.edgyarc.macos-translucent")) {
   :root {
     appearance: -moz-window-titlebar !important;
   }

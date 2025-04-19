@@ -1,0 +1,28 @@
+#sidebar {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+#browser {
+  padding-left: 0 !important;
+}
+
+#sidebar-wrapper {
+  display: flex !important;
+  @media (-moz-pref("uc.tweak.rounded-corners")) {
+    min-width: var(--uc-tweak-rounded-corners-padding);
+  }
+}
+
+#tabbrowser-tabbox {
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+#sidebar-box {
+  margin-right: var(--uc-tweak-rounded-corners-padding) !important;
+
+  margin-block-end: 0 !important;
+  margin-inline-start: 0 !important;
+}

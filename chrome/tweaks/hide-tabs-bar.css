@@ -46,7 +46,7 @@
     /*
       MARK: Window controls
     */
-    #toolbar-menubar:not([autohide="false"]) ~ #nav-bar {
+    &:not([inFullscreen]) #toolbar-menubar:not([autohide="false"]) ~ #nav-bar {
       /* Firefox 133 added window controls to nav-bar. */
       .titlebar-buttonbox-container {
         display: flex !important;
@@ -245,7 +245,7 @@
     /*
       MARK: Window controls
     */
-    #toolbar-menubar:not([autohide="false"]) ~ #nav-bar {
+    &:not([inFullscreen]) #toolbar-menubar:not([autohide="false"]) ~ #nav-bar {
       /* Firefox 133 added window controls to nav-bar. */
       .titlebar-buttonbox-container {
         display: flex !important;

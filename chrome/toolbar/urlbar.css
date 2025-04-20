@@ -3,12 +3,13 @@
 
 /* Variables */
 :root {
-  --urlbar-min-height: 30px !important;
+  --urlbar-toolbar-height: calc(8px + 16px + var(--toolbarbutton-inner-padding) * 2) !important;
+  --urlbar-height: calc(16px + var(--toolbarbutton-inner-padding) * 2) !important;
+  --urlbar-min-height: calc(16px + var(--toolbarbutton-inner-padding) * 2) !important;
   --urlbarView-item-inline-padding: calc(
     1px + var(--uc-urlbar-inline-padding) + var(--uc-urlbar-icon-inline-padding)
   ) !important;
   --urlbar-icon-border-radius: 99px !important;
-  --urlbar-icon-padding: calc(var(--toolbarbutton-inner-padding) - 2px) !important;
   --urlbar-margin-inline: 6px !important;
   --identity-box-margin-inline: 6px !important;
   --uc-urlbar-icon-inline-padding: var(--uc-toolbarbutton-inner-inline-padding);
@@ -19,12 +20,6 @@
   /* urlbar height */
   & #urlbar-container {
     --urlbar-container-height: calc(8px + 16px + var(--toolbarbutton-inner-padding) * 2) !important;
-  }
-
-  & #urlbar {
-    --urlbar-toolbar-height: calc(8px + 16px + var(--toolbarbutton-inner-padding) * 2) !important;
-    --urlbar-height: calc(16px + var(--toolbarbutton-inner-padding) * 2) !important;
-    --urlbar-min-height: calc(16px + var(--toolbarbutton-inner-padding) * 2) !important;
   }
 
   /* Spacing for urlbar suggestion icons. */
@@ -136,23 +131,6 @@
 /* Remove border between URL bar input and suggestions. */
 #urlbar[open] > .urlbarView > .urlbarView-body-outer > .urlbarView-body-inner {
   border-top: 0 !important;
-}
-
-/* Buttons inside the URL bar. */
-.urlbar-page-action,
-#urlbar-go-button,
-.search-go-button,
-#tracking-protection-icon-container,
-#identity-icon-box {
-  padding-inline: var(--uc-urlbar-icon-inline-padding) !important;
-  width: calc(var(--uc-urlbar-icon-inline-padding) * 2 + 16px) !important;
-}
-
-/* Site information and Permissions buttons. */
-#identity-icon-box,
-#identity-permission-box,
-.notification-anchor-icon {
-  padding-inline: var(--uc-urlbar-icon-inline-padding) !important;
 }
 
 /* Zoom level and tab container indicators. */

@@ -56,6 +56,9 @@
     --uc-tweak-rounded-corners-padding: 8px !important;
     --uc-tweak-rounded-corners-radius: 7px !important;
   }
+
+  /* String for the custom label. */
+  --uc-string-private: "Private";
 }
 
 :root,

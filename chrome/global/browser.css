@@ -15,6 +15,14 @@
   box-shadow: 0 -3px 5px 3px light-dark(rgb(0 0 0 / 0.3), rgb(0 0 0 / 0.6)) !important;
 }
 
+#main-window:not([chromehidden~="toolbar"]) {
+  --browser-frame-bgcolor: var(--lwt-accent-color);
+
+  &:-moz-window-inactive {
+    --browser-frame-bgcolor: var(--lwt-accent-color-inactive, var(--lwt-accent-color));
+  }
+}
+
 /* Rounded Corners Tweak */
 @media (-moz-pref("uc.tweak.rounded-corners")) {
   /* Since Firefox 120, when the bookmarks bar is set to only open on new tabs,
@@ -52,12 +60,6 @@
     --uc-tweak-rounded-corners-radius: 8px;
     --uc-tweak-rounded-corners-shadow: 0 -0.8px 0 0 rgb(0 0 0 / 0.02), 0 0.5px 1px 1px rgb(0 0 0 / 0.06),
       0 1px 1px rgb(0 0 0 / 0.1);
-
-    --browser-frame-bgcolor: var(--lwt-accent-color);
-
-    &:-moz-window-inactive {
-      --browser-frame-bgcolor: var(--lwt-accent-color-inactive, var(--lwt-accent-color));
-    }
 
     /* Different shadow for higher resolution displays. */
     @media (resolution > 1.8dppx) {

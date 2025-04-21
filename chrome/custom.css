@@ -12,8 +12,3 @@
     background-color: var(--toolbarbutton-active-background) !important;
   }
 }
-
-/* Fix margins for the buttons in the url bar */
-#page-action-buttons {
-  margin-right: 2px;
-}

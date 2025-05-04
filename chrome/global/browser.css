@@ -136,7 +136,6 @@
   /* Apply rounded corners to sidebar. */
   #sidebar-box {
     border-radius: var(--uc-tweak-rounded-corners-radius) !important;
-    overflow: hidden !important;
   }
 
   /* Devtools window when docked to the left or right. */

@@ -4,10 +4,7 @@
   border: none !important;
 }
 
-#browser {
-  padding-left: 0 !important;
-}
-
+/* Apparently not used anymore since FF140 (maybe earlier) */
 #sidebar-wrapper {
   display: flex !important;
   @media (-moz-pref("uc.tweak.rounded-corners")) {
@@ -21,8 +18,14 @@
 }
 
 #sidebar-box {
-  margin-right: var(--uc-tweak-rounded-corners-padding) !important;
-
   margin-block-end: 0 !important;
   margin-inline-start: 0 !important;
+  margin-inline-end: var(--uc-tweak-rounded-corners-padding) !important;
+}
+
+#sidebar-main:not([sidebar-positionend]) {
+  margin-inline-start: calc(-1 * var(--uc-tweak-rounded-corners-padding)) !important;
+}
+#sidebar-main[sidebar-positionend] {
+  margin-inline-end: calc(-1 * var(--uc-tweak-rounded-corners-padding)) !important;
 }

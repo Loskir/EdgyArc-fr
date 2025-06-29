@@ -5,7 +5,7 @@
 
   @media (-moz-pref("uc.tweak.rounded-corners")) {
     margin-inline-end: var(--uc-tweak-rounded-corners-padding);
-    &[positionend] {
+    &[sidebar-positionend] {
       margin-inline-start: var(--uc-tweak-rounded-corners-padding);
     }
   }

@@ -455,14 +455,14 @@
   }
 
   /* Sidebar positioned on the left. */
-  &:not([positionend]) {
+  &:not([sidebar-positionend]) {
     border-inline-end: 1px solid var(--sidebar-border-color);
     /* Use less padding on the side with the border. */
     padding-inline: 4px 3px;
   }
 
   /* Sidebar positioned on the right. */
-  &[positionend] {
+  &[sidebar-positionend] {
     border-inline-start: 1px solid var(--sidebar-border-color);
     /* Use less padding on the side with the border. */
     padding-inline: 3px 4px;
@@ -471,8 +471,8 @@
   /* Rounded corners tweak optimisations. */
   @media (-moz-pref("uc.tweak.rounded-corners")) {
     /* Remove padding and border from sidebar. */
-    &:not([positionend]),
-    &[positionend] {
+    &:not([sidebar-positionend]),
+    &[sidebar-positionend] {
       border-inline: none;
       padding-inline: 0;
     }
@@ -481,11 +481,11 @@
       border-radius: 0 !important;
       box-shadow: none !important;
 
-      &:not([positionend]) {
+      &:not([sidebar-positionend]) {
         padding-inline-end: 3px;
       }
 
-      &[positionend] {
+      &[sidebar-positionend] {
         padding-inline-start: 3px;
       }
     }

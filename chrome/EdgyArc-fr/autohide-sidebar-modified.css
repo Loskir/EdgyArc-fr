@@ -24,6 +24,20 @@ See the above repository for updates as well as full license text. */
   }
 }
 
+#sidebar-box[sidebar-positionend] {
+  direction: rtl;
+}
+#sidebar-box[sidebar-positionend] > * {
+  direction: ltr;
+}
+
+#sidebar-box[sidebar-positionend]:-moz-locale-dir(rtl) {
+  direction: ltr;
+}
+#sidebar-box[sidebar-positionend]:-moz-locale-dir(rtl) > * {
+  direction: rtl;
+}
+
 /* Apply styles only when toggled using the userchrome toggle addon */
 :root[titlepreface="᠎"] {
   #sidebar-box {
@@ -35,27 +49,12 @@ See the above repository for updates as well as full license text. */
     min-width: var(--uc-sidebar-width) !important;
     width: var(--uc-sidebar-width) !important;
     max-width: var(--uc-sidebar-width) !important;
-    z-index: 3;
     @media not (-moz-pref("uc.tweak.af.sidebar-width-350")) {
       --uc-sidebar-hover-width: 260px;
     }
     @media (-moz-pref("uc.tweak.af.sidebar-width-350")) {
       --uc-sidebar-hover-width: 350px;
     }
-  }
-
-  #sidebar-box[positionend] {
-    direction: rtl;
-  }
-  #sidebar-box[positionend] > * {
-    direction: ltr;
-  }
-
-  #sidebar-box[positionend]:-moz-locale-dir(rtl) {
-    direction: ltr;
-  }
-  #sidebar-box[positionend]:-moz-locale-dir(rtl) > * {
-    direction: rtl;
   }
 
   #sidebar-splitter {
@@ -70,19 +69,48 @@ See the above repository for updates as well as full license text. */
     padding-left: 8px;
   }
 
-  #sidebar-box:hover #sidebar-header,
-  #sidebar-box:hover #sidebar {
-    min-width: var(--uc-sidebar-hover-width) !important;
-    max-width: var(--uc-sidebar-hover-width) !important;
-    transition:
-      min-width var(--uc-autohide-transition-duration) var(--uc-autohide-transition-type)
-        var(--uc-autohide-sidebar-delay),
-      box-shadow var(--uc-autohide-transition-duration) ease-in-out var(--uc-autohide-sidebar-delay) !important;
+  #sidebar-header,
+  #sidebar {
+    width: var(--uc-sidebar-width);
+  }
 
-    background-color: var(--browser-frame-bgcolor) !important;
-    background-image: var(--lwt-additional-images);
-    background-repeat: var(--lwt-background-tiling);
-    background-position: var(--lwt-background-alignment);
+  #sidebar-box:hover {
+    z-index: var(--browser-area-z-index-sidebar-expand-on-hover) !important;
+
+    &[sidebar-positionend] .sidebar-browser-stack {
+      justify-content: end;
+    }
+
+    #sidebar-header,
+    #sidebar {
+      min-width: var(--uc-sidebar-hover-width) !important;
+      max-width: var(--uc-sidebar-hover-width) !important;
+      transition:
+        min-width var(--uc-autohide-transition-duration) var(--uc-autohide-transition-type)
+          var(--uc-autohide-sidebar-delay),
+        box-shadow var(--uc-autohide-transition-duration) ease-in-out var(--uc-autohide-sidebar-delay) !important;
+
+      background-color: var(--browser-frame-bgcolor) !important;
+      background-image: var(--lwt-additional-images);
+      background-repeat: var(--lwt-background-tiling);
+      background-position: var(--lwt-background-alignment);
+    }
+
+    #sidebar {
+      box-shadow: var(--uc-sidebar-shadow) !important;
+      border-radius: var(--uc-tweak-rounded-corners-radius) !important;
+    }
+    @media (not (-moz-pref("sidebar.revamp"))) {
+      #sidebar {
+        margin-bottom: var(--uc-tweak-rounded-corners-padding) !important;
+      }
+      &:not([sidebar-positionend]) #sidebar {
+        margin-left: var(--uc-tweak-rounded-corners-padding) !important;
+      }
+      &[sidebar-positionend] #sidebar {
+        margin-right: var(--uc-tweak-rounded-corners-padding) !important;
+      }
+    }
   }
 
   .sidebar-panel {
@@ -103,19 +131,19 @@ See the above repository for updates as well as full license text. */
     border-inline-width: 0px 0px;
   }
 
-  #sidebar-box:not([positionend]) > :-moz-locale-dir(rtl),
-  #sidebar-box[positionend] > * {
+  #sidebar-box:not([sidebar-positionend]) > :-moz-locale-dir(rtl),
+  #sidebar-box[sidebar-positionend] > * {
     border-inline-width: 0px 0px;
   }
 
   /* Move statuspanel to the other side when sidebar is hovered so it doesn't get covered by sidebar */
-  #sidebar-box:not([positionend]):hover ~ #appcontent #statuspanel,
-  #sidebar-box:not([positionend]):hover ~ #tabbrowser-tabpanels #statuspanel {
+  #sidebar-box:not([sidebar-positionend]):hover ~ #appcontent #statuspanel,
+  #sidebar-box:not([sidebar-positionend]):hover ~ #tabbrowser-tabpanels #statuspanel {
     inset-inline: auto 0px !important;
   }
 
-  #sidebar-box:not([positionend]):hover ~ #appcontent #statuspanel-label,
-  #sidebar-box:not([positionend]):hover ~ #tabbrowser-tabpanels #statuspanel-label {
+  #sidebar-box:not([sidebar-positionend]):hover ~ #appcontent #statuspanel-label,
+  #sidebar-box:not([sidebar-positionend]):hover ~ #tabbrowser-tabpanels #statuspanel-label {
     margin-inline: 0px !important;
     border-left-style: solid !important;
   }
@@ -123,18 +151,5 @@ See the above repository for updates as well as full license text. */
   /* fix sidebar opacity when auto collapse enabled **/
   #sidebar-header {
     visibility: collapse !important;
-  }
-
-  /*Add shadow to auto-expanded sidebar on hover*/
-  #sidebar-box:hover > #sidebar {
-    box-shadow: var(--uc-sidebar-shadow) !important;
-    border-radius: var(--uc-tweak-rounded-corners-radius) !important;
-  }
-
-  #sidebar-box {
-    &:hover > #sidebar {
-      margin-left: var(--uc-tweak-rounded-corners-padding) !important;
-      margin-bottom: var(--uc-tweak-rounded-corners-padding) !important;
-    }
   }
 }

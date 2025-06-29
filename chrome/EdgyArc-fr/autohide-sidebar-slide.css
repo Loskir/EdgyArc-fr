@@ -1,3 +1,17 @@
+#sidebar-box[sidebar-positionend] {
+  direction: rtl;
+}
+#sidebar-box[sidebar-positionend] > * {
+  direction: ltr;
+}
+
+#sidebar-box[sidebar-positionend]:-moz-locale-dir(rtl) {
+  direction: ltr;
+}
+#sidebar-box[sidebar-positionend]:-moz-locale-dir(rtl) > * {
+  direction: rtl;
+}
+
 :root[titlepreface*="᠎"] {
   #sidebar-box {
     --uc-sidebar-width: var(--uc-tweak-rounded-corners-padding);
@@ -5,26 +19,11 @@
     min-width: var(--uc-sidebar-width) !important;
     width: var(--uc-sidebar-width) !important;
     max-width: var(--uc-sidebar-width) !important;
-    z-index: 3;
 
     --uc-sidebar-extended-width: 260px;
     @media (-moz-pref("uc.tweak.af.sidebar-width-350")) {
       --uc-sidebar-extended-width: 350px;
     }
-  }
-
-  #sidebar-box[positionend] {
-    direction: rtl;
-  }
-  #sidebar-box[positionend] > * {
-    direction: ltr;
-  }
-
-  #sidebar-box[positionend]:-moz-locale-dir(rtl) {
-    direction: ltr;
-  }
-  #sidebar-box[positionend]:-moz-locale-dir(rtl) > * {
-    direction: rtl;
   }
 
   #sidebar-splitter {
@@ -51,11 +50,20 @@
     transition: transform 200ms ease;
     transform: translateX(calc(-100% - var(--uc-tweak-rounded-corners-padding) / 2 - 20px));
 
-    #sidebar-box[positionend] & {
+    #sidebar-box[sidebar-positionend] & {
       transform: translateX(calc(100% + var(--uc-tweak-rounded-corners-padding) / 2 + 20px));
     }
 
-    #sidebar-box:hover & {
+  }
+  #sidebar-box:hover {
+    z-index: var(--browser-area-z-index-sidebar-expand-on-hover) !important;
+
+    &[sidebar-positionend] .sidebar-browser-stack {
+      justify-content: end;
+    }
+
+    #sidebar,
+    #sidebar-header {
       transform: translateX(0);
     }
   }
@@ -63,7 +71,7 @@
   #sidebar {
     margin: calc(var(--uc-tweak-rounded-corners-padding) / -2) 0 calc(var(--uc-tweak-rounded-corners-padding) / 2)
       calc(var(--uc-tweak-rounded-corners-padding) / 2);
-    #sidebar-box[positionend] & {
+    #sidebar-box[sidebar-positionend] & {
       margin: calc(var(--uc-tweak-rounded-corners-padding) / -2) calc(var(--uc-tweak-rounded-corners-padding) / 2)
         calc(var(--uc-tweak-rounded-corners-padding) / 2) 0;
     }
@@ -79,11 +87,11 @@
   }
 
   /* Move statuspanel to the other side when sidebar is hovered so it doesn't get covered by sidebar */
-  #sidebar-box:not([positionend]):hover ~ #statuspanel {
+  #sidebar-box:not([sidebar-positionend]):hover ~ #statuspanel {
     inset-inline: auto 0px !important;
   }
 
-  #sidebar-box:not([positionend]):hover ~ #statuspanel-label {
+  #sidebar-box:not([sidebar-positionend]):hover ~ #statuspanel-label {
     margin-inline: 0px !important;
     border-left-style: solid !important;
   }

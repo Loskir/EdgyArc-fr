@@ -13,7 +13,7 @@ Because Arc and Edge look pretty af but FOSS FTW
   - Auto-collapse sidebar into just icons
   - Auto-hide sidebar
   - Toggle sidebar show/collapse _(using [UserChrome Toggle](https://addons.mozilla.org/firefox/addon/userchrome-toggle/))_
-- `macOS only` Translucent windows
+- `macOS/Windows` Translucency
 - Custom Sidebery theme
 - Auto-hide native top tabs when Sidebery or TST is active
 
@@ -29,13 +29,13 @@ Because Arc and Edge look pretty af but FOSS FTW
 - Noise texture background tweak
 - `af.edgyarc.autohide-sidebar-slide`
 - Support for Firefox v137+
+- Support for translucency (Mica) on Windows
 
 ## Usage
 
 ### Step 1 - Installation
 
-<details>
-  <summary> 🔵 Install recommended addons </summary>
+#### 🔵 Install recommended addons
 
 - [Sidebery](https://addons.mozilla.org/firefox/addon/sidebery/)
 - [UserChrome Toggle](https://addons.mozilla.org/firefox/addon/userchrome-toggle/) `Required for sidebar autohide`
@@ -44,41 +44,25 @@ Because Arc and Edge look pretty af but FOSS FTW
     `[OR]`
   - [Firefox Color](https://addons.mozilla.org/en-US/firefox/addon/firefox-color/)
 
-</details>
+#### 🔵 Install and Configure Base theme
 
-<details>
-  <summary> 🔵 Install and Configure Base theme </summary>
-  
   - Clone or download the repository to your local machine.
   - Copy the contents of the `chrome` folder into your Firefox profile's `chrome` folder.
   - Go to `about:config` and set these properties to `true`
-
-    `toolkit.legacyUserProfileCustomizations.stylesheets`
-
-    `svg.context-properties.content.enabled`
-
-    `layout.css.color-mix.enabled`
-
-    `layout.css.light-dark.enabled`
-
-    `layout.css.has-selector.enabled`
-
-    `widget.macos.titlebar-blend-mode.behind-window` [Required for translucency on macos]
-
-    `browser.tabs.allow_transparent_browser` [Required for translucency on macos]
-
-- Set these properties to `true` as well
-
-  `uc.tweak.hide-tabs-bar`
-
-  `uc.tweak.rounded-corners`
-
-</details>
+    - `toolkit.legacyUserProfileCustomizations.stylesheets`
+    - `svg.context-properties.content.enabled`
+    - `layout.css.color-mix.enabled`
+    - `layout.css.light-dark.enabled`
+    - `layout.css.has-selector.enabled`
+    - `uc.tweak.hide-tabs-bar`
+    - `uc.tweak.rounded-corners`
+    - For translucency on macOS:
+      - `widget.macos.titlebar-blend-mode.behind-window`
+      - `browser.tabs.allow_transparent_browser`
+    - For translucency on Windows:
+      - `widget.windows.mica`
 
 ### Step 2 Configure EdgyArc
-
-<details>
-<summary>Although the theme can be used as is, you can customize some aspects of it</summary>
 
 | Feature Description                                                                                                                                                                        | Screenshot                                                                                                                                      |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -103,8 +87,6 @@ Because Arc and Edge look pretty af but FOSS FTW
 | **Wider Expanded Sidebar on Hover** <br> `uc.tweak.af.sidebar-width-350`                                                                                                                   |                                                                                                                                                 |
 | **Sidebery Horizontal Navbar <br> on Top Tab List** <br> `af.sidebery.nav-on-top`                                                                                                          |                                                                                                                                                 |
 | **Disable Dynamic Width Pinned Tabs**<br>`af.sidebery.static-pinned-tab-width`                                                                                                             |                                                                                                                                                 |
-
-</details>
 
 ### Step 3 - Import Sidebery configs
 

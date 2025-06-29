@@ -4,7 +4,7 @@
 
 :root {
   --af-minimal-opacity: 1;
-  @media (-moz-pref("af.edgyarc.macos-translucent")) {
+  @media (-moz-pref("af.edgyarc.macos-translucent") or -moz-pref("widget.windows.mica")) {
     --af-minimal-opacity: 0.53;
   }
   @media (-moz-pref("af.edgyarc.macos-more-translucent")) {

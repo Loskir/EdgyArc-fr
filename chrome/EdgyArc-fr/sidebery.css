@@ -87,7 +87,7 @@
     --tabs-pinned-width: 42px !important;
     --tabs-color-layer-opacity: 0.4 !important;
     --tabs-activated-color-layer-opacity: 0.6 !important;
-    @media (-moz-pref("af.edgyarc.macos-translucent")) {
+    @media (-moz-pref("af.edgyarc.macos-translucent") or -moz-pref("widget.windows.mica")) {
       --tabs-color-layer-opacity: 0.5 !important;
       --tabs-activated-color-layer-opacity: 0.6 !important;
     }

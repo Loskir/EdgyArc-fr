@@ -49,10 +49,10 @@
     width: var(--uc-sidebar-extended-width) !important;
 
     transition: transform 200ms ease;
-    transform: translateX(calc(-100% - var(--uc-tweak-rounded-corners-padding) / 2));
+    transform: translateX(calc(-100% - var(--uc-tweak-rounded-corners-padding) / 2 - 20px));
 
     #sidebar-box[positionend] & {
-      transform: translateX(calc(100% + var(--uc-tweak-rounded-corners-padding) / 2));
+      transform: translateX(calc(100% + var(--uc-tweak-rounded-corners-padding) / 2 + 20px));
     }
 
     #sidebar-box:hover & {

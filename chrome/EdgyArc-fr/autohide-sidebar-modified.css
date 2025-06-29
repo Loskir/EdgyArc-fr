@@ -70,8 +70,8 @@ See the above repository for updates as well as full license text. */
     padding-left: 8px;
   }
 
-  #sidebar-box:hover > #sidebar-header,
-  #sidebar-box:hover > #sidebar {
+  #sidebar-box:hover #sidebar-header,
+  #sidebar-box:hover #sidebar {
     min-width: var(--uc-sidebar-hover-width) !important;
     max-width: var(--uc-sidebar-hover-width) !important;
     transition:

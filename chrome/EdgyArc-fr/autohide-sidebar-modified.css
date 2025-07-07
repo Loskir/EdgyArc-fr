@@ -42,9 +42,20 @@ See the above repository for updates as well as full license text. */
 :root[titlepreface="᠎"] {
   #sidebar-box {
     --uc-sidebar-width: 48px;
-    --uc-autohide-sidebar-delay: 0ms !important;
-    --uc-autohide-transition-duration: 100ms;
-    --uc-autohide-transition-type: linear;
+    --uc-autohide-sidebar-delay: 0ms;
+    --uc-autohide-transition-duration: 300ms;
+    --uc-autohide-transition-type: linear(
+      0,
+      0.02755 2.27%,
+      0.11264 4.92%,
+      0.7987 20.072%,
+      0.93357 25.073%,
+      1.01477 30.443%,
+      1.04379 34.693%,
+      1.05225 39.704%,
+      1.00166 66.267%,
+      0.99956
+    );
     position: relative;
     min-width: var(--uc-sidebar-width) !important;
     width: var(--uc-sidebar-width) !important;
@@ -55,6 +66,7 @@ See the above repository for updates as well as full license text. */
     @media (-moz-pref("uc.tweak.af.sidebar-width-350")) {
       --uc-sidebar-hover-width: 350px;
     }
+    z-index: var(--browser-area-z-index-sidebar-expand-on-hover) !important;
   }
 
   #sidebar-splitter {
@@ -72,11 +84,20 @@ See the above repository for updates as well as full license text. */
   #sidebar-header,
   #sidebar {
     width: var(--uc-sidebar-width);
+
+    /* Only apply delay on hover-out, e.g. when the sidebar is expanded */
+    transition:
+      min-width var(--uc-autohide-transition-duration) var(--uc-autohide-transition-type)
+        var(--uc-autohide-sidebar-delay),
+      box-shadow var(--uc-autohide-transition-duration) var(--uc-autohide-transition-type)
+        var(--uc-autohide-sidebar-delay),
+      /* Delay the background color transition to make it start after the width transition is over
+        (prevents sidebar being transparent over the page) */
+        background-color 100ms var(--uc-autohide-transition-type)
+        calc(var(--uc-autohide-sidebar-delay) + var(--uc-autohide-transition-duration) - 100ms);
   }
 
   #sidebar-box:hover {
-    z-index: var(--browser-area-z-index-sidebar-expand-on-hover) !important;
-
     &[sidebar-positionend] .sidebar-browser-stack {
       justify-content: end;
     }
@@ -85,10 +106,11 @@ See the above repository for updates as well as full license text. */
     #sidebar {
       min-width: var(--uc-sidebar-hover-width) !important;
       max-width: var(--uc-sidebar-hover-width) !important;
+
       transition:
-        min-width var(--uc-autohide-transition-duration) var(--uc-autohide-transition-type)
-          var(--uc-autohide-sidebar-delay),
-        box-shadow var(--uc-autohide-transition-duration) ease-in-out var(--uc-autohide-sidebar-delay) !important;
+        min-width var(--uc-autohide-transition-type) var(--uc-autohide-transition-duration),
+        box-shadow var(--uc-autohide-transition-type) var(--uc-autohide-transition-duration),
+        background-color var(--uc-autohide-transition-type) 100ms;
 
       background-color: var(--browser-frame-bgcolor) !important;
       background-image: var(--lwt-additional-images);

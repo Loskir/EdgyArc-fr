@@ -19,6 +19,7 @@
     min-width: var(--uc-sidebar-width) !important;
     width: var(--uc-sidebar-width) !important;
     max-width: var(--uc-sidebar-width) !important;
+    z-index: var(--browser-area-z-index-sidebar-expand-on-hover) !important;
 
     --uc-sidebar-extended-width: 260px;
     @media (-moz-pref("uc.tweak.af.sidebar-width-350")) {
@@ -41,34 +42,66 @@
     color: inherit !important;
   }
 
-  /* Add sidebar divider and give it background */
-  #sidebar,
-  #sidebar-header {
+  .sidebar-browser-stack {
     background-color: var(--browser-frame-bgcolor) !important;
     width: var(--uc-sidebar-extended-width) !important;
 
-    transition: transform 200ms ease;
+    --uc-autohide-transition-duration: 500ms;
+    --uc-autohide-transition-type: linear(
+      0,
+      0.02755 2.27%,
+      0.11264 4.92%,
+      0.7987 20.072%,
+      0.93357 25.073%,
+      1.01477 30.443%,
+      1.04379 34.693%,
+      1.05225 39.704%,
+      1.00166 66.267%,
+      0.99956
+    );
+
+    transition: transform var(--uc-autohide-transition-duration) var(--uc-autohide-transition-type);
     transform: translateX(calc(-100% - var(--uc-tweak-rounded-corners-padding) / 2 - 20px));
 
     #sidebar-box[sidebar-positionend] & {
       transform: translateX(calc(100% + var(--uc-tweak-rounded-corners-padding) / 2 + 20px));
     }
-
   }
+
+  .sidebar-browser-stack::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    top: 0;
+    bottom: 0;
+    transition: width var(--uc-autohide-transition-duration) var(--uc-autohide-transition-type);
+  }
+  #sidebar-box:not([sidebar-positionend]) .sidebar-browser-stack::after {
+    left: 100%;
+  }
+  #sidebar-box[sidebar-positionend] .sidebar-browser-stack::after {
+    right: 100%;
+  }
+
   #sidebar-box:hover {
-    z-index: var(--browser-area-z-index-sidebar-expand-on-hover) !important;
-
-    &[sidebar-positionend] .sidebar-browser-stack {
-      justify-content: end;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100px;
     }
 
-    #sidebar,
-    #sidebar-header {
+    .sidebar-browser-stack {
       transform: translateX(0);
+
+      &:after {
+        width: 100px;
+      }
     }
   }
 
-  #sidebar {
+  .sidebar-browser-stack {
     margin: calc(var(--uc-tweak-rounded-corners-padding) / -2) 0 calc(var(--uc-tweak-rounded-corners-padding) / 2)
       calc(var(--uc-tweak-rounded-corners-padding) / 2);
     #sidebar-box[sidebar-positionend] & {
@@ -81,7 +114,7 @@
     box-shadow: 0 2px 14px rgba(0, 0, 0, 0.2);
   }
   @media (-moz-pref("uc.tweak.rounded-corners")) {
-    #sidebar {
+    .sidebar-browser-stack {
       border-radius: var(--uc-tweak-rounded-corners-radius) !important;
     }
   }
